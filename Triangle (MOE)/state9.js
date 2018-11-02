@@ -18,13 +18,13 @@ demo.state9.prototype = {
         addTickCross(this);
         this.btnPlay = game.add.button(0,0,"btn2");
         this.btnPlay.frame = 1;
-        this.btnPlay.position.setTo(1035, 700);
-        this.btnPlay.scale.setTo(0.7,0.5);
+        this.btnPlay.position.setTo(1140, 750);
+        this.btnPlay.scale.setTo(0.8,0.5);
         this.btnPlay.inputEnabled = true;
         
         this.btnNext = game.add.button(0,0,"btn2");
         this.btnNext.frame = 0;
-        this.btnNext.position.setTo(1035, 700);
+        this.btnNext.position.setTo(1140, 750);
         this.btnNext.scale.setTo(0.8,0.5);
         this.btnNext.visible = false;
         
@@ -76,7 +76,7 @@ demo.state9.prototype = {
         this.texts[11].position.setTo(1190,414);
         this.texts[11].text = "3 cm";
         
-        this.texts[12].position.setTo(1060,705);
+        this.texts[12].position.setTo(1175,755);
         this.texts[12].text = "Check";
         this.texts[12].alpha = 0.3;
         
@@ -152,7 +152,7 @@ demo.state9.prototype = {
         this.btnRadio2.events.onInputDown.add(function(){if (check <2){this.btnRadio2.loadTexture("btnradiochecked",0); check++; b = 1}},this);
         this.btnRadio3.events.onInputDown.add(function(){if (check <2){this.btnRadio3.loadTexture("btnradiochecked",0); check++; c = 1}},this);
         
-        this.btnPlay.events.onInputDown.add(function(){if (check>=2 && a == 1 && c ==1){this.tick1.alpha = 1; this.tick2.alpha = 1; this.btnPlay.visible = false; this.btnNext.visible = true; this.texts[12].position.setTo(1055,705); this.texts[12].text = "Continue"; this.texts[12].alpha = 1; this.texts[3].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[4].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[10].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[9].setStyle({backgroundColor: 'rgba(255,255,0)'});this.ans1.alpha = 0;this.ans2.alpha = 1;this.ans2.position.setTo(500,625);} else if (check >=2 && b ==1){this.cross1.alpha = 1; this.tick1.alpha = 1; this.tick2.alpha = 1; this.btnPlay.visible = false; this.btnNext.visible = true; this.texts[12].position.setTo(1055,705); this.texts[12].text = "Continue"; this.texts[12].alpha = 1;this.texts[3].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[4].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[10].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[9].setStyle({backgroundColor: 'rgba(255,255,0)'});this.ans1.alpha = 1;this.ans2.alpha = 1;}},this);
+        this.btnPlay.events.onInputDown.add(function(){if (check>=2 && a == 1 && c ==1){this.tick1.alpha = 1; this.tick2.alpha = 1; this.btnPlay.visible = false; this.btnNext.visible = true; this.texts[12].position.setTo(1158,755); this.texts[12].text = "Continue"; this.texts[12].alpha = 1; this.texts[3].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[4].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[10].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[9].setStyle({backgroundColor: 'rgba(255,255,0)'});this.ans1.alpha = 0;this.ans2.alpha = 1;this.ans2.position.setTo(500,625);} else if (check >=2 && b ==1 && c == 1){this.cross1.alpha = 1; this.tick1.alpha = 1; this.tick2.alpha = 0; this.btnPlay.visible = false; this.btnNext.visible = true; this.texts[12].position.setTo(1158,755); this.texts[12].text = "Continue"; this.texts[12].alpha = 1;this.texts[3].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[4].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[10].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[9].setStyle({backgroundColor: 'rgba(255,255,0)'});this.ans1.alpha = 1;this.ans2.alpha = 1;}},this);
         
         this.btnNext.events.onInputDown.add(function(){check =0; a=0; b=0; c=0;game.state.start('state10');},this);
         
