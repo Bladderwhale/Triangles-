@@ -173,9 +173,10 @@ demo.state5.prototype = {
         
         
         this.ans1 = game.add.sprite(0,0,'ans4');
-        this.ans1.scale.setTo(1.25,1.25);
+        this.ans1.scale.setTo(0.25,0.25);
         this.ans1.alpha = 0;
-        this.ans1.position.setTo(820,750);
+        this.ans1.position.setTo(750,700);
+       
         
         //height of a triangle
         console.log(this.dot2.y - this.dot3.y);
@@ -185,14 +186,14 @@ demo.state5.prototype = {
         console.log(this.dot2.x - this.dot1.x);
         this.length = this.dot2.x - this.dot1.x;
         
-        this.fakeHandle1.events.onInputOver.add(function(){
+     /*   this.fakeHandle1.events.onInputOver.add(function(){
             this.game.canvas.style.cursor = "move";
           //  sprite.input.useHandCursor = true;
         }, this);
         
         this.fakeHandle1.events.onInputOut.add(function(){
         this.game.canvas.style.cursor = "default";
-        }, this);
+        }, this);*/
         
         //physics
         sprite3 = game.add.sprite(0,0,"");
@@ -238,6 +239,15 @@ demo.state5.prototype = {
         tickTween2 = this.game.add.tween(this.ans1).to({alpha:1},1500,Phaser.Easing.Linear.None);
     },
     update:function(){
+         if (this.fakeHandle1.input.pointerOver()) {
+           this.fakeHandle1.input.useHandCursor = true;
+       }
+        if (this.fakeHandle2.input.pointerOver()) {
+           this.fakeHandle2.input.useHandCursor = true;
+       }
+        if (this.fakeHandle3.input.pointerOver()) {
+           this.fakeHandle3.input.useHandCursor = true;
+       }
         if (this.boolTryAgain == true) {
             if  (this.k < 1) {
             this.btnTryAgain.visible = true;

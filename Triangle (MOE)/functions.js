@@ -62,6 +62,7 @@ function loadAssets(){
     game.load.image('ans8', 'assets/ans8.png');
     game.load.image('ans9', 'assets/ans9.png');
     game.load.image('ans10', 'assets/ans10.png');
+    game.load.image('hand', 'assets/hand.png');
 };
 
 function addTexts(state){
@@ -129,9 +130,9 @@ function forIsoEquTriangle(state) {
     state.fakeHandle1 = game.add.sprite(650, 500, 'dot');
     state.fakeHandle2 = game.add.sprite(850, 500, 'dot');
     state.fakeHandle3 = game.add.sprite(750, 400, 'dot');
-    state.fakeHandle1.scale.setTo(0.1,0.1);
-    state.fakeHandle2.scale.setTo(0.1,0.1);
-    state.fakeHandle3.scale.setTo(0.1,0.1);
+    state.fakeHandle1.scale.setTo(0.5,0.5);
+    state.fakeHandle2.scale.setTo(0.5,0.5);
+    state.fakeHandle3.scale.setTo(0.5,0.5);
     state.fakeHandle1.anchor.setTo(0.5,0.5);
     state.fakeHandle2.anchor.setTo(0.5,0.5);
     state.fakeHandle3.anchor.setTo(0.5,0.5);

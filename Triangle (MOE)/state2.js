@@ -159,22 +159,18 @@ demo.state2.prototype = {
         console.log(this.dot2.x - this.dot1.x);
         this.length = this.dot2.x - this.dot1.x;
         
-        this.fakeHandle1.events.onInputOver.add(function(){
-            this.game.canvas.style.cursor = "move";
-          //  sprite.input.useHandCursor = true;
+        
+      /* this.fakeHandle1.events.onInputOver.add(function(){
+        //   this.game.canvas.style.cursor = "move";
+        this.fakeHandle1.input.useHandCursor = true;
         }, this);
         
         this.fakeHandle1.events.onInputOut.add(function(){
         this.game.canvas.style.cursor = "default";
-        }, this);
-        
-        this.fakeHandle1.alpha =0;
-        this.fakeHandle2.alpha =0;
-        this.fakeHandle3.alpha =0;
-        
+        }, this); 
         this.fakeHandle2.events.onInputOver.add(function(){
-            this.game.canvas.style.cursor = "move";
-          //  sprite.input.useHandCursor = true;
+             //   this.game.canvas.style.cursor = "move";
+        this.fakeHandle2.input.useHandCursor = true;
         }, this);
         
         this.fakeHandle2.events.onInputOut.add(function(){
@@ -182,13 +178,19 @@ demo.state2.prototype = {
         }, this);
         
         this.fakeHandle3.events.onInputOver.add(function(){
-            this.game.canvas.style.cursor = "move";
-          //  sprite.input.useHandCursor = true;
+              //   this.game.canvas.style.cursor = "move";
+        this.fakeHandle3.input.useHandCursor = true;
         }, this);
         
         this.fakeHandle3.events.onInputOut.add(function(){
         this.game.canvas.style.cursor = "default";
-        }, this);
+        }, this); */
+        
+        this.fakeHandle1.alpha =0;
+        this.fakeHandle2.alpha =0;
+        this.fakeHandle3.alpha =0;
+        
+        
         
         
         
@@ -229,6 +231,18 @@ demo.state2.prototype = {
         
     },
     update:function(){
+        
+       if (this.fakeHandle1.input.pointerOver()) {
+           this.fakeHandle1.input.useHandCursor = true;
+       }
+        if (this.fakeHandle2.input.pointerOver()) {
+           this.fakeHandle2.input.useHandCursor = true;
+       }
+        if (this.fakeHandle3.input.pointerOver()) {
+           this.fakeHandle3.input.useHandCursor = true;
+       }
+        
+       // console.log("what is the bool of the handcursor: " + this.hand1.input.useHandCursor);
         console.log("what is tick tween: " +tickTween);
         //Try again function
         if (this.boolTryAgain == true) {

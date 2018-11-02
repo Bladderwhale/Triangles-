@@ -139,7 +139,7 @@ demo.state4.prototype = {
         this.ans3 = game.add.sprite(0,0,"ans1");
         this.ans3.scale.setTo(0.35,0.35);
         this.ans3.alpha = 0;
-        this.ans4 = game.add.sprite(0,0,"ans1");
+        this.ans4 = game.add.sprite(600,638,"ans1");
         this.ans4.scale.setTo(0.35,0.35);
         this.ans4.alpha = 0;
         
@@ -173,11 +173,13 @@ demo.state4.prototype = {
             this.texts[12].text = "Check"; this.btnPlay.visible = true; this.ans3.alpha = 0; a=0; b=0;c=0;}, this);
         
         
-         
+         this.ans5 = game.add.sprite(350,638,"ans1");
+        this.ans5.scale.setTo(0.35,0.35);
+        this.ans5.alpha = 0;
          tickTween = this.game.add.tween(this.tick2).to({alpha:1},1000,Phaser.Easing.Linear.None);
          tickTween2 = this.game.add.tween(this.tick1).to({alpha:1},1000,Phaser.Easing.Linear.None);
-         tickTween3 = this.game.add.tween(this.ans4).to({alpha:1, x: 600, y: 638},1000,Phaser.Easing.Linear.None);
-        tickTween4 = this.game.add.tween(this.ans4).to({alpha:1, x: 200, y: 638},1000,Phaser.Easing.Linear.None);
+         tickTween3 = this.game.add.tween(this.ans5).to({alpha:1, x: 600, y: 638},1000,Phaser.Easing.Linear.None);
+        tickTween4 = this.game.add.tween(this.ans4).to({alpha:1},1000,Phaser.Easing.Linear.None);
     
     },
     

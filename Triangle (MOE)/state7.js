@@ -147,20 +147,20 @@ demo.state7.prototype = {
         console.log(this.dot2.x - this.dot1.x);
         this.length = this.dot2.x - this.dot1.x;
         
-        this.fakeHandle1.events.onInputOver.add(function(){
+       /* this.fakeHandle1.events.onInputOver.add(function(){
             this.game.canvas.style.cursor = "move";
           //  sprite.input.useHandCursor = true;
         }, this);
         
         this.fakeHandle1.events.onInputOut.add(function(){
         this.game.canvas.style.cursor = "default";
-        }, this);
+        }, this);*/
         
         this.fakeHandle1.alpha =0;
         this.fakeHandle2.alpha =0;
         this.fakeHandle3.alpha =0;
         
-        this.fakeHandle2.events.onInputOver.add(function(){
+        /*this.fakeHandle2.events.onInputOver.add(function(){
             this.game.canvas.style.cursor = "move";
           //  sprite.input.useHandCursor = true;
         }, this);
@@ -176,7 +176,7 @@ demo.state7.prototype = {
         
         this.fakeHandle3.events.onInputOut.add(function(){
         this.game.canvas.style.cursor = "default";
-        }, this);
+        }, this);*/
         
         
         
@@ -218,6 +218,15 @@ demo.state7.prototype = {
         
     },
     update:function(){
+         if (this.fakeHandle1.input.pointerOver()) {
+           this.fakeHandle1.input.useHandCursor = true;
+       }
+        if (this.fakeHandle2.input.pointerOver()) {
+           this.fakeHandle2.input.useHandCursor = true;
+       }
+        if (this.fakeHandle3.input.pointerOver()) {
+           this.fakeHandle3.input.useHandCursor = true;
+       }
           //Try again function
         if (this.boolTryAgain == true) {
             if (this.k < 1){
