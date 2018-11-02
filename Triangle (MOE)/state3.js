@@ -1,0 +1,232 @@
+var check = 0;
+demo.state3 = function(){};
+demo.state3.prototype = {
+    btnPlay: null, btnNext: null, a: 0, b:0, c:0, ans1:null,ans2:null, btnTryAgain: null, txtTryAgain: null, boolTryAgain: false,k: 0,confusedCheck: 0,
+    preload: function(){
+        loadAssets();
+
+    },
+    create: function(){
+        game.stage.backgroundColor = '#ffffff';
+        console.log('state3');
+        addChangeStateEventListers();
+        fixedGUI(this);
+        addTexts(this);
+        this.headingTexts.text = "Isosceles Triangles";
+        fixedGUI3();
+        dotAttributes(this);
+        addBtnRadio(this);
+        addTickCross(this);
+
+        var firstTrianglePoints = [550, 550,400 ,350 ];
+        var firstTriDraw = game.add.graphics(0,0);
+        firstTriDraw.beginFill(0xe0ffff);
+        firstTriDraw.lineStyle(2,0x000000,1);
+        firstTriDraw.moveTo(250,550);
+        for (var i = 0; i < firstTrianglePoints.length; i++) {
+            firstTriDraw.lineTo(firstTrianglePoints[i], firstTrianglePoints[i+1]); 
+            i++;
+        }
+        firstTriDraw.endFill(); 
+
+        var secondTrianglePoints = [800, 550, 970, 350];
+        var secondTriDraw = game.add.graphics(0,0);
+        secondTriDraw.beginFill(0x7FBF7F);
+        secondTriDraw.moveTo(615,550);
+        secondTriDraw.lineStyle(2,0x000000,1);
+        for (var i = 0; i < secondTrianglePoints.length; i++) {
+            secondTriDraw.lineTo(secondTrianglePoints[i], secondTrianglePoints[i+1]);
+            i++;
+        }
+        secondTriDraw.endFill();
+        
+        var thirdTrianglePoints = [1150,550, 1087,350];
+        var thirdTriDraw = game.add.graphics(0,0);
+        thirdTriDraw.beginFill(0xFFFF66);
+        thirdTriDraw.moveTo(1025, 550);
+        thirdTriDraw.lineStyle(2,0x000000,1);
+            for (var i = 0; i<thirdTrianglePoints.length; i++) {
+            thirdTriDraw.lineTo(thirdTrianglePoints[i], thirdTrianglePoints[i+1] );
+            i++;
+        }
+        thirdTriDraw.endFill();
+        
+        this.btnPlay = game.add.button(0,0,"btn2");
+        this.btnPlay.frame = 1;
+        this.btnPlay.position.setTo(1035, 800);
+        this.btnPlay.scale.setTo(0.7,0.5);
+        this.btnPlay.inputEnabled = true;
+        
+        this.btnNext = game.add.button(0,0,"btn2");
+        this.btnNext.frame = 0;
+        this.btnNext.position.setTo(1035, 800);
+        this.btnNext.scale.setTo(0.8,0.5);
+        this.btnNext.visible = false;
+        
+
+        for (var i = 0; i < 14; i++){
+            this.texts[i] = game.add.text(i*10,i*10, "1");
+        }
+        this.texts[0].position.setTo(210,140);
+        this.texts[0].text = "If a triangle has two equal sides, it is an isosceles triangle."
+        this.texts[0].lineSpacing = 30;
+        this.texts[0].fontWeight = 'normal';
+        
+        this.texts[1].position.setTo(270,240);
+        this.texts[1].text = "Which two of these triangles are isosceles?"
+        this.texts[1].lineSpacing = 30;
+        this.texts[1].fontWeight = 'normal';
+        
+        this.texts[2].position.setTo(130,255);
+        this.texts[2].text = "Try this..."
+        this.texts[2].lineSpacing = 30;
+        this.texts[2].angle = -10;
+        this.texts[2].setStyle({ fill: '#008000'});
+        
+        this.texts[3].position.setTo(200, 425);
+        this.texts[3].text = "7.2 cm";
+        
+        this.texts[4].position.setTo(500, 425);
+        this.texts[4].text = "7.2 cm";
+        
+        this.texts[5].position.setTo(355, 562);
+        this.texts[5].text = "9.4 cm";
+        
+        this.texts[6].position.setTo(680, 425);
+        this.texts[6].text = "8.2 cm";
+        
+        this.texts[7].position.setTo(880, 470);
+        this.texts[7].text = "7.2 cm";
+        
+        this.texts[8].position.setTo(680, 562);
+        this.texts[8].text = "3.4 cm";
+        
+        this.texts[9].position.setTo(965,425);
+        this.texts[9].text = "5.3 cm";
+        
+        this.texts[10].position.setTo(1135,425);
+        this.texts[10].text = "5.3 cm";
+        
+        this.texts[11].position.setTo(1050,562);
+        this.texts[11].text = "2.4 cm";
+        
+        this.texts[12].position.setTo(1060,805);
+        this.texts[12].text = "Check";
+        this.texts[12].alpha = 0.3;
+        
+        this.btnRadio1.position.setTo(373,610);
+        this.btnRadio2.position.setTo(700,610);
+        this.btnRadio3.position.setTo(1075,610);
+        
+        this.tick1.position.setTo(373,610);
+        this.tick1.anchor.setTo(0.25,0.25);
+        this.tick1.alpha = 0;
+        
+        this.tick2.position.setTo(1075,610);
+        this.tick2.anchor.setTo(0.25,0.25);
+        this.tick2.alpha = 0;
+        
+        this.cross1.position.setTo(700,610);
+        this.cross1.anchor.setTo(0.19,0.19);
+        this.cross1.alpha = 0;
+        this.cross2.alpha=0;
+        
+        this.ans3 = game.add.sprite(0,0,"ans1");
+        this.ans3.scale.setTo(0.35,0.35);
+        this.ans3.position.setTo(180,610);
+        this.ans3.alpha = 0;
+        this.ans1 = game.add.sprite(0,0,"ans2");
+        this.ans1.scale.setTo(0.35,0.35);
+        this.ans1.position.setTo(600,625);
+        this.ans1.alpha = 0;
+        this.ans2 = game.add.sprite(0,0,"ans3");
+        this.ans2.scale.setTo(0.35,0.35);
+        this.ans2.position.setTo(180,625);
+        this.ans2.alpha = 0;
+        
+        
+        this.btnRadio1.events.onInputDown.add(function(){if (check <2){this.btnRadio1.loadTexture("btnradiochecked",0); check++; a = 1}},this);
+        this.btnRadio2.events.onInputDown.add(function(){if (check <2){this.btnRadio2.loadTexture("btnradiochecked",0); check++; b = 1}},this);
+        this.btnRadio3.events.onInputDown.add(function(){if (check <2){this.btnRadio3.loadTexture("btnradiochecked",0); check++; c = 1}},this);
+        
+        this.btnPlay.events.onInputDown.add(function(){if (check>=2 && a == 1 && c ==1){this.tick1.alpha = 1; this.tick2.alpha = 1; this.btnPlay.visible = false; this.btnNext.visible = true; this.texts[12].position.setTo(1055,805); this.texts[12].text = "Continue"; this.texts[12].alpha = 1; this.texts[3].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[4].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[10].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[9].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.ans1.alpha = 0;this.ans2.alpha = 1;this.ans2.position.setTo(500,625);} else if (check >=2 && b ==1 && a == 1){this.confusedCheck++;this.ans1.position.setTo(600,625);this.ans3.position.setTo(180,610);this.boolTryAgain = true;this.cross1.alpha = 1; this.tick1.alpha = 1; this.tick2.alpha = 0; this.btnPlay.visible = false; this.btnNext.visible = true; this.texts[12].position.setTo(1055,805); this.texts[12].text = "Continue"; this.texts[12].alpha = 1;this.texts[3].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[4].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[10].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[9].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.ans1.alpha = 1;this.ans3.alpha = 1;}else if (check >=2 && b ==1 && c == 1){this.confusedCheck++;this.boolTryAgain = true;this.cross1.alpha = 1; this.tick1.alpha = 0; this.tick2.alpha = 1; this.btnPlay.visible = false; this.btnNext.visible = true; this.texts[12].position.setTo(1055,805); this.texts[12].text = "Continue"; this.texts[12].alpha = 1;this.texts[3].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[4].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[10].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[9].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.ans1.alpha = 1;this.ans3.alpha = 1; this.ans3.position.setTo(900,605);this.ans1.position.setTo(500,625);}},this);
+        
+        this.btnNext.events.onInputDown.add(function(){check =0; a=0; b=0; c=0;game.state.start('state4');},this);
+        
+         //Creating the try again button
+        this.btnTryAgain = game.add.button(0,0, 'btn2');
+        this.btnTryAgain.frame = 0;
+        this.btnTryAgain.position.setTo(1035, 800);
+        this.btnTryAgain.scale.setTo(0.785,0.5);
+        this.btnTryAgain.visible = false;
+        this.txtTryAgain = game.add.text(1150,815,"Try Again");
+        this.txtTryAgain.alpha = 0;
+        this.txtTryAgain.position.setTo(1050, 805);
+        this.boolTryAgain = false;
+        this.btnTryAgain.events.onInputDown.add(function(){this.boolTryAgain = false;this.tick2.alpha = 0;
+            this.tick1.alpha = 0;
+            this.tick2.alpha = 0;                                               
+            this.cross1.alpha = 0;
+            this.btnRadio1.loadTexture('btnradio',0);
+            this.btnRadio2.loadTexture('btnradio',0);
+            this.btnRadio3.loadTexture('btnradio',0);this.ans1.alpha =0; this.ans2.alpha = 0;
+            check = 0;this.k++;this.btnNext.visible = false;this.texts[12].position.setTo(1060,805);
+            this.texts[12].text = "Check"; this.btnPlay.visible = true;a = 0; b = 0; c = 0; this.ans3.alpha=0;}, this);
+        
+        //Layering after tweening
+        this.ans4 = game.add.sprite(0,0,"ans1");
+        this.ans4.scale.setTo(0.35,0.35);
+        this.ans4.position.setTo(90,605);
+        this.ans4.alpha = 0;
+        
+            tickTween = this.game.add.tween(this.tick1).to({alpha:1},1000,Phaser.Easing.Linear.None);
+            tickTween2 = this.game.add.tween(this.tick2).to({alpha:1},1500,Phaser.Easing.Linear.None);
+            tickTween3 = this.game.add.tween(this.ans4).to({alpha:1, x:90,y:605,},1500,Phaser.Easing.Linear.None);
+            tickTween4 = this.game.add.tween(this.ans4).to({alpha:1, x:970,y:605,},1500,Phaser.Easing.Linear.None);
+    
+    },
+    update: function(){
+       // console.log(this.dot.x + " y: " + this.dot.y);
+       // console.log(check);
+         //Try again function
+        if (this.boolTryAgain == true) {
+            if (this.k < 1) {
+            this.btnTryAgain.visible = true;
+            this.txtTryAgain.alpha = 1;
+            n = 4;}
+        }
+        else if (this.boolTryAgain == false) {
+            this.btnTryAgain.visible = false;
+            this.txtTryAgain.alpha = 0;
+            
+            if (this.k == 2){this.tick1.alpha = 1; this.tick2.alpha = 1; this.btnPlay.visible = false; this.btnNext.visible = true; this.texts[12].position.setTo(1055,805); this.texts[12].text = "Continue"; this.texts[12].alpha = 1; this.texts[3].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[4].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[10].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[9].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.ans1.alpha = 0;this.ans2.alpha = 1;this.ans2.position.setTo(500,625);
+                            }
+          
+                
+            }
+        if(this.confusedCheck == 2 && b == 1 && c ==1) {
+            tickTween.start();
+            tickTween3.start();
+            //tickTween2.start();
+            //tickTween3.start();
+        }
+        if (this.confusedCheck == 2 && b ==1 && a==1){
+            tickTween2.start();
+            tickTween4.start();
+        }
+            console.log("What is the value of k" + this.k);
+        
+        if (check >= 2) {
+            this.btnPlay.frame = 0;
+            this.texts[12].alpha = 1;
+            }
+        
+        
+        
+
+        
+        
+     
+        
+    },
+};
