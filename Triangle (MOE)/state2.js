@@ -16,6 +16,9 @@ demo.state2.prototype = {
         game.stage.backgroundColor = '#000000';
     },
     create:function(){
+        //Answers
+        isoscelesTriangleAns(this);
+        //end
         game.stage.backgroundColor = '#ffffff';
         console.log("state2");
         addChangeStateEventListers();

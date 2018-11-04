@@ -1,6 +1,6 @@
 demo.state10 = function(){};
 demo.state10.prototype = {
-    x2: 800, y2: 385, x3: 650, y3: 385, x4:750,y4:515, btnPlay: null, btnStart: null, btnNext: null, n:0, ans1:null, top:null,left:null,right:null,down:null,
+    x2: 800, y2: 385, x3: 650, y3: 385, x4:750,y4:515, btnPlay: null, btnStart: null, btnNext: null, n:0, ans1:null, top:null,left:null,right:null,down:null,btnTryAgain: null, txtTryAgain: null, boolTryAgain: false, k: 0,
     preload:function(){
         loadAssets();
     },
@@ -94,13 +94,13 @@ demo.state10.prototype = {
         this.texts[1].fontWeight = 'normal';
        
         this.texts[2].position.setTo(this.x2,this.y2);
-        this.texts[2].setText("3cm");
+        this.texts[2].setText("3 cm");
         
         this.texts[3].position.setTo(this.x3, this.y3);
-        this.texts[3].text = "3cm";
+        this.texts[3].text = "3 cm";
         
         this.texts[4].position.setTo(this.x4, this.y4);
-        this.texts[4].text = "5cm";
+        this.texts[4].text = "5 cm";
         this.texts[4].anchor.x = 0.5;
         
         this.texts[5].position.setTo(240,670);
@@ -207,8 +207,6 @@ demo.state10.prototype = {
         sprite2.body.setSize(450, 550, 1000, 90);
         sprite2.body.immovable = true;
         this.game.physics.enable(this.dot2, Phaser.Physics.ARCADE);
-        
-       
         graphics1 = game.add.graphics(0,0);
         
     },
