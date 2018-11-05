@@ -63,6 +63,7 @@ function loadAssets(){
     game.load.image('ans9', 'assets/ans9.png');
     game.load.image('ans10', 'assets/ans10.png');
     game.load.image('hand', 'assets/hand.png');
+    game.load.image('sp2', 'assets/speechbubble2.png');
 };
 
 function addTexts(state){

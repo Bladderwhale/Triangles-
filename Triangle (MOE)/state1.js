@@ -1,4 +1,5 @@
 var sp1 = 0;
+var sp2 = 0;
 demo.state1 = function() {}
 demo.state1.prototype = { 
     preload: function(){
@@ -86,6 +87,15 @@ demo.state1.prototype = {
         dads.anchor.setTo(0.2,0.2);
         btnStart[0].alpha = 0.5;
         this.texts[2].alpha= 0.5;}
+        
+        if (sp2 == 1) {
+        var dads1 = game.add.sprite(560,670,'sp2');
+        dads1.scale.setTo(0.4,0.4)
+        dads1.anchor.setTo(0.2,0.2);
+        btnStart[1].alpha = 0.5;
+        this.texts[3].alpha = 0.5; 
+        dads1.alpha = 1;
+        }
        
   
     },

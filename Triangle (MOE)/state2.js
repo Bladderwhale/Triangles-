@@ -150,10 +150,7 @@ demo.state2.prototype = {
         linegraphics = game.add.graphics(0,0);
         
         
-        this.ans1 = game.add.sprite(0,0,'ans1');
-        this.ans1.scale.setTo(0.35,0.35);
-        this.ans1.alpha = 0;
-        this.ans1.position.setTo(720,680);
+       
         
         //height of a triangle
         console.log(this.dot2.y - this.dot3.y);
@@ -231,7 +228,8 @@ demo.state2.prototype = {
         this.btnTryAgain.events.onInputDown.add(function(){this.boolTryAgain = false;this.k++;}, this); 
 
         tickTween = this.game.add.tween(this.tick1).to({alpha:1},1000,Phaser.Easing.Linear.None);
-        tickTween2 = this.game.add.tween(this.ans1).to({alpha:1},1500,Phaser.Easing.Linear.None);
+        tickTween2 = this.game.add.tween(this.pinkbox).to({alpha:1},1500,Phaser.Easing.Linear.None);
+        tickTween3 = this.game.add.tween(this.isoAns1).to({alpha:1},1500,Phaser.Easing.Linear.None);
         
     },
     update:function(){
@@ -291,8 +289,9 @@ demo.state2.prototype = {
             this.texts[10].position.x = 1170;
             tickTween.start();
             tickTween2.start();
+            tickTween3.start();
             this.btnNext.visible = true;
-            this.ans1.alpha = 1;
+           // this.ans1.alpha = 1;
             
             linegraphics.beginFill(0x000000);
             linegraphics.lineStyle(7, '#FF3300', 1);
@@ -624,7 +623,9 @@ demo.state2.prototype = {
             this.texts[10].text = "Continue";
             this.texts[10].position.x = 1170;
             this.btnNext.visible = true;
-            this.ans1.alpha = 1;
+            //answers
+            this.pinkbox.alpha=1;
+            this.isoAns1.alpha=1;
             
             linegraphics.beginFill(0x000000);
             linegraphics.lineStyle(7, '#FF3300', 1);

@@ -201,7 +201,7 @@ demo.state11.prototype = {
         
         this.btnPlay.events.onInputDown.add(function(){if (check>=2 && a == 1 && b ==1){this.tick1.alpha = 1; this.tick2.alpha = 1; this.btnPlay.visible = false; this.btnNext.visible = true; this.texts[12].alpha = 1;this.texts[12].position.setTo(1160,805); this.texts[12].text = "Continue"; this.texts[3].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[4].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[6].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[7].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[3].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[8].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[9].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[5].setStyle({backgroundColor: 'rgba(255,255,0)'});this.ans1.alpha = 0;this.ans2.alpha = 1;} else if (check >=2 && c ==1 && b ==1){this.confusedCheck++;this.boolTryAgain = true; this.ans2.position.setTo(600,625);this.cross1.alpha = 1; this.tick1.alpha = 0; this.tick2.alpha = 1; this.btnPlay.visible = false; this.btnNext.visible = true;this.texts[12].alpha = 1; this.texts[12].position.setTo(1160,805); this.texts[12].text = "Continue";this.texts[3].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[4].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[6].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[7].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[3].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[8].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[9].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[5].setStyle({backgroundColor: 'rgba(255,255,0)'});this.ans1.alpha = 1;this.ans2.alpha = 1;}else if (check >=2 && c ==1 && a ==1){this.confusedCheck++;this.boolTryAgain = true; this.ans2.position.setTo(230,625);this.cross1.alpha = 1; this.tick1.alpha = 1; this.tick2.alpha = 0; this.btnPlay.visible = false; this.btnNext.visible = true;this.texts[12].alpha = 1; this.texts[12].position.setTo(1160,805); this.texts[12].text = "Continue";this.texts[3].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[4].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[6].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[7].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[3].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[8].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[9].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[5].setStyle({backgroundColor: 'rgba(255,255,0)'});this.ans1.alpha = 1;this.ans2.alpha = 1;}},this);
         
-        this.btnNext.events.onInputDown.add(function(){check =0;a=0;b=0;c=0;game.state.start('state1');},this);
+        this.btnNext.events.onInputDown.add(function(){check =0;a=0;b=0;c=0;sp2 = 1;game.state.start('state1');},this);
         
         
          //Creating the try again button
@@ -214,7 +214,7 @@ demo.state11.prototype = {
         this.txtTryAgain.alpha = 0;
         this.txtTryAgain.position.setTo(1155, 805);
         this.boolTryAgain = false;
-        this.btnTryAgain.events.onInputDown.add(function(){this.boolTryAgain = false;this.tick2.alpha = 0;
+        this.btnTryAgain.events.onInputDown.add(function(){a=0; b=0;c=0;this.boolTryAgain = false;this.tick2.alpha = 0;
             this.tick1.alpha = 0;
             this.tick2.alpha = 0;                                               
             this.cross1.alpha = 0;
@@ -222,7 +222,7 @@ demo.state11.prototype = {
             this.btnRadio2.loadTexture('btnradio',0);
             this.btnRadio3.loadTexture('btnradio',0);this.ans1.alpha =0; this.ans2.alpha = 0;
             check = 0;this.k++;this.btnNext.visible = false;this.texts[12].position.setTo(1175, 805);
-            this.texts[12].text = "Check"; this.btnPlay.visible = true; this.ans3.alpha = 0; a=0; b=0;c=0;}, this);
+            this.texts[12].text = "Check"; this.btnPlay.visible = true; this.ans3.alpha = 0;}, this);
         
         tickTween = this.game.add.tween(this.tick1).to({alpha:1},1000,Phaser.Easing.Linear.None);
         tickTween2 = this.game.add.tween(this.tick2).to({alpha:1},1000,Phaser.Easing.Linear.None);
@@ -236,6 +236,7 @@ demo.state11.prototype = {
               if (this.k < 1 ) {
             this.btnTryAgain.visible = true;
             this.txtTryAgain.alpha = 1;
+            
             n = 4;}
         }
         else if (this.boolTryAgain == false) {

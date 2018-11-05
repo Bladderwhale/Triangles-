@@ -78,7 +78,7 @@ demo.state14.prototype = {
         graphics1.arc(350+150,325,50,starttAngle3,starttAngle3+alx13.dotProductC,false);
         graphics1.arc(530,335, 50, starttAngle4, starttAngle4 + alx14.dotProductA,false);
         graphics1.arc(960, 335, 50, starttAngle6, starttAngle6 + alx14.dotProductC,false);
-        //Understanding pivot point. 
+        //child object attached to the parent object 
         emptyobj = game.add.sprite(738, 548, undefined);
         graphics = game.add.graphics(0,0);
         graphics.lineStyle(1,0x000000,1);
