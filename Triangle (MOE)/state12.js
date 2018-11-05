@@ -3,7 +3,7 @@ var startingAngle2;
 var startingAngle3;
 var height;
 demo.state12 = function(){};
-demo.state12.prototype = {rectLength:0,rectLength2:0,
+demo.state12.prototype = {rectLength:0,rectLength2:0, btnTryAgain: null, txtTryAgain: null, boolTryAgain: false,k: 0,
     preload: function(){
         loadAssets();
     },
@@ -72,9 +72,9 @@ demo.state12.prototype = {rectLength:0,rectLength2:0,
         this.btnStart.visible = false;
         
         this.btnStart.events.onInputDown.add(function(){
-            if (n==1){this.cross1.alpha = 1; this.texts[2].setStyle({backgroundColor: 'rgba(255, 255, 0)'});this.texts[3].setStyle({backgroundColor: 'rgba(255, 255, 0)'}); this.btnStart.frame = 1;   this.texts[10].alpha = 0.3; a+=1;}
+            if (n==1){this.boolTryAgain = true;this.cross1.alpha = 1; this.texts[2].setStyle({backgroundColor: 'rgba(255, 255, 0)'});this.texts[3].setStyle({backgroundColor: 'rgba(255, 255, 0)'}); this.btnStart.frame = 1;   this.texts[10].alpha = 0.3; a+=1;}
             if (n==2){this.tick1.alpha = 1; c+=1;}
-            if (n==3){this.cross2.alpha = 1; this.texts[2].setStyle({backgroundColor: 'rgba(255, 255, 0)'});this.texts[3].setStyle({backgroundColor: 'rgba(255, 255, 0)'}); this.btnStart.frame = 1;  this.texts[10].alpha = 0.3; b+=1;}
+            if (n==3){this.boolTryAgain = true;this.cross2.alpha = 1; this.texts[2].setStyle({backgroundColor: 'rgba(255, 255, 0)'});this.texts[3].setStyle({backgroundColor: 'rgba(255, 255, 0)'}); this.btnStart.frame = 1;  this.texts[10].alpha = 0.3; b+=1;}
         }
                                              ,this);
         
@@ -89,20 +89,20 @@ demo.state12.prototype = {rectLength:0,rectLength2:0,
         },this)
         
         
-        this.fakeHandle1.events.onInputOver.add(function(){
+        /*this.fakeHandle1.events.onInputOver.add(function(){
             this.game.canvas.style.cursor = "move";
           //  sprite.input.useHandCursor = true;
         }, this);
         
         this.fakeHandle1.events.onInputOut.add(function(){
         this.game.canvas.style.cursor = "default";
-        }, this);
+        }, this);*/
         
         this.fakeHandle1.alpha =0;
         this.fakeHandle2.alpha =0;
         this.fakeHandle3.alpha =0;
         
-        this.fakeHandle2.events.onInputOver.add(function(){
+        /*this.fakeHandle2.events.onInputOver.add(function(){
             this.game.canvas.style.cursor = "move";
           //  sprite.input.useHandCursor = true;
         }, this);
@@ -118,7 +118,7 @@ demo.state12.prototype = {rectLength:0,rectLength2:0,
         
         this.fakeHandle3.events.onInputOut.add(function(){
         this.game.canvas.style.cursor = "default";
-        }, this);
+        }, this);*/
         
         
          for (var i = 0; i < 11; i++){
@@ -181,8 +181,91 @@ demo.state12.prototype = {rectLength:0,rectLength2:0,
         graphics = game.add.graphics(0,0);
         graphics1 = game.add.graphics(0,0);
         
+         
+        //Creating the try again button
+        this.btnTryAgain = game.add.button(0,0, 'btn2');
+        this.btnTryAgain.frame = 0;
+        this.btnTryAgain.position.setTo(1150, 815);
+        this.btnTryAgain.scale.setTo(0.785,0.5);
+        this.btnTryAgain.visible = false;
+        this.txtTryAgain = game.add.text(1150,815,"Try Again");
+        this.txtTryAgain.alpha = 0;
+        this.txtTryAgain.position.setTo(1165, 822);
+        this.boolTryAgain = false;
+        this.btnTryAgain.events.onInputDown.add(function(){this.boolTryAgain = false;this.k++;}, this); 
+        
+        tickTween = this.game.add.tween(this.tick1).to({alpha:1},1000,Phaser.Easing.Linear.None);
+        tickTween2 = this.game.add.tween(this.ans1).to({alpha:1},1500,Phaser.Easing.Linear.None);
+
+        
     },
     update: function(){
+          if (this.fakeHandle1.input.pointerOver()) {
+           this.fakeHandle1.input.useHandCursor = true;
+       }
+        if (this.fakeHandle2.input.pointerOver()) {
+           this.fakeHandle2.input.useHandCursor = true;
+       }
+        if (this.fakeHandle3.input.pointerOver()) {
+           this.fakeHandle3.input.useHandCursor = true;
+       }
+        
+       // console.log("what is the bool of the handcursor: " + this.hand1.input.useHandCursor);
+        console.log("what is tick tween: " +tickTween);
+        //Try again function
+        if (this.boolTryAgain == true) {
+            if (this.k < 1){
+            this.btnTryAgain.visible = true;
+            this.txtTryAgain.alpha = 1;
+            n = 4;
+            }
+        }
+        else if (this.boolTryAgain == false) {
+            
+            this.btnTryAgain.visible = false;
+            this.txtTryAgain.alpha = 0;}
+            
+          /*  if (this.k == 2){
+                 this.btnRadio1.loadTexture('btnradio',0);
+            this.btnRadio2.loadTexture('btnradiochecked',0);
+            this.btnRadio3.loadTexture('btnradio',0);
+            this.texts[10].alpha=1;
+            this.texts[10].text = "Continue";
+            this.texts[10].position.x = 1170;
+            this.tick1.alpha = 1;
+            this.btnNext.visible = true;
+            this.ans1.alpha = 1;
+            
+            linegraphics.beginFill(0x000000);
+            linegraphics.lineStyle(7, '#FF3300', 1);
+            linegraphics.moveTo(this.dot1.x,this.dot1.y);
+            linegraphics.lineTo(this.dot3.x,this.dot3.y);
+            linegraphics.moveTo(this.dot2.x,this.dot2.y);
+            linegraphics.lineTo(this.dot3.x,this.dot3.y);
+            linegraphics.endFill();
+            }*/
+        
+        //another layer
+            if (a == 1 && b == 1){
+            this.btnRadio1.loadTexture('btnradio',0);
+            this.btnRadio2.loadTexture('btnradiochecked',0);
+            this.btnRadio3.loadTexture('btnradio',0);
+            this.texts[10].alpha = 1;
+            this.texts[10].text = "Continue";
+            this.texts[10].position.x = 1170;
+            tickTween.start();
+            tickTween2.start();
+            this.btnNext.visible = true;
+            this.ans1.alpha = 1;
+            
+            linegraphics.beginFill(0x000000);
+            linegraphics.lineStyle(7, '#FF3300', 1);
+            linegraphics.moveTo(this.dot1.x,this.dot1.y);
+            linegraphics.lineTo(this.dot3.x,this.dot3.y);
+            linegraphics.moveTo(this.dot2.x,this.dot2.y);
+            linegraphics.lineTo(this.dot3.x,this.dot3.y);
+            linegraphics.endFill();}
+        
        console.log("What is this x: " + this.dot.x + " y: " + this.dot.y);
             if (this.fakeHandle3.input.isDragged == false) {
             this.fakeHandle3.y = this.dot3.y; 

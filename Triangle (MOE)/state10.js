@@ -1,6 +1,6 @@
 demo.state10 = function(){};
 demo.state10.prototype = {
-    x2: 800, y2: 385, x3: 650, y3: 385, x4:750,y4:515, btnPlay: null, btnStart: null, btnNext: null, n:0, ans1:null, top:null,left:null,right:null,down:null,btnTryAgain: null, txtTryAgain: null, boolTryAgain: false, k: 0,
+    x2: 800, y2: 385, x3: 650, y3: 385, x4:750,y4:515, btnPlay: null, btnStart: null, btnNext: null, n:0, ans1:null, top:null,left:null,right:null,down:null,btnTryAgain: null, txtTryAgain: null, boolTryAgain: false, k: 0, b:0,
     preload:function(){
         loadAssets();
     },
@@ -59,9 +59,9 @@ demo.state10.prototype = {
         this.btnStart.visible = false;
         
         this.btnStart.events.onInputDown.add(function(){
-            if (n==1){this.cross1.alpha = 1; this.texts[2].setStyle({backgroundColor: 'rgba(255, 255, 0)'});this.texts[3].setStyle({backgroundColor: 'rgba(255, 255, 0)'}); this.btnStart.frame = 1;   this.texts[10].alpha = 0.3; a+=1;}
+            if (n==1){this.boolTryAgain = true;this.cross1.alpha = 1; this.texts[2].setStyle({backgroundColor: 'rgba(255, 255, 0)'});this.texts[3].setStyle({backgroundColor: 'rgba(255, 255, 0)'}); this.btnStart.frame = 1;   this.texts[10].alpha = 0.3; a+=1;}
             if (n==2){this.tick1.alpha = 1; c+=1;}
-            if (n==3){this.cross2.alpha = 1; this.texts[2].setStyle({backgroundColor: 'rgba(255, 255, 0)'});this.texts[3].setStyle({backgroundColor: 'rgba(255, 255, 0)'}); this.btnStart.frame = 1;  this.texts[10].alpha = 0.3; b+=1;}
+            if (n==3){this.boolTryAgain = true;this.cross2.alpha = 1; this.texts[2].setStyle({backgroundColor: 'rgba(255, 255, 0)'});this.texts[3].setStyle({backgroundColor: 'rgba(255, 255, 0)'}); this.btnStart.frame = 1;  this.texts[10].alpha = 0.3; this.b+=1;}
         }
                                              ,this);
         
@@ -155,20 +155,20 @@ demo.state10.prototype = {
         console.log(this.dot2.x - this.dot1.x);
         this.length = this.dot2.x - this.dot1.x;
         
-        this.fakeHandle1.events.onInputOver.add(function(){
+       /* this.fakeHandle1.events.onInputOver.add(function(){
             this.game.canvas.style.cursor = "move";
           //  sprite.input.useHandCursor = true;
         }, this);
         
         this.fakeHandle1.events.onInputOut.add(function(){
         this.game.canvas.style.cursor = "default";
-        }, this);
+        }, this);*/
         
         this.fakeHandle1.alpha =0;
         this.fakeHandle2.alpha =0;
         this.fakeHandle3.alpha =0;
         
-        this.fakeHandle2.events.onInputOver.add(function(){
+       /* this.fakeHandle2.events.onInputOver.add(function(){
             this.game.canvas.style.cursor = "move";
           //  sprite.input.useHandCursor = true;
         }, this);
@@ -184,7 +184,7 @@ demo.state10.prototype = {
         
         this.fakeHandle3.events.onInputOut.add(function(){
         this.game.canvas.style.cursor = "default";
-        }, this);
+        }, this); */
         
         
         
@@ -209,8 +209,90 @@ demo.state10.prototype = {
         this.game.physics.enable(this.dot2, Phaser.Physics.ARCADE);
         graphics1 = game.add.graphics(0,0);
         
+        //Creating the try again button
+        this.btnTryAgain = game.add.button(0,0, 'btn2');
+        this.btnTryAgain.frame = 0;
+        this.btnTryAgain.position.setTo(1150, 815);
+        this.btnTryAgain.scale.setTo(0.785,0.5);
+        this.btnTryAgain.visible = false;
+        this.txtTryAgain = game.add.text(1150,815,"Try Again");
+        this.txtTryAgain.alpha = 0;
+        this.txtTryAgain.position.setTo(1165, 822);
+        this.boolTryAgain = false;
+        this.btnTryAgain.events.onInputDown.add(function(){this.boolTryAgain = false;this.k++;}, this); 
+
+        tickTween = this.game.add.tween(this.tick1).to({alpha:1},1000,Phaser.Easing.Linear.None);
+        tickTween2 = this.game.add.tween(this.ans1).to({alpha:1},1500,Phaser.Easing.Linear.None);
+        
     },
     update:function(){
+          if (this.fakeHandle1.input.pointerOver()) {
+           this.fakeHandle1.input.useHandCursor = true;
+       }
+        if (this.fakeHandle2.input.pointerOver()) {
+           this.fakeHandle2.input.useHandCursor = true;
+       }
+        if (this.fakeHandle3.input.pointerOver()) {
+           this.fakeHandle3.input.useHandCursor = true;
+       }
+        
+       // console.log("what is the bool of the handcursor: " + this.hand1.input.useHandCursor);
+        console.log("what is tick tween: " +tickTween);
+        //Try again function
+        if (this.boolTryAgain == true) {
+            if (this.k < 1){
+            this.btnTryAgain.visible = true;
+            this.txtTryAgain.alpha = 1;
+            n = 4;
+            }
+        }
+        else if (this.boolTryAgain == false) {
+            
+            this.btnTryAgain.visible = false;
+            this.txtTryAgain.alpha = 0;}
+            
+          /*  if (this.k == 2){
+                 this.btnRadio1.loadTexture('btnradio',0);
+            this.btnRadio2.loadTexture('btnradiochecked',0);
+            this.btnRadio3.loadTexture('btnradio',0);
+            this.texts[10].alpha=1;
+            this.texts[10].text = "Continue";
+            this.texts[10].position.x = 1170;
+            this.tick1.alpha = 1;
+            this.btnNext.visible = true;
+            this.ans1.alpha = 1;
+            
+            linegraphics.beginFill(0x000000);
+            linegraphics.lineStyle(7, '#FF3300', 1);
+            linegraphics.moveTo(this.dot1.x,this.dot1.y);
+            linegraphics.lineTo(this.dot3.x,this.dot3.y);
+            linegraphics.moveTo(this.dot2.x,this.dot2.y);
+            linegraphics.lineTo(this.dot3.x,this.dot3.y);
+            linegraphics.endFill();
+            }*/
+        
+        //another layer
+            if (a == 1 && this.b == 1){
+            this.btnRadio1.loadTexture('btnradio',0);
+            this.btnRadio2.loadTexture('btnradiochecked',0);
+            this.btnRadio3.loadTexture('btnradio',0);
+            this.texts[10].alpha = 1;
+            this.texts[10].text = "Continue";
+            this.texts[10].position.x = 1170;
+            tickTween.start();
+            tickTween2.start();
+            this.btnNext.visible = true;
+            this.ans1.alpha = 1;
+            
+            linegraphics.beginFill(0x000000);
+            linegraphics.lineStyle(7, '#FF3300', 1);
+            linegraphics.moveTo(this.dot1.x,this.dot1.y);
+            linegraphics.lineTo(this.dot3.x,this.dot3.y);
+            linegraphics.moveTo(this.dot2.x,this.dot2.y);
+            linegraphics.lineTo(this.dot3.x,this.dot3.y);
+            linegraphics.endFill();}
+        
+        console.log("what is the value of a: " + a + " what is the value of b: " + this.b + "what is the value of c: " + c);
         console.log("X: " + this.dot.x + "Y: "+ this.dot.y);
         console.log(this.dot2.x - this.dot1.x);
         polygon.setTo([new Phaser.Point(this.dot1.x, this.dot1.y), new Phaser.Point(this.dot2.x, this.dot2.y),new Phaser.Point(this.dot3.x, this.dot3.y)])
@@ -324,11 +406,11 @@ demo.state10.prototype = {
         if (this.line.length <= 320&&this.fakeHandle1.x < this.dot1.x &&  this.fakeHandle1.input.isDragged) {
             this.dot1.x-= 1.15;
             this.texts[2].position.setTo(this.dot3.x+60,this.dot3.y+50);
-            this.texts[2].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(2) + "cm");
+            this.texts[2].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(2) + " cm");
             this.texts[3].position.setTo(this.dot3.x-130, this.dot3.y+50);
-            this.texts[3].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(2) + "cm");
+            this.texts[3].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(2) + " cm");
             this.texts[4].position.setTo(this.dot3.x, this.y4);
-            this.texts[4].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(2) + "cm");
+            this.texts[4].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(2) + " cm");
            // this.texts[2].setText(sidelines);
             
         
@@ -352,11 +434,11 @@ demo.state10.prototype = {
            
             
             this.texts[2].position.setTo(this.dot3.x+60,this.dot3.y+50);
-            this.texts[2].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(2) + "cm");
+            this.texts[2].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(2) + " cm");
             this.texts[3].position.setTo(this.dot3.x-130, this.dot3.y+50);
-            this.texts[3].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(2) + "cm");
+            this.texts[3].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(2) + " cm");
             this.texts[4].position.setTo(this.dot3.x, this.y4);
-            this.texts[4].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(2) + "cm");
+            this.texts[4].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(2) + " cm");
             
                    this.texts[11].position.setTo(this.dot2.x-105,this.dot2.y-50);
         this.texts[12].position.setTo(this.dot1.x+80,this.dot1.y-50);
@@ -373,11 +455,11 @@ demo.state10.prototype = {
             this.dot3.x+=0.5;
     
             this.texts[2].position.setTo(this.dot3.x+60,this.dot3.y+50);
-            this.texts[2].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(2) + "cm");
+            this.texts[2].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(2) + " cm");
             this.texts[3].position.setTo(this.dot3.x-130, this.dot3.y+50);
-            this.texts[3].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(2) + "cm");
+            this.texts[3].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(2) + " cm");
             this.texts[4].position.setTo(this.dot3.x, this.y4);
-            this.texts[4].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(2) + "cm");
+            this.texts[4].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(2) + " cm");
             
                   this.texts[11].position.setTo(this.dot2.x-105,this.dot2.y-50);
         this.texts[12].position.setTo(this.dot1.x+80,this.dot1.y-50);
@@ -392,11 +474,11 @@ demo.state10.prototype = {
           
             
             this.texts[2].position.setTo(this.dot3.x+60,this.dot3.y+50);
-            this.texts[2].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(2) + "cm");
+            this.texts[2].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(2) + " cm");
             this.texts[3].position.setTo(this.dot3.x-130, this.dot3.y+50);
-            this.texts[3].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(2) + "cm");
+            this.texts[3].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(2) + " cm");
             this.texts[4].position.setTo(this.dot3.x, this.y4);
-            this.texts[4].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(2) + "cm");
+            this.texts[4].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(2) + " cm");
             
                   this.texts[11].position.setTo(this.dot2.x-105,this.dot2.y-50);
         this.texts[12].position.setTo(this.dot1.x+80,this.dot1.y-50);
@@ -411,9 +493,9 @@ demo.state10.prototype = {
             this.dot3.x+=0.5;
             
             this.texts[2].position.setTo(this.dot3.x+60,this.dot3.y+50);
-            this.texts[2].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(2) + "cm");
+            this.texts[2].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(2) + " cm");
             this.texts[3].position.setTo(this.dot3.x-130, this.dot3.y+50);
-            this.texts[3].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(2) + "cm");
+            this.texts[3].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(2) + " cm");
             this.texts[4].position.setTo(this.dot3.x, this.y4);
           //  this.texts[4].setText(((Math.round( this.line.length* 10 ) / 100)-15).toFixed(2) + "cm");
             
@@ -430,11 +512,11 @@ demo.state10.prototype = {
             ;
             
             this.texts[2].position.setTo(this.dot3.x+60,this.dot3.y+50);
-            this.texts[2].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(2) + "cm");
+            this.texts[2].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(2) + " cm");
             this.texts[3].position.setTo(this.dot3.x-130, this.dot3.y+50);
-            this.texts[3].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(2) + "cm");
+            this.texts[3].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(2) + " cm");
             this.texts[4].position.setTo(this.dot3.x, this.y4);
-            this.texts[4].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(2) + "cm");
+            this.texts[4].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(2) + " cm");
             
           
                     this.texts[11].position.setTo(this.dot2.x-105,this.dot2.y-50);
@@ -449,11 +531,11 @@ demo.state10.prototype = {
           
             
             this.texts[2].position.setTo(this.dot3.x+60,this.dot3.y+50);
-            this.texts[2].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(2) + "cm");
+            this.texts[2].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(2) + " cm");
             this.texts[3].position.setTo(this.dot3.x-130, this.dot3.y+50);
-            this.texts[3].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(2) + "cm");
+            this.texts[3].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(2) + " cm");
             this.texts[4].position.setTo(this.dot3.x, this.y4);
-            this.texts[4].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(2) + "cm");
+            this.texts[4].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(2) + " cm");
             
                     this.texts[11].position.setTo(this.dot2.x-105,this.dot2.y-50);
         this.texts[12].position.setTo(this.dot1.x+80,this.dot1.y-50);
@@ -466,11 +548,11 @@ demo.state10.prototype = {
            
             
             this.texts[2].position.setTo(this.dot3.x+60,this.dot3.y+50);
-            this.texts[2].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(2) + "cm");
+            this.texts[2].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(2) + " cm");
             this.texts[3].position.setTo(this.dot3.x-130, this.dot3.y+50);
-            this.texts[3].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(2) + "cm");
+            this.texts[3].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(2) + " cm");
             this.texts[4].position.setTo(this.dot3.x, this.y4);
-            this.texts[4].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(2) + "cm");
+            this.texts[4].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(2) + " cm");
             
                   this.texts[11].position.setTo(this.dot2.x-105,this.dot2.y-50);
         this.texts[12].position.setTo(this.dot1.x+80,this.dot1.y-50);

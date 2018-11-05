@@ -1,6 +1,6 @@
 demo.state13 = function(){};
 demo.state13.prototype = {
-    btnPlay: null, btnNext: null, a: 0, b:0, c:0, ans1:null,ans2:null,n1:0, 
+    btnPlay: null, btnNext: null, a: 0, b:0, c:0, ans1:null,ans2:null,n1:0, btnTryAgain: null, txtTryAgain: null, boolTryAgain: false,k: 0,confusedCheck: 0,
     preload: function(){
         loadAssets();
 
@@ -195,6 +195,8 @@ demo.state13.prototype = {
                 this.ans1.alpha = 1;
                 this.btnPlay.frame = 1;
                 this.btnPlay.alpha = 1;
+                this.boolTryAgain = true;
+                this.confusedCheck++;
             }
             if(this.n1 == 3) {
                 this.cross2.alpha = 1;
@@ -203,18 +205,70 @@ demo.state13.prototype = {
                 this.ans1.alpha = 1;
                 this.btnPlay.frame = 1;
                 this.btnPlay.alpha = 1;
+                this.boolTryAgain = true;
+                this.confusedCheck++;
             }
                },this);
         
         this.btnNext.events.onInputDown.add(function(){check =0; this.a=0; this.b=0; this.c=0;game.state.start('state14');},this);
         
+           //Creating the try again button
+        this.btnTryAgain = game.add.button(0,0, 'btn2');
+        this.btnTryAgain.frame = 0;
+        this.btnTryAgain.position.setTo(1035, 800);
+        this.btnTryAgain.scale.setTo(0.785,0.5);
+        this.btnTryAgain.visible = false;
+        this.txtTryAgain = game.add.text(1150,815,"Try Again");
+        this.txtTryAgain.alpha = 0;
+        this.txtTryAgain.position.setTo(1050, 805);
+        this.boolTryAgain = false;
+        this.btnTryAgain.events.onInputDown.add(function(){this.boolTryAgain = false;this.tick2.alpha = 0;
+            this.tick1.alpha = 0;
+            this.tick2.alpha = 0;                                               
+            this.btnRadio1.loadTexture('btnradio',0);
+            this.btnRadio2.loadTexture('btnradio',0);
+            this.btnRadio3.loadTexture('btnradio',0);this.ans1.alpha =0; this.ans2.alpha = 0;
+            check = 0;this.k++;this.btnNext.visible = false;this.texts[12].position.setTo(1060,805);
+            this.texts[12].text = "Check"; this.btnPlay.visible = true;a = 0; b = 0; c = 0; this.ans3.alpha=0;}, this);
         
+       tickTween = this.game.add.tween(this.tick1).to({alpha:1},1000,Phaser.Easing.Linear.None);
     },
     update: function(){
+        console.log("what is the value of confusedcheck: " + this.confusedCheck);
+        console.log("what is the value of k: " + this.k);
         console.log(this.dot.x + " y: " + this.dot.y);
        // console.log(check);
         
-        
+        // console.log(check);
+         //Try again function
+        if (this.boolTryAgain == true) {
+            if (this.k < 1) {
+            this.btnTryAgain.visible = true;
+            this.txtTryAgain.alpha = 1;
+            }
+            this.n1 = 4;
+        }
+        else if (this.boolTryAgain == false) {
+            this.btnTryAgain.visible = false;
+            this.txtTryAgain.alpha = 0;
+            
+            if (this.k == 2){this.tick1.alpha = 1; this.tick2.alpha = 1; this.btnPlay.visible = false; this.btnNext.visible = true; this.texts[12].position.setTo(1055,805); this.texts[12].text = "Continue"; this.texts[12].alpha = 1; this.texts[3].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[4].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[10].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[9].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.ans1.alpha = 0;this.ans2.alpha = 1;this.ans2.position.setTo(500,625);
+                            }
+          
+                
+            }
+        console.log("what is the value of n: " + n);
+        if (this.confusedCheck == 2) {
+            tickTween.start();
+            
+            
+                this.btnNext.visible = true;
+                this.texts[12].text = "Continue";
+                this.texts[12].position.setTo(1055,805);
+            this.texts[12].alpha = 1;
+             //   this.ans2.alpha = 1;
+
+        }
             
             
             
@@ -255,7 +309,11 @@ demo.state13.prototype = {
                 }
                 
                 break;
-               
+            case 4:
+                this.btnRadio1.loadTexture("btnradio",0);
+                this.btnRadio2.loadTexture("btnradio",0);
+                this.btnRadio3.loadTexture("btnradio",0);
+                break;
         }
         console.log(this.a);
     },
