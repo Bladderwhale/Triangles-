@@ -179,7 +179,7 @@ demo.state14.prototype = {
         this.ans1.alpha = 0;
         this.ans2 = game.add.sprite(0,0,"ans3");
         this.ans2.scale.setTo(0.35,0.35);
-        this.ans2.position.setTo(180,625);
+        this.ans2.position.setTo(470,625);
         this.ans2.alpha = 0;
         
         
