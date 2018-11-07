@@ -110,6 +110,15 @@ function fixedGUI3() {
     bar.drawRect(50, 90, 1200, 125);
     bar.endFill();
 }
+
+function fixedGUI3state11() {
+    game.stage.backgroundColor = '#ffffff';
+    var bar = game.add.graphics(0,0);3
+    bar.beginFill(0x98FB98, 0.2);
+    bar.lineStyle(2, 0x98FB98, 1);
+    bar.drawRect(50, 90, 1200, 125);
+    bar.endFill();
+}
 function fixedGUI4(state) {
     state.roundedrectangle = game.add.graphics(0,0);
     state.roundedrectangle.beginFill(0xffffff,1);

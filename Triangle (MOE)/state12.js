@@ -130,7 +130,7 @@ demo.state12.prototype = {rectLength:0,rectLength2:0, btnTryAgain: null, txtTryA
         this.texts[0].setStyle({ fill: '#008000'});
         dotAttributes(this);
         
-        this.texts[1].text = "Drag any one of the red points to change the size of the isosceles triangle.\nObserve how the lengths of the sides change.";
+        this.texts[1].text = "Drag any one of the red points to change the size of the right-angled triangle.\nObserve how the angles change.";
         this.texts[1].position.setTo(300, 125);
         this.texts[1].align = 'left';
         this.texts[1].fontWeight = 'normal';
@@ -146,20 +146,24 @@ demo.state12.prototype = {rectLength:0,rectLength2:0, btnTryAgain: null, txtTryA
         
         
         this.texts[5].position.setTo(240,670);
-        this.texts[5].text = "No matter how the size of the triangle changes, the length of _________________."
+        this.texts[5].text = "No matter how the size of the triangle changes, _________________."
         this.texts[5].alpha = 0;
+        this.texts[5].fontWeight = 'normal';
         
         this.texts[6].position.setTo(350,720);
-        this.texts[6].text = "all three sides are always equal";
+        this.texts[6].text = "all three angles are equal";
         this.texts[6].alpha = 0;
+        this.texts[6].fontWeight ='normal';
         
         this.texts[7].position.setTo(350,770);
-        this.texts[7].text = "two sides are always equal";
+        this.texts[7].text = "only two angles are always equal";
         this.texts[7].alpha = 0;
+        this.texts[7].fontWeight ='normal';
         
         this.texts[8].position.setTo(350,820);
-        this.texts[8].text = "all three sides are always different";
+        this.texts[8].text = "one angle is always 90\xB0";
         this.texts[8].alpha = 0;
+        this.texts[8].fontWeight ='normal';
         
         this.texts[9].position.setTo(1285,555);
         this.texts[9].text = "Done";
@@ -259,14 +263,14 @@ demo.state12.prototype = {rectLength:0,rectLength2:0, btnTryAgain: null, txtTryA
             this.btnNext.visible = true;
             this.ans1.alpha = 1;
             
-            linegraphics.beginFill(0x000000);
+         /*   linegraphics.beginFill(0x000000);
             linegraphics.lineStyle(7, '#FF3300', 1);
             linegraphics.moveTo(this.dot1.x,this.dot1.y);
             linegraphics.lineTo(this.dot3.x,this.dot3.y);
             linegraphics.moveTo(this.dot2.x,this.dot2.y);
             linegraphics.lineTo(this.dot3.x,this.dot3.y);
-            linegraphics.endFill();}
-        
+            linegraphics.endFill();*/
+            }
        console.log("What is this x: " + this.dot.x + " y: " + this.dot.y);
             if (this.fakeHandle3.input.isDragged == false) {
             this.fakeHandle3.y = this.dot3.y; 
@@ -390,13 +394,13 @@ demo.state12.prototype = {rectLength:0,rectLength2:0, btnTryAgain: null, txtTryA
                     if (a==1)
                     {
                         this.btnRadio1.loadTexture('btnradiochecked',0);
-                        linegraphics.beginFill(0x000000);
+                       /* linegraphics.beginFill(0x000000);
                         linegraphics.lineStyle(7, '#FF3300', 1);
                         linegraphics.moveTo(this.dot1.x,this.dot1.y);
                         linegraphics.lineTo(this.dot3.x,this.dot3.y);
                         linegraphics.moveTo(this.dot2.x,this.dot2.y);
                         linegraphics.lineTo(this.dot3.x,this.dot3.y);
-                        linegraphics.endFill();
+                        linegraphics.endFill();*/
                         
                     } 
                     else if (b==1)
@@ -427,13 +431,13 @@ demo.state12.prototype = {rectLength:0,rectLength2:0, btnTryAgain: null, txtTryA
                     else if (b==1)
                     {
                         this.btnRadio3.loadTexture('btnradiochecked',0);  
-                        linegraphics.beginFill(0x000000);
+                     /*   linegraphics.beginFill(0x000000);
                         linegraphics.lineStyle(7, '#FF3300', 1);
                         linegraphics.moveTo(this.dot1.x,this.dot1.y);
                         linegraphics.lineTo(this.dot3.x,this.dot3.y);
                         linegraphics.moveTo(this.dot2.x,this.dot2.y);
                         linegraphics.lineTo(this.dot3.x,this.dot3.y);
-                        linegraphics.endFill();
+                        linegraphics.endFill();*/
                         
                     }
                     break;
@@ -451,13 +455,13 @@ demo.state12.prototype = {rectLength:0,rectLength2:0, btnTryAgain: null, txtTryA
             this.btnNext.visible = true;
             this.ans1.alpha = 1;
             
-            linegraphics.beginFill(0x000000);
+          /*  linegraphics.beginFill(0x000000);
             linegraphics.lineStyle(7, '#FF3300', 1);
             linegraphics.moveTo(this.dot1.x,this.dot1.y);
             linegraphics.lineTo(this.dot3.x,this.dot3.y);
             linegraphics.moveTo(this.dot2.x,this.dot2.y);
             linegraphics.lineTo(this.dot3.x,this.dot3.y);
-            linegraphics.endFill();
+            linegraphics.endFill();*/
         }
         
         
