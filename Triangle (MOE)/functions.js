@@ -88,6 +88,11 @@ function fixedGUI(state){
     home.scale.setTo(0.03,0.03);
     home.inputEnabled = true;
     home.events.onInputDown.add(function(){
+        touchCheck = false;
+        n =0;
+        a =0;
+        b =0;
+        c =0;
         game.state.start('state1');
     },this)
     
