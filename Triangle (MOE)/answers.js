@@ -400,4 +400,91 @@ function equilateralTrianglesAns(state) {
     
     
 };
+function rightangleAns(state) {
+    state.pinkbox6 = game.add.graphics(0,0);
+    state.pinkbox6.beginFill(0xF2C2B5, 1);
+    state.pinkbox6.lineStyle(1, 0x000000,1);
+    state.pinkbox6.drawRect(760,720, 370,110);
+    state.pinkbox6.alpha = 1;
+    state.isoAns6 = game.add.text(760,720, "Correct. \nA right-angled triangle is a '\ntriangle with a 90\xB0 angle.");
+    state.isoAns6.fontWeight = 'normal';
+    state.isoAns6.align = 'left';
+    state.isoAns6.addFontWeight('bold',0);
+    state.isoAns6.addFontWeight('normal',9);
+    state.pinkbox6.endFill();
+    state.isoAns6.alpha = 0;
+    state.pinkbox6.alpha = 0;
+    
+    state.pinkbox7 = game.add.graphics(0,0);
+    state.pinkbox7.beginFill(0xF2C2B5, 1);
+    state.pinkbox7.lineStyle(1, 0x000000,1);
+    state.pinkbox7.drawRect(700,660, 390,80);
+    state.pinkbox7.alpha = 1;
+    state.isoAns7 = game.add.text(700,660, "Incorrect. This triangle does not  \nhave a 90\xB0 angle.");
+    state.isoAns7.fontWeight = 'normal';
+    state.isoAns7.align = 'left';
+    state.isoAns7.addFontWeight('bold',0);
+    state.isoAns7.addFontWeight('normal',9);
+    state.pinkbox7.endFill();
+    state.isoAns7.alpha = 0;
+    state.pinkbox7.alpha = 0;
+    
+     state.pinkbox7a = game.add.graphics(0,0);
+    state.pinkbox7a.beginFill(0xF2C2B5, 1);
+    state.pinkbox7a.lineStyle(1, 0x000000,1);
+    state.pinkbox7a.drawRect(200,660, 390,80);
+    state.pinkbox7a.alpha = 1;
+    state.isoAns7a = game.add.text(200,660, "Correct. This is a right-angled  \ntriangle. It has a 90\xB0 angle.");
+    state.isoAns7a.fontWeight = 'normal';
+    state.isoAns7a.align = 'left';
+    state.isoAns7a.addFontWeight('bold',0);
+    state.isoAns7a.addFontWeight('normal',9);
+    state.pinkbox7a.endFill();
+    state.isoAns7a.alpha = 0;
+    state.pinkbox7a.alpha = 0;
+    
+     state.pinkbox8a = game.add.graphics(0,0);
+    state.pinkbox8a.beginFill(0xF2C2B5, 1);
+    state.pinkbox8a.lineStyle(1, 0x000000,1);
+    state.pinkbox8a.drawRect(950,660, 390,80);
+    state.pinkbox8a.alpha = 1;
+    state.isoAns8a = game.add.text(950,660, "Incorrect. This triangle does not  \nhave a 90\xB0 angle.");
+    state.isoAns8a.fontWeight = 'normal';
+    state.isoAns8a.align = 'left';
+    state.isoAns8a.addFontWeight('bold',0);
+    state.isoAns8a.addFontWeight('normal',9);
+    state.pinkbox8a.endFill();
+    state.isoAns8a.alpha = 0;
+    state.pinkbox8a.alpha = 0;
+    
+     state.pinkbox8b = game.add.graphics(0,0);
+    state.pinkbox8b.beginFill(0xF2C2B5, 1);
+    state.pinkbox8b.lineStyle(1, 0x000000,1);
+    state.pinkbox8b.drawRect(150,660, 390,80);
+    state.pinkbox8b.alpha = 1;
+    state.isoAns8b = game.add.text(150,660, "Incorrect. This triangle does not  \nhave a 90\xB0 angle.");
+    state.isoAns8b.fontWeight = 'normal';
+    state.isoAns8b.align = 'left';
+    state.isoAns8b.addFontWeight('bold',0);
+    state.isoAns8b.addFontWeight('normal',9);
+    state.pinkbox8b.endFill();
+    state.isoAns8b.alpha = 0;
+    state.pinkbox8b.alpha = 0;
+    
+      state.pinkbox8c = game.add.graphics(0,0);
+    state.pinkbox8c.beginFill(0xF2C2B5, 1);
+    state.pinkbox8c.lineStyle(1, 0x000000,1);
+    state.pinkbox8c.drawRect(550,660, 390,80);
+    state.pinkbox8c.alpha = 1;
+    state.isoAns8c = game.add.text(550,660, "Correct. This is a right-angled  \ntriangle. It have a 90\xB0 angle.");
+    state.isoAns8c.fontWeight = 'normal';
+    state.isoAns8c.align = 'left';
+    state.isoAns8c.addFontWeight('bold',0);
+    state.isoAns8c.addFontWeight('normal',9);
+    state.pinkbox8c.endFill();
+    state.isoAns8c.alpha = 0;
+    state.pinkbox8c.alpha = 0;
+    
+    
+};
 

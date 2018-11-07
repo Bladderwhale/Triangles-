@@ -17,7 +17,7 @@ demo.state13.prototype = {
         dotAttributes(this);
         addBtnRadio(this);
         addTickCross(this);
-        
+        rightangleAns(this);
         
 
         var firstTrianglePoints = [350, 325+250,350+150 ,325 ];
@@ -72,7 +72,7 @@ demo.state13.prototype = {
         starttAngle9 = Math.PI/2 - alx15.dotProductC/2.3;
         
         graphics1 = game.add.graphics(0,0);
-        graphics1.lineStyle(1,0x000000,1);
+        graphics1.lineStyle(2, 0xFF3300);
       //  graphics1.arc(350,325,50,starttAngle1,starttAngle1+alx13.dotProductA,false);
         graphics1.drawRect(350,325,20,20);
         graphics1.arc(350,575,50,starttAngle2,starttAngle2+alx13.dotProductB,false);
@@ -101,12 +101,12 @@ demo.state13.prototype = {
             this.texts[i] = game.add.text(i*10,i*10, "1");
         }
         this.texts[0].position.setTo(210,140);
-        this.texts[0].text = "If a triangle has a right angle , it is a right-angled triangle."
+        this.texts[0].text = "If a triangle has a 90\xB0, it is a right-angled triangle."
         this.texts[0].lineSpacing = 30;
         this.texts[0].fontWeight = 'normal';
         
         this.texts[1].position.setTo(270,240);
-        this.texts[1].text = "Which two of these triangles are right-angled?"
+        this.texts[1].text = "Which one of these triangles are right-angled?"
         this.texts[1].lineSpacing = 30;
         this.texts[1].fontWeight = 'normal';
         
@@ -164,14 +164,7 @@ demo.state13.prototype = {
         this.cross2.alpha = 0;
        
         
-        this.ans1 = game.add.sprite(0,0,"ans2");
-        this.ans1.scale.setTo(0.35,0.35);
-        this.ans1.position.setTo(600,625);
-        this.ans1.alpha = 0;
-        this.ans2 = game.add.sprite(0,0,"ans3");
-        this.ans2.scale.setTo(0.35,0.35);
-        this.ans2.position.setTo(180,625);
-        this.ans2.alpha = 0;
+   
         
         
         this.btnRadio1.events.onInputDown.add(function(){if (check <2){this.btnRadio1.loadTexture("btnradiochecked",0); this.n1 = 1; this.a = 1;}},this);
@@ -185,29 +178,34 @@ demo.state13.prototype = {
                 this.btnNext.visible = true;
                 this.texts[12].text = "Continue";
                 this.texts[12].position.setTo(1055,805);
-                this.ans2.alpha = 1;
-                this.a = 1;
+               this.pinkbox7a.alpha =1;
+                 this.isoAns7a.alpha =1;
+               
                 
             }
             if(this.n1 == 2) {
                 this.cross1.alpha = 1;
                 this.texts[12].alpha = 0.3;
-                this.ans1.position.setTo(700,625)
-                this.ans1.alpha = 1;
+             
                 this.btnPlay.frame = 1;
                 this.btnPlay.alpha = 1;
                 this.boolTryAgain = true;
                 this.confusedCheck++;
+                this.pinkbox7.alpha =1;
+                 this.isoAns7.alpha =1;
+                
+                
             }
             if(this.n1 == 3) {
                 this.cross2.alpha = 1;
                 this.texts[12].alpha = 0.3;
-                this.ans1.position.setTo(700,625)
-                this.ans1.alpha = 1;
+        
                 this.btnPlay.frame = 1;
                 this.btnPlay.alpha = 1;
                 this.boolTryAgain = true;
                 this.confusedCheck++;
+                 this.pinkbox7.alpha =1;
+                 this.isoAns7.alpha =1;
             }
                },this);
         
@@ -228,11 +226,14 @@ demo.state13.prototype = {
             this.tick2.alpha = 0;                                               
             this.btnRadio1.loadTexture('btnradio',0);
             this.btnRadio2.loadTexture('btnradio',0);
-            this.btnRadio3.loadTexture('btnradio',0);this.ans1.alpha =0; this.ans2.alpha = 0;
+            this.btnRadio3.loadTexture('btnradio',0);
             check = 0;this.k++;this.btnNext.visible = false;this.texts[12].position.setTo(1060,805);
-            this.texts[12].text = "Check"; this.btnPlay.visible = true;a = 0; b = 0; c = 0; this.ans3.alpha=0;}, this);
+            this.texts[12].text = "Check"; this.btnPlay.visible = true;a = 0; b = 0; c = 0;this.pinkbox7.alpha =0;
+                 this.isoAns7.alpha =0; }, this);
         
        tickTween = this.game.add.tween(this.tick1).to({alpha:1},1000,Phaser.Easing.Linear.None);
+        tickTween2 = this.game.add.tween(this.pinkbox7a).to({alpha:1},1000,Phaser.Easing.Linear.None);
+        tickTween3 = this.game.add.tween(this.isoAns7a).to({alpha:1},1000,Phaser.Easing.Linear.None);
     },
     update: function(){
         console.log("what is the value of confusedcheck: " + this.confusedCheck);
@@ -253,7 +254,7 @@ demo.state13.prototype = {
             this.btnTryAgain.visible = false;
             this.txtTryAgain.alpha = 0;
             
-            if (this.k == 2){this.tick1.alpha = 1; this.tick2.alpha = 1; this.btnPlay.visible = false; this.btnNext.visible = true; this.texts[12].position.setTo(1055,805); this.texts[12].text = "Continue"; this.texts[12].alpha = 1; this.texts[3].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[4].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[10].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[9].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.ans1.alpha = 0;this.ans2.alpha = 1;this.ans2.position.setTo(500,625);
+            if (this.k == 2){this.tick1.alpha = 1; this.tick2.alpha = 1; this.btnPlay.visible = false; this.btnNext.visible = true; this.texts[12].position.setTo(1055,805); this.texts[12].text = "Continue"; this.texts[12].alpha = 1; this.texts[3].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[4].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[10].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[9].setStyle({backgroundColor: 'rgba(255,255,0,1)'});
                             }
           
                 
@@ -261,7 +262,8 @@ demo.state13.prototype = {
         console.log("what is the value of n: " + n);
         if (this.confusedCheck == 2) {
             tickTween.start();
-            
+            tickTween2.start();
+            tickTween3.start();
             
                 this.btnNext.visible = true;
                 this.texts[12].text = "Continue";

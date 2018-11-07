@@ -19,12 +19,10 @@ demo.state12.prototype = {rectLength:0,rectLength2:0, btnTryAgain: null, txtTryA
         addBtnRadio(this);
         addTickCross(this);
         forIsoEquTriangle(this);
+        rightangleAns(this);
         linegraphics = game.add.graphics(0,0);
         
-         this.ans1 = game.add.sprite(0,0,'ans1');
-        this.ans1.scale.setTo(0.35,0.35);
-        this.ans1.alpha = 0;
-        this.ans1.position.setTo(720,680);
+      
           
           this.cross1.position.setTo(310,722.5);
         this.cross1.anchor.setTo(0.15,0.15);
@@ -73,9 +71,9 @@ demo.state12.prototype = {rectLength:0,rectLength2:0, btnTryAgain: null, txtTryA
         this.btnStart.visible = false;
         
         this.btnStart.events.onInputDown.add(function(){
-            if (n==1){this.boolTryAgain = true;this.cross1.alpha = 1; this.texts[2].setStyle({backgroundColor: 'rgba(255, 255, 0)'});this.texts[3].setStyle({backgroundColor: 'rgba(255, 255, 0)'}); this.btnStart.frame = 1;   this.texts[10].alpha = 0.3; a+=1;}
-            if (n==2){this.tick1.alpha = 1; c+=1;}
-            if (n==3){this.boolTryAgain = true;this.cross2.alpha = 1; this.texts[2].setStyle({backgroundColor: 'rgba(255, 255, 0)'});this.texts[3].setStyle({backgroundColor: 'rgba(255, 255, 0)'}); this.btnStart.frame = 1;  this.texts[10].alpha = 0.3; b+=1;}
+            if (n==1){this.boolTryAgain = true;this.cross1.alpha = 1; this.texts[2].setStyle({backgroundColor: 'rgba(255, 255, 0)'}); this.btnStart.frame = 1;   this.texts[10].alpha = 0.3; a+=1;}
+            if (n==2){this.tick1.alpha = 1; c+=1; this.texts[2].setStyle({backgroundColor: 'rgba(255, 255, 0)'});}
+            if (n==3){this.boolTryAgain = true;this.cross2.alpha = 1; this.texts[2].setStyle({backgroundColor: 'rgba(255, 255, 0)'});this.btnStart.frame = 1;  this.texts[10].alpha = 0.3; b+=1;}
         }
                                              ,this);
         
@@ -136,13 +134,13 @@ demo.state12.prototype = {rectLength:0,rectLength2:0, btnTryAgain: null, txtTryA
         this.texts[1].fontWeight = 'normal';
        
         this.texts[2].position.setTo(this.dot1.x+70,this.dot1.y-50);
-        this.texts[2].setText("90");
+        this.texts[2].setText("90\xB0.");
         
         this.texts[3].position.setTo(this.dot3.x+10, this.dot3.y+50);
-        this.texts[3].text = "56";
+        this.texts[3].text = "56\xB0.";
         
         this.texts[4].position.setTo(this.dot2.x+65, this.dot2.y-40);
-        this.texts[4].text = "34";
+        this.texts[4].text = "34\xB0.";
         
         
         this.texts[5].position.setTo(240,670);
@@ -200,8 +198,10 @@ demo.state12.prototype = {rectLength:0,rectLength2:0, btnTryAgain: null, txtTryA
         this.btnTryAgain.events.onInputDown.add(function(){this.boolTryAgain = false;this.k++;}, this); 
         
         tickTween = this.game.add.tween(this.tick1).to({alpha:1},1000,Phaser.Easing.Linear.None);
-        tickTween2 = this.game.add.tween(this.ans1).to({alpha:1},1500,Phaser.Easing.Linear.None);
-
+       
+        
+         tickTween3 = this.game.add.tween(this.pinkbox6).to({alpha:1},1000,Phaser.Easing.Linear.None);
+        tickTween4 = this.game.add.tween(this.isoAns6).to({alpha:1},1500,Phaser.Easing.Linear.None);
         
     },
     update: function(){
@@ -259,9 +259,11 @@ demo.state12.prototype = {rectLength:0,rectLength2:0, btnTryAgain: null, txtTryA
             this.texts[10].text = "Continue";
             this.texts[10].position.x = 1170;
             tickTween.start();
-            tickTween2.start();
+       
+                tickTween3.start();
+            tickTween4.start();
             this.btnNext.visible = true;
-            this.ans1.alpha = 1;
+            
             
          /*   linegraphics.beginFill(0x000000);
             linegraphics.lineStyle(7, '#FF3300', 1);
@@ -298,10 +300,10 @@ demo.state12.prototype = {rectLength:0,rectLength2:0, btnTryAgain: null, txtTryA
         graphics = game.add.graphics(0,0);
         graphics.beginFill(0xACD9E2, 0.4);
         graphics.drawPolygon(polygon.points);
-        graphics.beginFill(0x000000,1);
+        graphics.beginFill(2, 0xFF3300);
         graphics.drawRect(this.dot1.x-this.rectLength,this.dot1.y+this.rectLength, this.rectLength, this.rectLength2);
         graphics1 = game.add.graphics(0,0);
-        graphics1.lineStyle(1,0x000000,1);
+        graphics1.lineStyle(2, 0xFF3300);
         graphics1.arc(this.dot2.x, this.dot2.y, 50,startingAngle2,startingAngle2+alx.dotProductB ,false );
         graphics1.arc(this.dot3.x, this.dot3.y, 50, startingAngle3, startingAngle3+alx.dotProductC, false);
         
@@ -453,7 +455,8 @@ demo.state12.prototype = {rectLength:0,rectLength2:0, btnTryAgain: null, txtTryA
             this.texts[10].text = "Continue";
             this.texts[10].position.x = 1170;
             this.btnNext.visible = true;
-            this.ans1.alpha = 1;
+            this.pinkbox6.alpha =1;
+            this.isoAns6.alpha =1;
             
           /*  linegraphics.beginFill(0x000000);
             linegraphics.lineStyle(7, '#FF3300', 1);
