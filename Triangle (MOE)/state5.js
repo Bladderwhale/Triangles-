@@ -86,9 +86,9 @@ demo.state5.prototype = {
         this.btnStart.visible = false;
         
         this.btnStart.events.onInputDown.add(function(){
-            if (n==1){this.boolTryAgain = true;this.cross1.alpha = 1; this.texts[2].setStyle({backgroundColor: 'rgba(255, 255, 0)'});this.texts[3].setStyle({backgroundColor: 'rgba(255, 255, 0)'});this.texts[11].setStyle({backgroundColor: 'rgba(255,255,0)'}); this.texts[12].setStyle({backgroundColor: 'rgba(255,255,0)'}); this.btnStart.frame = 1; a+=1;}
+            if (n==1){this.boolTryAgain = true;this.cross1.alpha = 1; this.texts[2].setStyle({backgroundColor: 'rgba(255, 255, 0,1)'});this.texts[3].setStyle({backgroundColor: 'rgba(255, 255, 0,1)'});this.texts[11].setStyle({backgroundColor: 'rgba(255,255,0,1)'}); this.texts[12].setStyle({backgroundColor: 'rgba(255,255,0,1)'}); this.btnStart.frame = 1; a+=1;}
             if (n==2){this.tick1.alpha = 1; c+=1;}
-            if (n==3){this.boolTryAgain = true;this.cross2.alpha = 1; this.texts[2].setStyle({backgroundColor: 'rgba(255, 255, 0)'});this.texts[3].setStyle({backgroundColor: 'rgba(255, 255, 0)'});this.texts[11].setStyle({backgroundColor: 'rgba(255,255,0)'}); this.texts[12].setStyle({backgroundColor: 'rgba(255,255,0)'}); this.btnStart.frame = 1; b+=1;}
+            if (n==3){this.boolTryAgain = true;this.cross2.alpha = 1; this.texts[2].setStyle({backgroundColor: 'rgba(255, 255, 0,1)'});this.texts[3].setStyle({backgroundColor: 'rgba(255, 255, 0)'});this.texts[11].setStyle({backgroundColor: 'rgba(255,255,0,1)'}); this.texts[12].setStyle({backgroundColor: 'rgba(255,255,0,1)'}); this.btnStart.frame = 1; b+=1;}
         }
                                              ,this);
         

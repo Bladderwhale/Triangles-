@@ -529,7 +529,7 @@ demo.state10.prototype = {
             
         }
         //Handle3 - pull right down
-        if (this.line.length >= 201&&this.fakeHandle3.x < this.dot3.x && this.fakeHandle3.y > this.dot3.y+0.8 &&this.fakeHandle3.input.isDragged) {
+        if (this.line.length >= 201&&this.fakeHandle3.x < this.dot3.x && this.fakeHandle3.y > this.dot3.y+0.99 &&this.fakeHandle3.input.isDragged) {
             this.dot2.x-=1.15;
           
             
@@ -546,7 +546,7 @@ demo.state10.prototype = {
             
         }
         //Handle3 - pull left down
-        if (this.line.length >= 201 &&this.fakeHandle3.x > this.dot3.x && this.fakeHandle3.y > this.dot3.y+0.8 &&this.fakeHandle3.input.isDragged) {
+        if (this.line.length >= 201 &&this.fakeHandle3.x > this.dot3.x && this.fakeHandle3.y > this.dot3.y+0.99 &&this.fakeHandle3.input.isDragged) {
             this.dot1.x+=1.15;
            
             
