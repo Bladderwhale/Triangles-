@@ -19,16 +19,16 @@ demo.state5.prototype = {
         fixedGUI4(this);
         addTickCross(this);
         forIsoEquTriangle(this);
+        isoscelesTriangleAns(this);
         
-        
-        this.fakeHandle3.events.onInputOver.add(function(){
+     /*   this.fakeHandle3.events.onInputOver.add(function(){
             this.game.canvas.style.cursor = "move";
           //  sprite.input.useHandCursor = true;
         }, this);
         
         this.fakeHandle3.events.onInputOut.add(function(){
         this.game.canvas.style.cursor = "default";
-        }, this);
+        }, this);*/
         
         this.fakeHandle3.alpha =0;
         this.fakeHandle2.alpha =0;
@@ -108,7 +108,7 @@ demo.state5.prototype = {
         }
         this.texts[0].text = "Try this";
         this.texts[0].position.setTo(140, 140);
-        this.texts[0].setStyle({backgroundColor: 'rgba(255,165,0)', fill: '#ffffff'});
+        this.texts[0].setStyle({ fill: '#008000'});
         dotAttributes(this);
         
         this.texts[1].text = "Drag the red point to change the height of the triangle.\nObserve how the length of the sides and the angles change.";
@@ -172,10 +172,7 @@ demo.state5.prototype = {
         linegraphics = game.add.graphics(0,0);
         
         
-        this.ans1 = game.add.sprite(0,0,'ans4');
-        this.ans1.scale.setTo(0.25,0.25);
-        this.ans1.alpha = 0;
-        this.ans1.position.setTo(750,700);
+      
        
         
         //height of a triangle
@@ -236,7 +233,9 @@ demo.state5.prototype = {
         this.btnTryAgain.events.onInputDown.add(function(){this.boolTryAgain = false;this.k++;}, this); 
         
         tickTween = this.game.add.tween(this.tick1).to({alpha:1},1000,Phaser.Easing.Linear.None);
-        tickTween2 = this.game.add.tween(this.ans1).to({alpha:1},1500,Phaser.Easing.Linear.None);
+         tickTween2 = this.game.add.tween(this.pinkbox1b).to({alpha:1},1000,Phaser.Easing.Linear.None);
+         tickTween3 = this.game.add.tween(this.isoAns1b).to({alpha:1},1000,Phaser.Easing.Linear.None);
+       
     },
     update:function(){
          if (this.fakeHandle1.input.pointerOver()) {
@@ -286,9 +285,10 @@ demo.state5.prototype = {
             this.btnRadio3.loadTexture('btnradio',0);
             this.texts[10].alpha=1;
             this.texts[10].text = "Continue";
-            this.texts[10].position.x = 1170;
+            this.texts[10].position.x = 1160;
             tickTween.start();
             tickTween2.start();
+            tickTween3.start();
             this.btnNext.visible = true;
             
             
@@ -305,7 +305,7 @@ demo.state5.prototype = {
         polygon.setTo([new Phaser.Point(this.dot1.x, this.dot1.y), new Phaser.Point(this.dot2.x, this.dot2.y),new Phaser.Point(this.dot3.x, this.dot3.y)])
         graphics.destroy();
         graphics = game.add.graphics(0,0);;
-        graphics.beginFill(0xFF3300, 0);
+        graphics.beginFill(0xACD9E2, 0.3);
         graphics.lineStyle(5, '#FF3300', 1);
         graphics.drawPolygon(polygon.points);
         graphics.endFill();
@@ -360,7 +360,7 @@ demo.state5.prototype = {
         this.final2 = Math.acos(this.final2);
         
         var startAngle2 = (Math.PI/2 + Math.PI + Math.PI/2-this.final2);
-        graphics1.lineStyle(8, 0xffd900);
+        graphics1.lineStyle(2, 0xFF3300);
         graphics1.arc(this.dot1.x, this.dot1.y,70,startAngle2, startAngle2+this.final2,false);
         console.log("LeftAngle: " +Math.asd(this.final2));
         
@@ -373,7 +373,7 @@ demo.state5.prototype = {
         this.final3 = this.newLine5.dot(this.newLine6);
         this.final3 = Math.acos(this.final3);
         var startAngle3 = Math.PI 
-        graphics1.lineStyle(8, 0xffd900);
+        graphics1.lineStyle(2, 0xFF3300);
         graphics1.arc(this.dot2.x,this.dot2.y,70, startAngle3, startAngle3+this.final3, false);
         console.log("Right Angle: " + Math.asd(this.final3));
         
@@ -385,7 +385,7 @@ demo.state5.prototype = {
         console.log(this.final);
         this.final = Math.acos(this.final);
         
-        graphics1.lineStyle(8, 0xffd900);
+        graphics1.lineStyle(2, 0xFF3300);
         var startAngle = (Math.PI/2-this.final/2);
         graphics1.arc(this.dot3.x, this.dot3.y, 70, startAngle, startAngle+ this.final, false);
         graphics1.endFill();
@@ -436,11 +436,11 @@ demo.state5.prototype = {
           
             
             this.texts[2].position.setTo(this.dot3.x+80,this.dot3.y+50);
-            this.texts[2].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(2) + " cm");
+            this.texts[2].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(1) + " cm");
             this.texts[3].position.setTo(this.dot3.x-150, this.dot3.y+50);
-            this.texts[3].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(2) + " cm");
+            this.texts[3].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(1) + " cm");
             this.texts[4].position.setTo(this.dot3.x, this.y4);
-            this.texts[4].setText(((Math.round( this.line.length* 10 ) / 100)-15).toFixed(2) + " cm");
+            this.texts[4].setText(((Math.round( this.line.length* 10 ) / 100)-15).toFixed(1) + " cm");
             
             this.texts[13].position.setTo(this.dot3.x-15, this.dot3.y+70);
             
@@ -457,11 +457,11 @@ demo.state5.prototype = {
           
             
             this.texts[2].position.setTo(this.dot3.x+80,this.dot3.y+50);
-            this.texts[2].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(2) + " cm");
+            this.texts[2].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(1) + " cm");
             this.texts[3].position.setTo(this.dot3.x-150, this.dot3.y+50);
-            this.texts[3].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(2) + " cm");
+            this.texts[3].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(1) + " cm");
             this.texts[4].position.setTo(this.dot3.x, this.y4);
-            this.texts[4].setText(((Math.round( this.line.length* 10 ) / 100)-15).toFixed(2) + " cm");
+            this.texts[4].setText(((Math.round( this.line.length* 10 ) / 100)-15).toFixed(1) + " cm");
             
             this.texts[13].position.setTo(this.dot3.x-15, this.dot3.y+70);
             this.texts[13].text = finaldegrees.toFixed(0) + "\xB0";
@@ -594,7 +594,9 @@ demo.state5.prototype = {
             this.texts[10].text = "Continue";
             this.texts[10].position.x = 1160;
             this.btnNext.visible = true;
-            this.ans1.alpha = 1;
+            this.pinkbox1b.alpha = 1;
+            this.isoAns1b.alpha = 1;
+
             
             linegraphics.beginFill(0x000000);
             linegraphics.lineStyle(7, '#FF3300', 1);

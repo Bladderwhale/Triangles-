@@ -39,7 +39,7 @@ demo.state2.prototype = {
         this.tick1.alpha = 0;
         this.tick2.alpha = 0;
         
-       
+        
         
        
         this.btnRadio1.position.setTo(310, 722.5);

@@ -17,7 +17,7 @@ demo.state6.prototype = {
         
         addTexts(this);
         newDot(this);
-        
+        isoscelesTriangleAns2(this);
         
         var arr1x = [373,159,425];
         var arr2y = [350,470,592];
@@ -55,7 +55,7 @@ demo.state6.prototype = {
         
         var firstTrianglePoints = [this.newDot[1].x,this.newDot[1].y,this.newDot[2].x,this.newDot[2].y];
         var firstTriangleDraw = game.add.graphics(0,0); 
-        firstTriangleDraw.beginFill(0x6666FF);
+        firstTriangleDraw.beginFill(0x6666FF,0.5);
         firstTriangleDraw.lineStyle(2, 0x000000,1);
         firstTriangleDraw.moveTo(this.newDot[0].x,this.newDot[0].y);
         for (var i =0; i<firstTrianglePoints.length; i++){
@@ -66,7 +66,7 @@ demo.state6.prototype = {
         
         var secondTrianglePoints = [newDot2[1].x,newDot2[1].y,newDot2[2].x,newDot2[2].y];
         var secondTriangleDraw = game.add.graphics(0,0); 
-        secondTriangleDraw.beginFill(0xffa500);
+        secondTriangleDraw.beginFill(0xffa500,0.5);
         secondTriangleDraw.lineStyle(2, 0x000000,1);
         secondTriangleDraw.moveTo(newDot2[0].x,newDot2[0].y);
         for (var i =0; i<firstTrianglePoints.length; i++){
@@ -77,7 +77,7 @@ demo.state6.prototype = {
         
         var thirdTrianglePoints = [newDot3[1].x,newDot3[1].y,newDot3[2].x,newDot3[2].y];
         var thirdTriangleDraw = game.add.graphics(0,0); 
-        thirdTriangleDraw.beginFill(0xffff00);
+        thirdTriangleDraw.beginFill(0xffff00,0.5);
         thirdTriangleDraw.lineStyle(2, 0x000000,1);
         thirdTriangleDraw.moveTo(newDot3[0].x,newDot3[0].y);
         for (var i =0; i<firstTrianglePoints.length; i++){
@@ -169,7 +169,7 @@ demo.state6.prototype = {
         
         graphics1 = game.add.graphics(0,0);
        // graphics1.beginFill('#EEE8AA');
-        graphics1.lineStyle(5, 0x000000,1);
+        graphics1.lineStyle(2, 0xDE1C24,1);
         graphics1.arc(373,350,50, startAngle,startAngle+newFinal,false);
         graphics1.arc(this.newDot[1].x,this.newDot[1].y,50, startAngle2,startAngle2+newFinal2,false);
         graphics1.arc(this.newDot[2].x,this.newDot[2].y,50, startAngle3,startAngle3+newFinal3,false);
@@ -254,28 +254,13 @@ demo.state6.prototype = {
         this.cross1.alpha = 0;
         this.cross2.alpha=0;
         
-        this.ans1 = game.add.sprite(0,0,"ans6");
-        this.ans1.scale.setTo(1.5,1.5);
-        this.ans1.position.setTo(1025,735);
-        this.ans1.alpha = 0;
-        this.ans2 = game.add.sprite(0,0,"ans5");
-        this.ans2.scale.setTo(1.5,1.5);
-        this.ans2.position.setTo(415,725);
-        this.ans2.alpha = 0;
-        this.ans3 = game.add.sprite(0,0,"ans7");
-        this.ans3.scale.setTo(1.5,1.5);
-        this.ans3.position.setTo(415,725);
-        this.ans3.alpha = 0;
-        this.ans4 = game.add.sprite(0,0,"ans5");
-        this.ans4.scale.setTo(1.5,1.5);
-        this.ans4.position.setTo(415,725);
-        this.ans4.alpha = 0;
+       
         
         this.btnRadio1.events.onInputDown.add(function(){if (check <2){this.btnRadio1.loadTexture("btnradiochecked",0); check++; a = 1}},this);
         this.btnRadio2.events.onInputDown.add(function(){if (check <2){this.btnRadio2.loadTexture("btnradiochecked",0); check++; b = 1}},this);
         this.btnRadio3.events.onInputDown.add(function(){if (check <2){this.btnRadio3.loadTexture("btnradiochecked",0); check++; c = 1}},this);
         
-        this.btnPlay.events.onInputDown.add(function(){if (check>=2 && a == 1 && b ==1){this.tick1.alpha = 1; this.tick2.alpha = 1; this.btnPlay.visible = false; this.btnNext.visible = true; this.texts[12].position.setTo(1120,875); this.texts[12].text = "Continue"; this.texts[3].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[4].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[6].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[7].setStyle({backgroundColor: 'rgba(255,255,0)'});this.ans1.alpha = 0;this.ans3.alpha = 1;} else if (check >=2 && c ==1 && b ==1){this.confusedCheck++;this.boolTryAgain = true;this.cross1.alpha = 1; this.tick1.alpha = 0; this.tick2.alpha = 1; this.btnPlay.visible = false; this.btnNext.visible = true; this.texts[12].position.setTo(1120,875); this.texts[12].text = "Continue";this.texts[3].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[4].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[6].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[7].setStyle({backgroundColor: 'rgba(255,255,0)'});this.ans1.alpha = 1;this.ans2.alpha = 1;this.ans2.position.setTo(620,725)}else if (check >=2 && c ==1 && a ==1){this.confusedCheck++;this.boolTryAgain = true;this.cross1.alpha = 1; this.tick1.alpha = 1; this.tick2.alpha = 0; this.btnPlay.visible = false; this.btnNext.visible = true; this.texts[12].position.setTo(1120,875); this.texts[12].text = "Continue";this.texts[3].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[4].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[6].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[7].setStyle({backgroundColor: 'rgba(255,255,0)'});this.ans1.alpha = 1;this.ans2.alpha = 1;this.ans2.position.setTo(180,725)}},this);
+        this.btnPlay.events.onInputDown.add(function(){if (check>=2 && a == 1 && b ==1){tickTween7.start();tickTween8.start();this.tick1.alpha = 1; this.tick2.alpha = 1; this.btnPlay.visible = false; this.btnNext.visible = true; this.texts[12].position.setTo(1120,875); this.texts[12].text = "Continue"; this.texts[3].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[4].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[6].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[7].setStyle({backgroundColor: 'rgba(255,255,0)'});this.ans1.alpha = 0;this.ans3.alpha = 1;} else if (check >=2 && c ==1 && b ==1){ this.pinkbox2dd.alpha = 1; this.isoAns2dd.alpha = 1;this.pinkbox3c.alpha=1;this.isoAns3c.alpha =1;  this.confusedCheck++;this.boolTryAgain = true;this.cross1.alpha = 1; this.tick1.alpha = 0; this.tick2.alpha = 1; this.btnPlay.visible = false; this.btnNext.visible = true; this.texts[12].position.setTo(1120,875); this.texts[12].text = "Continue";this.texts[3].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[4].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[6].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[7].setStyle({backgroundColor: 'rgba(255,255,0)'});}else if (check >=2 && c ==1 && a ==1){ this.pinkbox2d.alpha = 1; this.isoAns2d.alpha = 1;this.pinkbox3c.alpha=1;this.isoAns3c.alpha =1;  this.confusedCheck++;this.boolTryAgain = true;this.cross1.alpha = 1; this.tick1.alpha = 1; this.tick2.alpha = 0; this.btnPlay.visible = false; this.btnNext.visible = true; this.texts[12].position.setTo(1120,875); this.texts[12].text = "Continue";this.texts[3].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[4].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[6].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[7].setStyle({backgroundColor: 'rgba(255,255,0)'});}},this);
         this.btnNext.events.onInputDown.add(function(){check =0;a=0;b=0;c=0;game.state.start('state1'); sp1 =1;},this);
         
         
@@ -300,7 +285,9 @@ demo.state6.prototype = {
             this.cross1.alpha = 0;
             this.btnRadio1.loadTexture('btnradio',0);
             this.btnRadio2.loadTexture('btnradio',0);
-            this.btnRadio3.loadTexture('btnradio',0);this.ans1.alpha =0; this.ans2.alpha = 0;
+            this.btnRadio3.loadTexture('btnradio',0);
+             this.pinkbox3c.alpha=0;this.isoAns3c.alpha =0;                                   this.pinkbox2d.alpha=0;this.isoAns2d.alpha = 0;   
+            this.pinkbox2dd.alpha=0;this.isoAns2dd.alpha = 0;  
             check = 0;this.k++;this.btnNext.visible = false;this.texts[12].position.setTo(1135,875);
             this.texts[12].text = "Check"; this.btnPlay.visible = true;a = 0; b = 0; c = 0;}, this);
         
@@ -319,8 +306,17 @@ demo.state6.prototype = {
         
        tickTween = this.game.add.tween(this.tick2).to({alpha:1},1000,Phaser.Easing.Linear.None);
          tickTween2 = this.game.add.tween(this.tick1).to({alpha:1},1000,Phaser.Easing.Linear.None);
-         tickTween3 = this.game.add.tween(this.ans4).to({alpha:1, x: 600, y: 726},1000,Phaser.Easing.Linear.None);
-        tickTween4 = this.game.add.tween(this.ans4).to({alpha:1, x: 200, y: 726},1000,Phaser.Easing.Linear.None);
+        
+        tickTween3 = this.game.add.tween(this.pinkbox2d).to({alpha:1},1000,Phaser.Easing.Linear.None);
+         tickTween4 = this.game.add.tween(this.isoAns2d).to({alpha:1},1000,Phaser.Easing.Linear.None);
+        
+          tickTween5 = this.game.add.tween(this.pinkbox2dd).to({alpha:1},1000,Phaser.Easing.Linear.None);
+         tickTween6 = this.game.add.tween(this.isoAns2dd).to({alpha:1},1000,Phaser.Easing.Linear.None);
+        tickTween7 = this.game.add.tween(this.pinkbox2ddd).to({alpha:1},1000,Phaser.Easing.Linear.None);
+         tickTween8 = this.game.add.tween(this.isoAns2ddd).to({alpha:1},1000,Phaser.Easing.Linear.None);
+        
+     
+        
          
     },
     update: function(){
@@ -341,13 +337,15 @@ demo.state6.prototype = {
             
            if (this.confusedCheck == 2 && a == 1 && c == 1) {
                 tickTween.start();
-                tickTween3.start();
+               tickTween5.start();
+               tickTween6.start();
             }
         
         console.log("see this booltryagain:" + this.boolTryAgain);
         
         if (this.confusedCheck == 2 && b == 1 && c == 1) { 
                 tickTween2.start(); 
+                tickTween3.start();
                 tickTween4.start();
         }
         
