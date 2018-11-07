@@ -167,9 +167,9 @@ demo.state13.prototype = {
    
         
         
-        this.btnRadio1.events.onInputDown.add(function(){if (check <2){this.btnRadio1.loadTexture("btnradiochecked",0); this.n1 = 1; this.a = 1;}},this);
-                this.btnRadio2.events.onInputDown.add(function(){if (check <2){this.btnRadio2.loadTexture("btnradiochecked",0); this.n1 = 2; this.b = 1;}},this);
-        this.btnRadio3.events.onInputDown.add(function(){if (check <2){this.btnRadio3.loadTexture("btnradiochecked",0); this.n1 = 3; this.c = 1;}},this);
+        this.btnRadio1.events.onInputDown.add(function(){if (check <20){this.btnRadio1.loadTexture("btnradiochecked",0); this.n1 = 1; this.a = 1;}},this);
+                this.btnRadio2.events.onInputDown.add(function(){if (check <20){this.btnRadio2.loadTexture("btnradiochecked",0); this.n1 = 2; this.b = 1;}},this);
+        this.btnRadio3.events.onInputDown.add(function(){if (check <20){this.btnRadio3.loadTexture("btnradiochecked",0); this.n1 = 3; this.c = 1;}},this);
         
         this.btnPlay.events.onInputDown.add(function()
                                             {
@@ -209,7 +209,7 @@ demo.state13.prototype = {
             }
                },this);
         
-        this.btnNext.events.onInputDown.add(function(){check =0; this.a=0; this.b=0; this.c=0;game.state.start('state14');},this);
+        this.btnNext.events.onInputDown.add(function(){check =0; this.a=0; this.b=0; this.c=0;a =0;b=0;c=0;n=0;game.state.start('state14');},this);
         
            //Creating the try again button
         this.btnTryAgain = game.add.button(0,0, 'btn2');
@@ -236,8 +236,10 @@ demo.state13.prototype = {
         tickTween3 = this.game.add.tween(this.isoAns7a).to({alpha:1},1000,Phaser.Easing.Linear.None);
     },
     update: function(){
+        console.log("what is the value of check:"+ check);
         console.log("what is the value of confusedcheck: " + this.confusedCheck);
         console.log("what is the value of k: " + this.k);
+        console.log("what is the value of boolTryAgain: " + this.boolTryAgain);
         console.log(this.dot.x + " y: " + this.dot.y);
        // console.log(check);
         
@@ -278,6 +280,7 @@ demo.state13.prototype = {
         
         switch(this.n1) {
             case 1:
+                this.btnRadio1.loadTexture("btnradiochecked",0);
                 this.btnRadio2.loadTexture("btnradio",0);
                 this.btnRadio3.loadTexture("btnradio",0);
                 
@@ -288,28 +291,24 @@ demo.state13.prototype = {
             case 2: 
                 
                 this.btnRadio1.loadTexture("btnradio",0);
+                this.btnRadio2.loadTexture("btnradiochecked",0);
                 this.btnRadio3.loadTexture("btnradio", 0);
                 
                 this.btnPlay.frame = 0;
                 this.texts[12].alpha = 1;
-                if (this.a == 1) {
-                this.btnRadio1.loadTexture("btnradiochecked",0);
-                this.btnRadio2.loadTexture("btnradio",0);
-                this.btnRadio3.loadTexture("btnradio",0);
-                }
+                
+                
                 break;
             case 3:
                
                 this.btnRadio1.loadTexture("btnradio", 0);
                 this.btnRadio2.loadTexture("btnradio", 0);
+                this.btnRadio3.loadTexture("btnradiochecked",0);
                 
                 this.btnPlay.frame = 0;
                 this.texts[12].alpha = 1;
-                if (this.a == 1) {
-                this.btnRadio1.loadTexture("btnradiochecked",0);
-                this.btnRadio2.loadTexture("btnradio",0);
-                this.btnRadio3.loadTexture("btnradio",0);
-                }
+            
+                
                 
                 break;
             case 4:

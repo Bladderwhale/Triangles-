@@ -246,6 +246,8 @@ demo.state14.prototype = {
        tickTween3 = this.game.add.tween(this.isoAns8c).to({alpha:1},1000,Phaser.Easing.Linear.None);
     },
     update: function(){
+        console.log("what is the value of check: " + check);
+        console.log("a: " + a + "b: " + b + "c " + c);
           //Try again function
         if (this.boolTryAgain == true) {
             if (this.k < 1) {
@@ -302,11 +304,7 @@ demo.state14.prototype = {
                 
                 this.btnPlay.frame = 0;
                 this.texts[12].alpha = 1;
-                if (this.a == 1) {
-                this.btnRadio1.loadTexture("btnradiochecked",0);
-                this.btnRadio2.loadTexture("btnradio",0);
-                this.btnRadio3.loadTexture("btnradio",0);
-                }
+             
                 break;
             case 3:
                
@@ -315,11 +313,7 @@ demo.state14.prototype = {
                 
                 this.btnPlay.frame = 0;
                 this.texts[12].alpha = 1;
-                if (this.a == 1) {
-                this.btnRadio1.loadTexture("btnradiochecked",0);
-                this.btnRadio2.loadTexture("btnradio",0);
-                this.btnRadio3.loadTexture("btnradio",0);
-                }
+            
                 
                 break;
             case 4:
