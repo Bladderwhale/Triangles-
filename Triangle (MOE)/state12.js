@@ -6,6 +6,7 @@ demo.state12 = function(){};
 demo.state12.prototype = {rectLength:0,rectLength2:0, btnTryAgain: null, txtTryAgain: null, boolTryAgain: false,k: 0,
     preload: function(){
         loadAssets();
+        game.stage.backgroundColor = '#000000';
     },
     create: function(){
         game.stage.backgroundColor = '#ffffff';

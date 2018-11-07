@@ -4,6 +4,7 @@ demo.state1 = function() {}
 demo.state1.prototype = { 
     preload: function(){
         loadAssets();
+         game.stage.backgroundColor = '#000000';
     },
     create: function(){
         game.stage.backgroundColor = '#DDDDDD';

@@ -7,6 +7,7 @@ demo.state5.prototype = {
     x2: 800, y2: 385, x3: 650, y3: 385, x4:750,y4:515, btnPlay: null, btnStart: null, btnNext: null, n:0, ans1:null, top:null,left:null,right:null,down:null,btnTryAgain: null, txtTryAgain: null, boolTryAgain: false,k: 0,
     preload:function(){
         loadAssets();
+         game.stage.backgroundColor = '#000000';
     },
     create:function(){
         game.stage.backgroundColor = '#ffffff';

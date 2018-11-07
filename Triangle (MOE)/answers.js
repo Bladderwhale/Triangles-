@@ -213,3 +213,148 @@ function isoscelesTriangleAns2(state) {
     state.pinkbox4a.alpha = 0;
 };
 
+function equilateralTrianglesAns(state) {
+    state.pinkbox1 = game.add.graphics(0,0);
+    state.pinkbox1.beginFill(0xF2C2B5, 1);
+    state.pinkbox1.lineStyle(1, 0x000000,1);
+    state.pinkbox1.drawRect(840,723, 275, 140);
+    state.pinkbox1.alpha = 1;
+    state.isoAns1 = game.add.text(849,728, "Correct. \nAn Equilateral triangle \nhas three equal sides.");
+   // state.isoAns1.addfontWeight = ('bold',0);
+    state.isoAns1.addFontWeight('bold',0);
+    state.isoAns1.addFontWeight('normal',8);
+   // state.isoAns1.fontWeight = 'normal';
+    state.isoAns1.align = 'left';
+    state.pinkbox1.endFill();
+    state.isoAns1.alpha = 0;
+    state.pinkbox1.alpha = 0;
+    
+    state.pinkbox2 = game.add.graphics(0,0);
+    state.pinkbox2.beginFill(0xF2C2B5, 1);
+    state.pinkbox2.lineStyle(1, 0x000000,1);
+    state.pinkbox2.drawRect(1000,660,390,80);
+    state.pinkbox2.alpha = 1;
+    state.isoAns2 = game.add.text(1000,660, "Incorrect. All three sides of this '\ntriangle are different.");
+    state.isoAns2.fontWeight = 'normal';
+    state.isoAns2.align = 'left';
+    state.pinkbox2.endFill();
+    state.isoAns2.addFontWeight('bold',0);
+    state.isoAns2.addFontWeight('normal',10);
+    state.isoAns2.alpha = 0;
+    state.pinkbox2.alpha = 0;
+    
+    state.pinkbox3 = game.add.graphics(0,0);
+    state.pinkbox3.beginFill(0xF2C2B5, 1);
+    state.pinkbox3.lineStyle(1, 0x000000,1);
+    state.pinkbox3.drawRect(170,660, 400,80);
+    state.pinkbox3.alpha = 1;
+    state.isoAns3 = game.add.text(170,660, "Correct. This is an equilateral\ntriangle. It has three equal sides. ");
+    state.isoAns3.fontWeight = 'normal';
+    state.isoAns3.align = 'left';
+    state.isoAns3.addFontWeight('bold',0);
+    state.isoAns3.addFontWeight('normal',9);
+    state.pinkbox3.endFill();
+    state.isoAns3.alpha = 0;
+    state.pinkbox3.alpha = 0;
+    
+    state.pinkbox3a = game.add.graphics(0,0);
+    state.pinkbox3a.beginFill(0xF2C2B5, 1);
+    state.pinkbox3a.lineStyle(1, 0x000000,1);
+    state.pinkbox3a.drawRect(585,660, 400,80);
+    state.pinkbox3a.alpha = 1;
+    state.isoAns3a = game.add.text(585,660, "Correct. This is an equilateral\ntriangle. It has three equal sides. ");
+    state.isoAns3a.fontWeight = 'normal';
+    state.isoAns3a.align = 'left';
+    state.isoAns3a.addFontWeight('bold',0);
+    state.isoAns3a.addFontWeight('normal',9);
+    state.pinkbox3a.endFill();
+    state.isoAns3a.alpha = 0;
+    state.pinkbox3a.alpha = 0;
+    
+    state.pinkbox3c = game.add.graphics(0,0);
+    state.pinkbox3c.beginFill(0xF2C2B5, 1);
+    state.pinkbox3c.lineStyle(1, 0x000000,1);
+    state.pinkbox3c.drawRect(390,660, 400,80);
+    state.pinkbox3c.alpha = 1;
+    state.isoAns3c = game.add.text(390,660, "Correct. They are equilateral\ntriangle. It has three equal sides. ");
+    state.isoAns3c.fontWeight = 'normal';
+    state.isoAns3c.align = 'left';
+    state.isoAns3c.addFontWeight('bold',0);
+    state.isoAns3c.addFontWeight('normal',9);
+    state.pinkbox3c.endFill();
+    state.isoAns3c.alpha = 0;
+    state.pinkbox3c.alpha = 0;
+    
+    state.pinkbox4 = game.add.graphics(0,0);
+    state.pinkbox4.beginFill(0xF2C2B5, 1);
+    state.pinkbox4.lineStyle(1, 0x000000,1);
+    state.pinkbox4.drawRect(550,660,390,80);
+    state.pinkbox4.alpha = 1;
+    state.isoAns4 = game.add.text(550,660, "Incorrect. All three sides of this '\ntriangle are different.");
+    state.isoAns4.fontWeight = 'normal';
+    state.isoAns4.align = 'left';
+    state.pinkbox4.endFill();
+    state.isoAns4.addFontWeight('bold',0);
+    state.isoAns4.addFontWeight('normal',10);
+    state.isoAns4.alpha = 0;
+    state.pinkbox4.alpha = 0;
+    
+    state.pinkbox4a = game.add.graphics(0,0);
+    state.pinkbox4a.beginFill(0xF2C2B5, 1);
+    state.pinkbox4a.lineStyle(1, 0x000000,1);
+    state.pinkbox4a.drawRect(950,660, 400,80);
+    state.pinkbox4a.alpha = 1;
+    state.isoAns4a = game.add.text(950,660, "Correct. This is an equilateral\ntriangle. It has three equal sides. ");
+    state.isoAns4a.fontWeight = 'normal';
+    state.isoAns4a.align = 'left';
+    state.isoAns4a.addFontWeight('bold',0);
+    state.isoAns4a.addFontWeight('normal',9);
+    state.pinkbox4a.endFill();
+    state.isoAns4a.alpha = 0;
+    state.pinkbox4a.alpha = 0;
+    
+    state.pinkbox4b = game.add.graphics(0,0);
+    state.pinkbox4b.beginFill(0xF2C2B5, 1);
+    state.pinkbox4b.lineStyle(1, 0x000000,1);
+    state.pinkbox4b.drawRect(130,660, 400,80);
+    state.pinkbox4b.alpha = 1;
+    state.isoAns4b = game.add.text(130,660, "Correct. This is an equilateral\ntriangle. It has three equal sides. ");
+    state.isoAns4b.fontWeight = 'normal';
+    state.isoAns4b.align = 'left';
+    state.isoAns4b.addFontWeight('bold',0);
+    state.isoAns4b.addFontWeight('normal',9);
+    state.pinkbox4b.endFill();
+    state.isoAns4b.alpha = 0;
+    state.pinkbox4b.alpha = 0;
+    
+    state.pinkbox4c = game.add.graphics(0,0);
+    state.pinkbox4c.beginFill(0xF2C2B5, 1);
+    state.pinkbox4c.lineStyle(1, 0x000000,1);
+    state.pinkbox4c.drawRect(550,660, 400,80);
+    state.pinkbox4c.alpha = 1;
+    state.isoAns4c = game.add.text(550,660, "Correct. They are equilateral\ntriangle. It has three equal sides. ");
+    state.isoAns4c.fontWeight = 'normal';
+    state.isoAns4c.align = 'left';
+    state.isoAns4c.addFontWeight('bold',0);
+    state.isoAns4c.addFontWeight('normal',9);
+    state.pinkbox4c.endFill();
+    state.isoAns4c.alpha = 0;
+    state.pinkbox4c.alpha = 0;
+    
+    state.pinkbox5 = game.add.graphics(0,0);
+    state.pinkbox5.beginFill(0xF2C2B5, 1);
+    state.pinkbox5.lineStyle(1, 0x000000,1);
+    state.pinkbox5.drawRect(760,728, 380,110);
+    state.pinkbox5.alpha = 1;
+    state.isoAns5 = game.add.text(760,728, "Correct. An equilateral triangle.'\nalso has three equal angles.\nEach angle is 60\xB0.");
+    state.isoAns5.fontWeight = 'normal';
+    state.isoAns5.align = 'left';
+    state.isoAns5.addFontWeight('bold',0);
+    state.isoAns5.addFontWeight('normal',9);
+    state.pinkbox5.endFill();
+    state.isoAns5.alpha = 0;
+    state.pinkbox5.alpha = 0;
+    
+    
+};
+

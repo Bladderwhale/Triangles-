@@ -4,6 +4,7 @@ demo.state7.prototype = {
     x2: 800, y2: 385, x3: 650, y3: 385, x4:750,y4:515, btnPlay: null, btnStart: null, btnNext: null, n:0, ans1:null, top:null,left:null,right:null,down:null,btnTryAgain: null, txtTryAgain: null, boolTryAgain: false,k: 0,b:0,
     preload:function(){
         loadAssets();
+         game.stage.backgroundColor = '#000000';
     },
     create:function(){
         game.stage.backgroundColor = '#ffffff';
@@ -15,6 +16,7 @@ demo.state7.prototype = {
         fixedGUI2();
         addBtnRadio(this);
         addTickCross(this);
+        equilateralTrianglesAns(this);
         this.cross1.position.setTo(310,768);
         this.cross1.anchor.setTo(0.15,0.15);
         this.cross1.alpha = 0;
@@ -61,7 +63,7 @@ demo.state7.prototype = {
         
         this.btnStart.events.onInputDown.add(function(){
             if (n==1){this.boolTryAgain = true;this.cross1.alpha = 1; this.texts[2].setStyle({backgroundColor: 'rgba(255, 255, 0)'});this.texts[3].setStyle({backgroundColor: 'rgba(255, 255, 0)'});this.texts[4].setStyle({backgroundColor: 'rgba(255,255,0)'});this.btnStart.frame = 1;   this.texts[10].alpha = 0.3; a+=1;}
-            if (n==2){this.tick1.alpha = 1; c+=1;}
+            if (n==2){this.tick1.alpha = 1;this.texts[2].setStyle({backgroundColor: 'rgba(255, 255, 0)'});this.texts[3].setStyle({backgroundColor: 'rgba(255, 255, 0)'});this.texts[4].setStyle({backgroundColor: 'rgba(255,255,0)'}); c+=1;}
             if (n==3){this.boolTryAgain = true;this.cross2.alpha = 1; this.texts[2].setStyle({backgroundColor: 'rgba(255, 255, 0)'});this.texts[3].setStyle({backgroundColor: 'rgba(255, 255, 0)'}); this.texts[4].setStyle({backgroundColor: 'rgba(255,255,0)'});this.btnStart.frame = 1;  this.texts[10].alpha = 0.3; this.b+=1;}
         }
                                              ,this);
@@ -107,18 +109,22 @@ demo.state7.prototype = {
         this.texts[5].position.setTo(240,670);
         this.texts[5].text = "No matter how the size of the triangle changes, the length of _________________."
         this.texts[5].alpha = 0;
+        this.texts[5].fontWeight = 'normal';
         
         this.texts[6].position.setTo(350,720);
         this.texts[6].text = "all three sides are always equal";
         this.texts[6].alpha = 0;
+        this.texts[6].fontWeight = 'normal';
         
         this.texts[7].position.setTo(350,770);
         this.texts[7].text = "only two sides are always equal";
         this.texts[7].alpha = 0;
+        this.texts[7].fontWeight = 'normal';
         
         this.texts[8].position.setTo(350,820);
         this.texts[8].text = "all three sides are always different";
         this.texts[8].alpha = 0;
+        this.texts[8].fontWeight = 'normal';
         
         this.texts[9].position.setTo(1285,555);
         this.texts[9].text = "Done";
@@ -134,10 +140,7 @@ demo.state7.prototype = {
         linegraphics = game.add.graphics(0,0);
         
         
-        this.ans1 = game.add.sprite(0,0,'ans8');
-        this.ans1.scale.setTo(0.35,0.35);
-        this.ans1.alpha = 0;
-        this.ans1.position.setTo(763,680);
+       
         
         //height of a triangle
         console.log(this.dot2.y - this.dot3.y);
@@ -213,7 +216,8 @@ demo.state7.prototype = {
         this.btnTryAgain.events.onInputDown.add(function(){this.boolTryAgain = false;this.k++;}, this); 
 
         tickTween = this.game.add.tween(this.tick1).to({alpha:1},1000,Phaser.Easing.Linear.None);
-        tickTween2 = this.game.add.tween(this.ans1).to({alpha:1},1500,Phaser.Easing.Linear.None);
+        tickTween2 = this.game.add.tween(this.pinkbox1).to({alpha:1},1000,Phaser.Easing.Linear.None);
+         tickTween3 = this.game.add.tween(this.isoAns1).to({alpha:1},1000,Phaser.Easing.Linear.None);
 
         
     },
@@ -270,6 +274,7 @@ demo.state7.prototype = {
             this.texts[10].position.x = 1170;
             tickTween.start();
             tickTween2.start();
+            tickTween3.start();
             this.btnNext.visible = true;
             
             linegraphics.beginFill(0x000000);
@@ -561,7 +566,8 @@ demo.state7.prototype = {
             this.texts[10].text = "Continue";
             this.texts[10].position.x = 1170;
             this.btnNext.visible = true;
-            this.ans1.alpha = 1;
+            this.pinkbox1.alpha =1;
+            this.isoAns1.alpha = 1;
             
             linegraphics.beginFill(0x000000);
             linegraphics.lineStyle(7, '#FF3300', 1);
