@@ -358,5 +358,14 @@ demo.state6.prototype = {
             this.btnPlay.frame = 0;
             this.texts[12].alpha = 1;
             }
+          if (this.btnRadio1.input.pointerOver()) {
+           this.btnRadio1.input.useHandCursor = true;
+       }
+        if (this.btnRadio2.input.pointerOver()) {
+           this.btnRadio2.input.useHandCursor = true;
+       }
+        if (this.btnRadio3.input.pointerOver()) {
+           this.btnRadio3.input.useHandCursor = true;
+       }
     }
 };

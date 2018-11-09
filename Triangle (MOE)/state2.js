@@ -635,7 +635,15 @@ demo.state2.prototype = {
             linegraphics.lineTo(this.dot3.x,this.dot3.y);
             linegraphics.endFill();
         }
-        
+         if (this.btnRadio1.input.pointerOver()) {
+           this.btnRadio1.input.useHandCursor = true;
+       }
+        if (this.btnRadio2.input.pointerOver()) {
+           this.btnRadio2.input.useHandCursor = true;
+       }
+        if (this.btnRadio3.input.pointerOver()) {
+           this.btnRadio3.input.useHandCursor = true;
+       }
         console.log("Is this true/false: " + activation2);
     },
     render: function() {

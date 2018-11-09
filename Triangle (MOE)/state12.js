@@ -467,7 +467,15 @@ demo.state12.prototype = {rectLength:0,rectLength2:0, btnTryAgain: null, txtTryA
             linegraphics.endFill();*/
         }
         
-        
+          if (this.btnRadio1.input.pointerOver()) {
+           this.btnRadio1.input.useHandCursor = true;
+       }
+        if (this.btnRadio2.input.pointerOver()) {
+           this.btnRadio2.input.useHandCursor = true;
+       }
+        if (this.btnRadio3.input.pointerOver()) {
+           this.btnRadio3.input.useHandCursor = true;
+       }
         
        
     }

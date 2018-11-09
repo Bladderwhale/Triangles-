@@ -48,7 +48,7 @@ demo.state1.prototype = {
         
         //Texts
         addTexts(this);
-        textsElements = ["Triangles", "There are different types of triangles. \n Select one type and find out its properties.", "Isoceles \n Triangles", "Equilateral \n Triangles", "Right-Angled \n Triangles"];
+        textsElements = ["Triangles", "There are different types of triangles. \n Select one type and find out its properties.", "Isosceles\nTriangles", "Equilateral\nTriangles", "Right-Angled \n Triangles"];
     
         var height = -250;
         for (var i = 0; i < 5; i++) {

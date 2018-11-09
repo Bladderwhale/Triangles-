@@ -12,7 +12,7 @@ demo.state13.prototype = {
         addChangeStateEventListers();
         fixedGUI(this);
         addTexts(this);
-        this.headingTexts.text = "Isosceles Triangles";
+        this.headingTexts.text = "Right Angled Triangles";
         fixedGUI3();
         dotAttributes(this);
         addBtnRadio(this);
@@ -106,7 +106,7 @@ demo.state13.prototype = {
         this.texts[0].fontWeight = 'normal';
         
         this.texts[1].position.setTo(270,240);
-        this.texts[1].text = "Which one of these triangles are right-angled?"
+        this.texts[1].text = "Which one of these triangles is right-angled?"
         this.texts[1].lineSpacing = 30;
         this.texts[1].fontWeight = 'normal';
         
@@ -317,6 +317,15 @@ demo.state13.prototype = {
                 this.btnRadio3.loadTexture("btnradio",0);
                 break;
         }
+          if (this.btnRadio1.input.pointerOver()) {
+           this.btnRadio1.input.useHandCursor = true;
+       }
+        if (this.btnRadio2.input.pointerOver()) {
+           this.btnRadio2.input.useHandCursor = true;
+       }
+        if (this.btnRadio3.input.pointerOver()) {
+           this.btnRadio3.input.useHandCursor = true;
+       }
         console.log(this.a);
     },
 };
