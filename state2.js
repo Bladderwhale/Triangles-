@@ -89,7 +89,7 @@ demo.state2.prototype = {
         this.btnNext.scale.setTo(0.8,0.5);
         this.btnNext.visible = false;
         this.btnNext.events.onInputDown.add(function(){check =0;a =0; b=0; c=0;
-            game.state.start('state3');touchCheck = false;
+            game.state.start('state3');touchCheck = false;this.k=0
         },this)
         
         forIsoEquTriangle(this);
@@ -108,13 +108,13 @@ demo.state2.prototype = {
         this.texts[1].fontWeight = 'normal';
        
         this.texts[2].position.setTo(this.x2,this.y2);
-        this.texts[2].setText("3 cm");
+        this.texts[2].setText("3.0 cm");
         
-        this.texts[3].position.setTo(this.x3, this.y3);
-        this.texts[3].text = "3 cm";
+        this.texts[3].position.setTo(this.x3-25, this.y3);
+        this.texts[3].text = "3.0 cm";
         
         this.texts[4].position.setTo(this.x4, this.y4);
-        this.texts[4].text = "2 cm";
+        this.texts[4].text = "2.0 cm";
         this.texts[4].anchor.x = 0.5;
         
         this.texts[5].position.setTo(240,670);
@@ -229,8 +229,9 @@ demo.state2.prototype = {
         this.btnTryAgain.events.onInputDown.add(function(){this.boolTryAgain = false;this.k++;}, this); 
 
         tickTween = this.game.add.tween(this.tick1).to({alpha:1},1000,Phaser.Easing.Linear.None);
-        tickTween2 = this.game.add.tween(this.pinkbox).to({alpha:1},1500,Phaser.Easing.Linear.None);
-        tickTween3 = this.game.add.tween(this.isoAns1).to({alpha:1},1500,Phaser.Easing.Linear.None);
+        tickTween2 = this.game.add.tween(this.pinkbox11).to({alpha:1},1500,Phaser.Easing.Linear.None);
+        tickTween3 = this.game.add.tween(this.isoAns11).to({alpha:1},1500,Phaser.Easing.Linear.None);
+
         
     },
     update:function(){
@@ -253,10 +254,11 @@ demo.state2.prototype = {
             this.btnTryAgain.visible = true;
             this.txtTryAgain.alpha = 1;
             n = 4;
+                
             }
         }
         else if (this.boolTryAgain == false) {
-            
+             
             this.btnTryAgain.visible = false;
             this.txtTryAgain.alpha = 0;}
             
@@ -558,17 +560,12 @@ demo.state2.prototype = {
                 case 1:
                     this.btnRadio2.loadTexture('btnradio',0);
                     this.btnRadio3.loadTexture('btnradio',0);
+                     
+                        
                     if (a==1)
                     {
                         this.btnRadio1.loadTexture('btnradiochecked',0);
-                        linegraphics.beginFill(0x000000);
-                        linegraphics.lineStyle(7, '#FF3300', 1);
-                        linegraphics.moveTo(this.dot1.x,this.dot1.y);
-                        linegraphics.lineTo(this.dot3.x,this.dot3.y);
-                        linegraphics.moveTo(this.dot2.x,this.dot2.y);
-                        linegraphics.lineTo(this.dot3.x,this.dot3.y);
-                        linegraphics.endFill();
-                        
+                       
                     } 
                     else if (b==1)
                     {
@@ -590,6 +587,7 @@ demo.state2.prototype = {
                 case 3:
                     this.btnRadio1.loadTexture('btnradio',0);
                     this.btnRadio2.loadTexture('btnradio',0);   
+                    
                     if (a==1)
                     {
                         this.btnRadio1.loadTexture('btnradiochecked',0);
@@ -597,21 +595,17 @@ demo.state2.prototype = {
                     }
                     else if (b==1)
                     {
-                        this.btnRadio3.loadTexture('btnradiochecked',0);  
-                        linegraphics.beginFill(0x000000);
-                        linegraphics.lineStyle(7, '#FF3300', 1);
-                        linegraphics.moveTo(this.dot1.x,this.dot1.y);
-                        linegraphics.lineTo(this.dot3.x,this.dot3.y);
-                        linegraphics.moveTo(this.dot2.x,this.dot2.y);
-                        linegraphics.lineTo(this.dot3.x,this.dot3.y);
-                        linegraphics.endFill();
+                        this.btnRadio3.loadTexture('btnradiochecked',0); 
+                           
                         
                     }
+                    
                     break;
                 case 4:
                     this.btnRadio1.loadTexture('btnradio',0);
                     this.btnRadio2.loadTexture('btnradio',0);
                     this.btnRadio3.loadTexture('btnradio',0);
+                    
                 default: 
                     break;
             }
@@ -629,7 +623,7 @@ demo.state2.prototype = {
             this.isoAns1.alpha=1;
             
             linegraphics.beginFill(0x000000);
-            linegraphics.lineStyle(7, '#FF3300', 1);
+            linegraphics.lineStyle(3, 0xFFFF00, 1);
             linegraphics.moveTo(this.dot1.x,this.dot1.y);
             linegraphics.lineTo(this.dot3.x,this.dot3.y);
             linegraphics.moveTo(this.dot2.x,this.dot2.y);
@@ -645,7 +639,30 @@ demo.state2.prototype = {
         if (this.btnRadio3.input.pointerOver()) {
            this.btnRadio3.input.useHandCursor = true;
        }
+        
+        //extras
+        if (a ==1) {
+            linegraphics.beginFill(0x000000);
+                    linegraphics.lineStyle(3, 0xFFFF00, 1);
+                    linegraphics.moveTo(this.dot1.x,this.dot1.y);
+                    linegraphics.lineTo(this.dot3.x,this.dot3.y);
+                    linegraphics.moveTo(this.dot2.x,this.dot2.y);
+                    linegraphics.lineTo(this.dot3.x,this.dot3.y);
+                    linegraphics.endFill();
+        }
+          if (b ==1) {
+            linegraphics.beginFill(0x000000);
+                    linegraphics.lineStyle(3, 0xFFFF00, 1);
+                    linegraphics.moveTo(this.dot1.x,this.dot1.y);
+                    linegraphics.lineTo(this.dot3.x,this.dot3.y);
+                    linegraphics.moveTo(this.dot2.x,this.dot2.y);
+                    linegraphics.lineTo(this.dot3.x,this.dot3.y);
+                    linegraphics.endFill();
+        }
+        //end
         console.log("Is this true/false: " + activation2);
+        console.log("A: " + a + " B " + b + " C " + c);
+        console.log("What is the value of n: " + n);
     },
     render: function() {
      /*   game.debug.body(sprite1);

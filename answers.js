@@ -16,6 +16,21 @@ function isoscelesTriangleAns(state) {
     state.isoAns1.alpha = 0;
     state.pinkbox.alpha = 0;
     
+    state.pinkbox11 = game.add.graphics(0,0);
+    state.pinkbox11.beginFill(0xF2C2B5, 1);
+    state.pinkbox11.lineStyle(1, 0x000000,1);
+    state.pinkbox11.drawRect(840,723, 275, 80);
+    state.pinkbox11.alpha = 1;
+    state.isoAns11 = game.add.text(849,728, "An isosceles triangle \nhas two equal sides. ");
+   // state.isoAns1.addfontWeight = ('bold',0);
+    state.isoAns11.addFontWeight('normal',0);
+   // state.isoAns1.fontWeight = 'normal';
+    state.isoAns11.align = 'left';
+    state.pinkbox11.endFill();
+    state.isoAns11.alpha = 0;
+    state.pinkbox11.alpha = 0;
+    
+    
     state.pinkbox1b = game.add.graphics(0,0);
     state.pinkbox1b.beginFill(0xF2C2B5, 1);
     state.pinkbox1b.lineStyle(1, 0x000000,1);
