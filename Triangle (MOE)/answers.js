@@ -4,7 +4,7 @@ function isoscelesTriangleAns(state) {
     state.pinkbox = game.add.graphics(0,0);
     state.pinkbox.beginFill(0xF2C2B5, 1);
     state.pinkbox.lineStyle(1, 0x000000,1);
-    state.pinkbox.drawRect(840,723, 275, 140);
+    state.pinkbox.drawRect(840,723, 275, 120);
     state.pinkbox.alpha = 1;
     state.isoAns1 = game.add.text(849,728, "Correct. \nAn isosceles triangle \nhas two equal sides. ");
    // state.isoAns1.addfontWeight = ('bold',0);
@@ -19,9 +19,9 @@ function isoscelesTriangleAns(state) {
     state.pinkbox1b = game.add.graphics(0,0);
     state.pinkbox1b.beginFill(0xF2C2B5, 1);
     state.pinkbox1b.lineStyle(1, 0x000000,1);
-    state.pinkbox1b.drawRect(820,723, 320, 140);
+    state.pinkbox1b.drawRect(820,723, 230, 140);
     state.pinkbox1b.alpha = 1;
-    state.isoAns1b = game.add.text(820,728, "Correct. \nAn isosceles triangle \nalso has two equal angles. ");
+    state.isoAns1b = game.add.text(820,728, "Correct. \nAn isosceles triangle  \nalso has two equal angles. ");
    // state.isoAns1.addfontWeight = ('bold',0);
     state.isoAns1b.addFontWeight('bold',0);
     state.isoAns1b.addFontWeight('normal',8);
@@ -189,7 +189,7 @@ function isoscelesTriangleAns2(state) {
     state.pinkbox4.lineStyle(1, 0x000000,1);
     state.pinkbox4.drawRect(550,649,450,80);
     state.pinkbox4.alpha = 1;
-    state.isoAns4 = game.add.text(550,649, "Correct. They are isosceles triangles.\nEach triangle has two equal sides");
+    state.isoAns4 = game.add.text(550,649, "Correct. They are isosceles triangles. \nEach triangle has two equal sides");
     state.isoAns4.fontWeight = 'normal';
     state.isoAns4.align = 'left';
      state.isoAns4.addFontWeight('bold',0);
@@ -203,7 +203,7 @@ function isoscelesTriangleAns2(state) {
     state.pinkbox4a.lineStyle(1, 0x000000,1);
     state.pinkbox4a.drawRect(400,670,450,80);
     state.pinkbox4a.alpha = 1;
-    state.isoAns4a = game.add.text(400,670, "Correct. They are isosceles triangles.\nEach triangle has two equal sides");
+    state.isoAns4a = game.add.text(400,670, "Correct. They are isosceles triangles. \nEach triangle has two equal sides");
     state.isoAns4a.fontWeight = 'normal';
     state.isoAns4a.align = 'left';
      state.isoAns4a.addFontWeight('bold',0);

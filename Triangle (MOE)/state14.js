@@ -18,7 +18,7 @@ demo.state14.prototype = {
         addBtnRadio(this);
         addTickCross(this);
         rightangleAns(this);
-        
+        addLightImage();
 
         var firstTrianglePoints = [360, 325+250,350+150 ,325 ];
         var firstTriDraw = game.add.graphics(0,0);
@@ -107,7 +107,7 @@ demo.state14.prototype = {
         this.btnNext.visible = false;
         
 
-        for (var i = 0; i < 14; i++){
+        for (var i = 0; i < 13; i++){
             this.texts[i] = game.add.text(i*10,i*10, "1");
         }
         this.texts[0].position.setTo(210,140);

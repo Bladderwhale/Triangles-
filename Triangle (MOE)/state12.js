@@ -20,6 +20,7 @@ demo.state12.prototype = {rectLength:0,rectLength2:0, btnTryAgain: null, txtTryA
         addTickCross(this);
         forIsoEquTriangle(this);
         rightangleAns(this);
+       
         linegraphics = game.add.graphics(0,0);
         
       

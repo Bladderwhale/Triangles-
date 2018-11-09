@@ -18,7 +18,7 @@ demo.state3.prototype = {
         addBtnRadio(this);
         addTickCross(this);
         isoscelesTriangleAns2(this);
-
+        addLightImage();
         var firstTrianglePoints = [550, 550,400 ,350 ];
         var firstTriDraw = game.add.graphics(0,0);
         firstTriDraw.beginFill(0xe0ffff);
@@ -65,7 +65,7 @@ demo.state3.prototype = {
         this.btnNext.visible = false;
         
 
-        for (var i = 0; i < 14; i++){
+        for (var i = 0; i < 13; i++){
             this.texts[i] = game.add.text(i*10,i*10, "1");
         }
         this.texts[0].position.setTo(210,140);

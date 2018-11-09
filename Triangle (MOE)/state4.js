@@ -17,7 +17,7 @@ demo.state4.prototype = {
         addTickCross(this);
         addTexts(this);
         isoscelesTriangleAns2(this);
-        
+        addLightImage();
         this.btnPlay = game.add.button(0,0,"btn2");
         this.btnPlay.frame = 1;
         this.btnPlay.position.setTo(1140, 800);
@@ -29,7 +29,7 @@ demo.state4.prototype = {
         this.btnNext.position.setTo(1140, 800);
         this.btnNext.scale.setTo(0.8,0.5);
         this.btnNext.visible = false;
-        for (var i = 0; i < 14; i++){
+        for (var i = 0; i < 13; i++){
             this.texts[i] = game.add.text(i*10,i*10, "1");
         }
         this.texts[0].position.setTo(210,140);

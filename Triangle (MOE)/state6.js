@@ -19,7 +19,7 @@ demo.state6.prototype = {
         addTexts(this);
         newDot(this);
         isoscelesTriangleAns2(this);
-        
+        addLightImage();
         var arr1x = [373,159,425];
         var arr2y = [350,470,592];
         for (var i =0; i<arr1x.length; i++) {

@@ -64,6 +64,7 @@ demo.state1.prototype = {
         this.texts[1].position.y = game.world.centerY - height - 350;
         this.texts[1].anchor.setTo(0.5,0.5);
         this.texts[1].fontSize = 30;
+        this.texts[1].fontWeight = 'normal';
         
         this.texts[2].align = 'center';
         this.texts[2].position.x = game.world.centerX - 350;

@@ -28,6 +28,7 @@ demo.state2.prototype = {
         fixedGUI2();
         addBtnRadio(this);
         addTickCross(this);
+        
         this.cross1.position.setTo(310,722.5);
         this.cross1.anchor.setTo(0.15,0.15);
         this.cross1.alpha = 0;
@@ -113,7 +114,7 @@ demo.state2.prototype = {
         this.texts[3].text = "3 cm";
         
         this.texts[4].position.setTo(this.x4, this.y4);
-        this.texts[4].text = "5 cm";
+        this.texts[4].text = "2 cm";
         this.texts[4].anchor.x = 0.5;
         
         this.texts[5].position.setTo(240,670);
@@ -309,7 +310,7 @@ demo.state2.prototype = {
         graphics.destroy();
         graphics = game.add.graphics(0,0);;
         graphics.beginFill(0xACD9E2, 1);
-        graphics.lineStyle(5, '#FF3300', 1);
+        graphics.lineStyle(2, '#FF3300', 1);
         graphics.drawPolygon(polygon.points);
         graphics.endFill();
         if (this.fakeHandle3.input.isDragged == false) {
@@ -430,11 +431,11 @@ demo.state2.prototype = {
             this.dot3.x+=0.5;
             
             this.texts[2].position.setTo(this.dot3.x+60,this.dot3.y+50);
-            this.texts[2].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(2) + " cm");
+            this.texts[2].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(1) + " cm");
             this.texts[3].position.setTo(this.dot3.x-130, this.dot3.y+50);
-            this.texts[3].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(2) + " cm");
+            this.texts[3].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(1) + " cm");
             this.texts[4].position.setTo(this.dot3.x, this.y4);
-            this.texts[4].setText(((Math.round( this.line.length* 10 ) / 100)-19).toFixed(2) + " cm");
+            this.texts[4].setText(((Math.round( this.line.length* 10 ) / 100)-19).toFixed(1) + " cm");
             
             
          
@@ -511,11 +512,11 @@ demo.state2.prototype = {
             this.dot3.x-=0.5;
             
             this.texts[2].position.setTo(this.dot3.x+60,this.dot3.y+50);
-            this.texts[2].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(2) + " cm");
+            this.texts[2].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(1) + " cm");
             this.texts[3].position.setTo(this.dot3.x-130, this.dot3.y+50);
-            this.texts[3].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(2) + " cm");
+            this.texts[3].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(1) + " cm");
             this.texts[4].position.setTo(this.dot3.x, this.y4);
-            this.texts[4].setText(((Math.round( this.line.length* 10 ) / 100)-19).toFixed(2) + " cm");
+            this.texts[4].setText(((Math.round( this.line.length* 10 ) / 100)-19).toFixed(1) + " cm");
             
         }
         //Handle3 - pull left down

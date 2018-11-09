@@ -64,8 +64,12 @@ function loadAssets(){
     game.load.image('ans10', 'assets/ans10.png');
     game.load.image('hand', 'assets/hand.png');
     game.load.image('sp2', 'assets/speechbubble2.png');
+    game.load.image('lightbulb', 'assets/Lightbulb.png');
 };
-
+function addLightImage(){
+    var lightbulb = game.add.sprite(60,95,'lightbulb');
+    lightbulb.scale.setTo(0.2,0.2);
+}
 function addTexts(state){
     state.texts = [];
 };

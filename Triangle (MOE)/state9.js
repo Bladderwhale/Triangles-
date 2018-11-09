@@ -18,7 +18,7 @@ demo.state9.prototype = {
         addBtnRadio(this);
         addTickCross(this);
         equilateralTrianglesAns(this);
-        
+        addLightImage();
         this.btnPlay = game.add.button(0,0,"btn2");
         this.btnPlay.frame = 1;
         this.btnPlay.position.setTo(1140, 800);
@@ -33,7 +33,7 @@ demo.state9.prototype = {
         
         addTexts(this);
 
-        for (var i = 0; i < 14; i++){
+        for (var i = 0; i < 13; i++){
             this.texts[i] = game.add.text(i*10,i*10, "1");
         }
         this.texts[0].position.setTo(210,140);

@@ -16,6 +16,7 @@ demo.state8.prototype = {  btnPlay: null, btnNext: null, a: 0, b:0, c:0, ans1:nu
         this.headingTexts.text = "Equilateral Triangles";
         addTexts(this);
         equilateralTrianglesAns(this);
+        addLightImage();
         this.btnPlay = game.add.button(0,0,"btn2");
         this.btnPlay.frame = 1;
         this.btnPlay.position.setTo(1140, 750);
