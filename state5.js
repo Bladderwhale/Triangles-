@@ -7,7 +7,7 @@ demo.state5.prototype = {
     x2: 800, y2: 385, x3: 650, y3: 385, x4:750,y4:515, btnPlay: null, btnStart: null, btnNext: null, n:0, ans1:null, top:null,left:null,right:null,down:null,btnTryAgain: null, txtTryAgain: null, boolTryAgain: false,k: 0,
     preload:function(){
         loadAssets();
-         game.stage.backgroundColor = '#000000';
+        game.stage.backgroundColor = '#000000';
     },
     create:function(){
         game.stage.backgroundColor = '#ffffff';
@@ -17,7 +17,7 @@ demo.state5.prototype = {
         addTexts(this);
         fixedGUI(this);
         this.headingTexts.text = "Isosceles Triangles";
-        fixedGUI4(this);
+        fixedGUI4i(this);
         addTickCross(this);
         forIsoEquTriangle(this);
         isoscelesTriangleAns(this);
@@ -87,7 +87,7 @@ demo.state5.prototype = {
         
         this.btnStart.events.onInputDown.add(function(){
             if (n==1){this.boolTryAgain = true;this.cross1.alpha = 1; this.texts[2].setStyle({backgroundColor: 'rgba(255, 255, 0,1)'});this.texts[3].setStyle({backgroundColor: 'rgba(255, 255, 0,1)'});this.texts[11].setStyle({backgroundColor: 'rgba(255,255,0,1)'}); this.texts[12].setStyle({backgroundColor: 'rgba(255,255,0,1)'}); this.btnStart.frame = 1; a+=1;}
-            if (n==2){this.tick1.alpha = 1; c+=1;}
+            if (n==2){this.tick1.alpha = 1; c+=1;this.texts[2].setStyle({backgroundColor: 'rgba(255, 255, 0,1)'});this.texts[3].setStyle({backgroundColor: 'rgba(255, 255, 0,1)'});this.texts[11].setStyle({backgroundColor: 'rgba(255,255,0,1)'}); this.texts[12].setStyle({backgroundColor: 'rgba(255,255,0,1)'});}
             if (n==3){this.boolTryAgain = true;this.cross2.alpha = 1; this.texts[2].setStyle({backgroundColor: 'rgba(255, 255, 0,1)'});this.texts[3].setStyle({backgroundColor: 'rgba(255, 255, 0)'});this.texts[11].setStyle({backgroundColor: 'rgba(255,255,0,1)'}); this.texts[12].setStyle({backgroundColor: 'rgba(255,255,0,1)'}); this.btnStart.frame = 1; b+=1;}
         }
                                              ,this);
@@ -103,7 +103,8 @@ demo.state5.prototype = {
             touchCheck = false;
         },this)
         
-        
+        this.txtHeading = game.add.text(140,60,"There is another property for an isosceles triangle.");
+        this.txtHeading.fontWeight = 'normal';
         for (var i = 0; i < 14; i++){
             this.texts[i] = game.add.text(i*100,i*100, "6");
         }
@@ -112,24 +113,29 @@ demo.state5.prototype = {
         this.texts[0].setStyle({ fill: '#008000'});
         dotAttributes(this);
         
+        drawGraphicsLength = 100;
+         boxTryAgainRotation(this);
+        this.texts[0].addChild(this.drawGraphics);
+        
+        
         this.texts[1].text = "Drag the red point to change the height of the triangle.\nObserve how the length of the sides and the angles change.";
         this.texts[1].position.setTo(300, 125);
         this.texts[1].align = 'left';
         this.texts[1].fontWeight = 'normal';
         
        
-        this.texts[2].position.setTo(this.x2+35,this.y2);
-        this.texts[2].setText("3 cm");
+        this.texts[2].position.setTo(this.x2+50,this.y2);
+        this.texts[2].setText("3.0 m");
         
-        this.texts[3].position.setTo(this.x3-35, this.y3);
-        this.texts[3].text = "3 cm";
+        this.texts[3].position.setTo(this.x3-90, this.y3);
+        this.texts[3].text = "3.0 m";
         
         this.texts[4].position.setTo(this.x4, this.y4);
-        this.texts[4].text = "5 cm";
+        this.texts[4].text = "5.0 m";
         this.texts[4].anchor.x = 0.5;
         
         this.texts[5].position.setTo(240,640);
-        this.texts[5].text = "No matter how the size of the isosceles triangle changes \n two sides are always equal and _________________."
+        this.texts[5].text = "No matter how the size of the isosceles triangle changes \ntwo sides are always equal and _________________."
         this.texts[5].alpha = 0;
         this.texts[5].align = 'left';
         this.texts[5].fontWeight = 'normal';
@@ -234,8 +240,8 @@ demo.state5.prototype = {
         this.btnTryAgain.events.onInputDown.add(function(){this.boolTryAgain = false;this.k++;}, this); 
         
         tickTween = this.game.add.tween(this.tick1).to({alpha:1},1000,Phaser.Easing.Linear.None);
-         tickTween2 = this.game.add.tween(this.pinkbox1b).to({alpha:1},1000,Phaser.Easing.Linear.None);
-         tickTween3 = this.game.add.tween(this.isoAns1b).to({alpha:1},1000,Phaser.Easing.Linear.None);
+         tickTween2 = this.game.add.tween(this.pinkbox1bi).to({alpha:1},1000,Phaser.Easing.Linear.None);
+         tickTween3 = this.game.add.tween(this.isoAns1bi).to({alpha:1},1000,Phaser.Easing.Linear.None);
        
     },
     update:function(){
@@ -293,13 +299,7 @@ demo.state5.prototype = {
             this.btnNext.visible = true;
             
             
-            linegraphics.beginFill(0x000000);
-            linegraphics.lineStyle(7, '#FF3300', 1);
-            linegraphics.moveTo(this.dot1.x,this.dot1.y);
-            linegraphics.lineTo(this.dot3.x,this.dot3.y);
-            linegraphics.moveTo(this.dot2.x,this.dot2.y);
-            linegraphics.lineTo(this.dot3.x,this.dot3.y);
-            linegraphics.endFill();}
+         }
         
         console.log("X: " + this.dot.x + "Y: "+ this.dot.y);
         console.log(this.dot2.x - this.dot1.x);
@@ -307,7 +307,7 @@ demo.state5.prototype = {
         graphics.destroy();
         graphics = game.add.graphics(0,0);;
         graphics.beginFill(0xACD9E2, 0.3);
-        graphics.lineStyle(5, '#FF3300', 1);
+        graphics.lineStyle(2, '#FF3300', 1);
         graphics.drawPolygon(polygon.points);
         graphics.endFill();
         if (this.fakeHandle3.input.isDragged == false) {
@@ -437,11 +437,11 @@ demo.state5.prototype = {
           
             
             this.texts[2].position.setTo(this.dot3.x+80,this.dot3.y+50);
-            this.texts[2].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(1) + " cm");
+            this.texts[2].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(1) + " m");
             this.texts[3].position.setTo(this.dot3.x-150, this.dot3.y+50);
-            this.texts[3].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(1) + " cm");
+            this.texts[3].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(1) + " m");
             this.texts[4].position.setTo(this.dot3.x, this.y4);
-            this.texts[4].setText(((Math.round( this.line.length* 10 ) / 100)-15).toFixed(1) + " cm");
+            this.texts[4].setText(((Math.round( this.line.length* 10 ) / 100)-15).toFixed(1) + " m");
             
             this.texts[13].position.setTo(this.dot3.x-15, this.dot3.y+70);
             
@@ -458,11 +458,11 @@ demo.state5.prototype = {
           
             
             this.texts[2].position.setTo(this.dot3.x+80,this.dot3.y+50);
-            this.texts[2].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(1) + " cm");
+            this.texts[2].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(1) + " m");
             this.texts[3].position.setTo(this.dot3.x-150, this.dot3.y+50);
-            this.texts[3].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(1) + " cm");
+            this.texts[3].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(1) + " m");
             this.texts[4].position.setTo(this.dot3.x, this.y4);
-            this.texts[4].setText(((Math.round( this.line.length* 10 ) / 100)-15).toFixed(1) + " cm");
+            this.texts[4].setText(((Math.round( this.line.length* 10 ) / 100)-15).toFixed(1) + " m");
             
             this.texts[13].position.setTo(this.dot3.x-15, this.dot3.y+70);
             this.texts[13].text = finaldegrees.toFixed(0) + "\xB0";
@@ -530,14 +530,7 @@ demo.state5.prototype = {
                     this.btnRadio3.loadTexture('btnradio',0);
                     if (a==1)
                     {
-                        this.btnRadio1.loadTexture('btnradiochecked',0);
-                        linegraphics.beginFill(0x000000);
-                        linegraphics.lineStyle(7, '#FF3300', 1);
-                        linegraphics.moveTo(this.dot1.x,this.dot1.y);
-                        linegraphics.lineTo(this.dot3.x,this.dot3.y);
-                        linegraphics.moveTo(this.dot2.x,this.dot2.y);
-                        linegraphics.lineTo(this.dot3.x,this.dot3.y);
-                        linegraphics.endFill();
+                       
                         
                     } 
                     else if (b==1)
@@ -568,14 +561,7 @@ demo.state5.prototype = {
                     }
                     else if (b==1)
                     {
-                        this.btnRadio3.loadTexture('btnradiochecked',0);  
-                        linegraphics.beginFill(0x000000);
-                        linegraphics.lineStyle(7, '#FF3300', 1);
-                        linegraphics.moveTo(this.dot1.x,this.dot1.y);
-                        linegraphics.lineTo(this.dot3.x,this.dot3.y);
-                        linegraphics.moveTo(this.dot2.x,this.dot2.y);
-                        linegraphics.lineTo(this.dot3.x,this.dot3.y);
-                        linegraphics.endFill();
+                        
                         
                     }
                     break;
@@ -599,13 +585,7 @@ demo.state5.prototype = {
             this.isoAns1b.alpha = 1;
 
             
-            linegraphics.beginFill(0x000000);
-            linegraphics.lineStyle(7, '#FF3300', 1);
-            linegraphics.moveTo(this.dot1.x,this.dot1.y);
-            linegraphics.lineTo(this.dot3.x,this.dot3.y);
-            linegraphics.moveTo(this.dot2.x,this.dot2.y);
-            linegraphics.lineTo(this.dot3.x,this.dot3.y);
-            linegraphics.endFill();
+         
         }
           if (this.btnRadio1.input.pointerOver()) {
            this.btnRadio1.input.useHandCursor = true;

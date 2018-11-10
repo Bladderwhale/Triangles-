@@ -11,7 +11,7 @@ demo.state6.prototype = {
         addChangeStateEventListers(); 
         fixedGUI(this);
         this.headingTexts.text = "Isosceles Triangle"
-        fixedGUI3(this);
+        fixedGUI3i(this);
         dotAttributes(this);
         addBtnRadio(this)
         addTickCross(this);
@@ -19,7 +19,7 @@ demo.state6.prototype = {
         addTexts(this);
         newDot(this);
         isoscelesTriangleAns2(this);
-        addLightImage();
+        addLightImage1i();
         var arr1x = [373,159,425];
         var arr2y = [350,470,592];
         for (var i =0; i<arr1x.length; i++) {
@@ -189,9 +189,9 @@ demo.state6.prototype = {
         for (var i = 0; i < 13; i++){
             this.texts[i] = game.add.text(i*10,i*10, "1");
         }
-        this.texts[0].position.setTo(210,140);
-        this.texts[0].text = "If a triangle has two equal angles, it is an isosceles triangle."
-        this.texts[0].lineSpacing = 30;
+        this.texts[0].position.setTo(340,120);
+        this.texts[0].text = "If a triangle has two equal sides or two equal angles,\nit is an isosceles triangle."
+        
         this.texts[0].fontWeight = 'normal';
         
         this.texts[1].position.setTo(270,240);
@@ -205,13 +205,17 @@ demo.state6.prototype = {
         this.texts[2].angle = -10;
         this.texts[2].setStyle({ fill: "#008000"});
         
+        drawGraphicsLength = 130;
+         boxTryAgainRotation(this);
+        this.texts[2].addChild(this.drawGraphics);
+        
         this.texts[3].position.setTo(325, 409);
         this.texts[3].text = "50\xB0";
         
         this.texts[4].position.setTo(230, 451);
         this.texts[4].text = "50\xB0";
         
-        this.texts[5].position.setTo(351, 498);
+        this.texts[5].position.setTo(351, 520);
         this.texts[5].text = "80\xB0";
         
         this.texts[6].position.setTo(825, 455);
@@ -308,11 +312,11 @@ demo.state6.prototype = {
        tickTween = this.game.add.tween(this.tick2).to({alpha:1},1000,Phaser.Easing.Linear.None);
          tickTween2 = this.game.add.tween(this.tick1).to({alpha:1},1000,Phaser.Easing.Linear.None);
         
-        tickTween3 = this.game.add.tween(this.pinkbox2d).to({alpha:1},1000,Phaser.Easing.Linear.None);
-         tickTween4 = this.game.add.tween(this.isoAns2d).to({alpha:1},1000,Phaser.Easing.Linear.None);
+        tickTween3 = this.game.add.tween(this.pinkbox2di).to({alpha:1},1000,Phaser.Easing.Linear.None);
+         tickTween4 = this.game.add.tween(this.isoAns2di).to({alpha:1},1000,Phaser.Easing.Linear.None);
         
-          tickTween5 = this.game.add.tween(this.pinkbox2dd).to({alpha:1},1000,Phaser.Easing.Linear.None);
-         tickTween6 = this.game.add.tween(this.isoAns2dd).to({alpha:1},1000,Phaser.Easing.Linear.None);
+          tickTween5 = this.game.add.tween(this.pinkbox2ddi).to({alpha:1},1000,Phaser.Easing.Linear.None);
+         tickTween6 = this.game.add.tween(this.isoAns2ddi).to({alpha:1},1000,Phaser.Easing.Linear.None);
         tickTween7 = this.game.add.tween(this.pinkbox2ddd).to({alpha:1},1000,Phaser.Easing.Linear.None);
          tickTween8 = this.game.add.tween(this.isoAns2ddd).to({alpha:1},1000,Phaser.Easing.Linear.None);
         

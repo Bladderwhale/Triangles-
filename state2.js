@@ -28,6 +28,7 @@ demo.state2.prototype = {
         fixedGUI2();
         addBtnRadio(this);
         addTickCross(this);
+        boxTryAgain();
         
         this.cross1.position.setTo(310,722.5);
         this.cross1.anchor.setTo(0.15,0.15);

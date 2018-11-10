@@ -11,13 +11,13 @@ demo.state4.prototype = {
         addChangeStateEventListers();
         fixedGUI(this);
         this.headingTexts.text = "Isosceles Triangle"
-        fixedGUI3(this);
+        fixedGUI3i(this);
         dotAttributes(this);
         addBtnRadio(this);
         addTickCross(this);
         addTexts(this);
         isoscelesTriangleAns2(this);
-        addLightImage();
+        addLightImage1i();
         this.btnPlay = game.add.button(0,0,"btn2");
         this.btnPlay.frame = 1;
         this.btnPlay.position.setTo(1140, 800);
@@ -32,7 +32,7 @@ demo.state4.prototype = {
         for (var i = 0; i < 13; i++){
             this.texts[i] = game.add.text(i*10,i*10, "1");
         }
-        this.texts[0].position.setTo(210,140);
+        this.texts[0].position.setTo(325,140);
         this.texts[0].text = "If a triangle has two equal sides, it is an isosceles triangle."
         this.texts[0].lineSpacing = 30;
         this.texts[0].fontWeight = 'normal';
@@ -48,11 +48,14 @@ demo.state4.prototype = {
         this.texts[2].angle = -10;
         this.texts[2].setStyle({fill: "#008000"});
         
-        var firstTrianglePoints = [400,550,550,350];
+        boxTryAgainRotation(this);
+        this.texts[2].addChild(this.drawGraphics);
+        
+        var firstTrianglePoints = [400-50,550,550-50,350];
         var firstTriangleDraw = game.add.graphics(0,0); 
         firstTriangleDraw.beginFill(0x003366);
         firstTriangleDraw.lineStyle(2, 0x000000,1);
-        firstTriangleDraw.moveTo(250,350);
+        firstTriangleDraw.moveTo(250-50,350);
         for (var i =0; i<firstTrianglePoints.length; i++){
             firstTriangleDraw.lineTo(firstTrianglePoints[i], firstTrianglePoints[i+1]);
             i++
@@ -70,53 +73,53 @@ demo.state4.prototype = {
         }
         secondTriangleDraw.endFill();
         
-        var thirdTrianglePoints = [1042,500,1350,400];
+        var thirdTrianglePoints = [1042+50,500,1350+50,400];
         var thirdTriangleDraw = game.add.graphics(0,0); 
         thirdTriangleDraw.beginFill(0xFF6A6A);
         thirdTriangleDraw.lineStyle(2, 0x000000,1);
-        thirdTriangleDraw.moveTo(1050,350);
+        thirdTriangleDraw.moveTo(1050+50,350);
         for (var i =0; i<firstTrianglePoints.length; i++){
             thirdTriangleDraw.lineTo(thirdTrianglePoints[i], thirdTrianglePoints[i+1]);
             i++
         }
         thirdTriangleDraw.endFill();
         
-        this.texts[3].position.setTo(200, 425);
-        this.texts[3].text = "8.7 cm";
+        this.texts[3].position.setTo(200-50, 425);
+        this.texts[3].text = "8.7 m";
         
-        this.texts[4].position.setTo(500, 425);
-        this.texts[4].text = "8.7 cm";
+        this.texts[4].position.setTo(500-50, 425);
+        this.texts[4].text = "8.7 m";
         
-        this.texts[5].position.setTo(355, 310);
-        this.texts[5].text = "9.8 cm";
+        this.texts[5].position.setTo(355-50, 310);
+        this.texts[5].text = "9.8 m";
         
         this.texts[6].position.setTo(716, 506);
-        this.texts[6].text = "7 cm";
+        this.texts[6].text = "7 m";
         
         this.texts[7].position.setTo(880, 440);
-        this.texts[7].text = "7 cm";
+        this.texts[7].text = "7 m";
         
         this.texts[8].position.setTo(680, 370);
-        this.texts[8].text = "4 cm";
+        this.texts[8].text = "4 m";
         
-        this.texts[9].position.setTo(950,390);
-        this.texts[9].text = "3.4 cm";
+        this.texts[9].position.setTo(950+50,400);
+        this.texts[9].text = "3.4 m";
         
-        this.texts[10].position.setTo(1125,325);
-        this.texts[10].text = "6.0 cm";
+        this.texts[10].position.setTo(1125+50,325);
+        this.texts[10].text = "6.0 m";
         
-        this.texts[11].position.setTo(1135,475);
-        this.texts[11].text = "7.4 cm";
+        this.texts[11].position.setTo(1135+50,475);
+        this.texts[11].text = "7.4 m";
         
         this.texts[12].position.setTo(1175, 805);
         this.texts[12].text = "Check";
         this.texts[12].alpha = 0.3;
         
-         this.btnRadio1.position.setTo(378,610);
+         this.btnRadio1.position.setTo(378-40,610);
         this.btnRadio2.position.setTo(800,610);
         this.btnRadio3.position.setTo(1175,610);
         
-        this.tick1.position.setTo(378,610);
+        this.tick1.position.setTo(378-40,610);
         this.tick1.anchor.setTo(0.25,0.25);
         this.tick1.alpha = 0;
         
@@ -177,10 +180,10 @@ demo.state4.prototype = {
         
          tickTween = this.game.add.tween(this.tick2).to({alpha:1},1000,Phaser.Easing.Linear.None);
          tickTween2 = this.game.add.tween(this.tick1).to({alpha:1},1000,Phaser.Easing.Linear.None);
-        tickTween3 = this.game.add.tween(this.pinkbox2b).to({alpha:1},1000,Phaser.Easing.Linear.None);
-         tickTween4 = this.game.add.tween(this.isoAns2b).to({alpha:1},1000,Phaser.Easing.Linear.None);
-        tickTween5 = this.game.add.tween(this.pinkbox2bb).to({alpha:1},1000,Phaser.Easing.Linear.None);
-         tickTween6 = this.game.add.tween(this.isoAns2bb).to({alpha:1},1000,Phaser.Easing.Linear.None);
+        tickTween3 = this.game.add.tween(this.pinkbox2bi).to({alpha:1},1000,Phaser.Easing.Linear.None);
+         tickTween4 = this.game.add.tween(this.isoAns2bi).to({alpha:1},1000,Phaser.Easing.Linear.None);
+        tickTween5 = this.game.add.tween(this.pinkbox2bbi).to({alpha:1},1000,Phaser.Easing.Linear.None);
+         tickTween6 = this.game.add.tween(this.isoAns2bbi).to({alpha:1},1000,Phaser.Easing.Linear.None);
          
     
     },

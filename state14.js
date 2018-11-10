@@ -111,7 +111,7 @@ demo.state14.prototype = {
             this.texts[i] = game.add.text(i*10,i*10, "1");
         }
         this.texts[0].position.setTo(210,140);
-        this.texts[0].text = "If a triangle has a 90\xB0, it is a right-angled triangle."
+        this.texts[0].text = "If a triangle has a 90\xB0 angle, it is a right-angled triangle."
         this.texts[0].lineSpacing = 30;
         this.texts[0].fontWeight = 'normal';
         

@@ -1,3 +1,5 @@
+var drawGraphicsLength = 120;
+
 function addChangeStateEventListers() { 
     //Global Function (All scripts can access to it)
     addKeyCallback(Phaser.Keyboard.ZERO, changeState, 0); 
@@ -70,6 +72,10 @@ function addLightImage(){
     var lightbulb = game.add.sprite(60,95,'lightbulb');
     lightbulb.scale.setTo(0.2,0.2);
 }
+function addLightImage1i(){
+    var lightbulb = game.add.sprite(150,95,'lightbulb');
+    lightbulb.scale.setTo(0.2,0.2);
+}
 function addTexts(state){
     state.texts = [];
 };
@@ -111,15 +117,24 @@ function fixedGUI2() {
     roundedrectangle.drawRoundedRect(50, 90, 1400, 550);
 };
 
+
+
 function fixedGUI3() {
     game.stage.backgroundColor = '#ffffff';
-    var bar = game.add.graphics(0,0);3
+    var bar = game.add.graphics(0,0);
     bar.beginFill(0x98FB98, 0.2);
     bar.lineStyle(2, 0x98FB98, 1);
     bar.drawRect(50, 90, 1200, 125);
     bar.endFill();
 }
-
+function fixedGUI3i() {
+    game.stage.backgroundColor = '#ffffff';
+    var bar = game.add.graphics(0,0);
+    bar.beginFill(0x98FB98, 0.2);
+    bar.lineStyle(2, 0x98FB98, 1);
+    bar.drawRect(140, 90, 900, 125);
+    bar.endFill();
+}
 function fixedGUI3state11() {
     game.stage.backgroundColor = '#ffffff';
     var bar = game.add.graphics(0,0);3
@@ -133,6 +148,13 @@ function fixedGUI4(state) {
     state.roundedrectangle.beginFill(0xffffff,1);
     state.roundedrectangle.lineStyle(2,0x000000, 1);
     state.roundedrectangle.drawRoundedRect(50, 80, 1400, 540);
+}
+
+function fixedGUI4i(state) {
+    state.roundedrectangle = game.add.graphics(0,0);
+    state.roundedrectangle.beginFill(0xffffff,1);
+    state.roundedrectangle.lineStyle(2,0x000000, 1);
+    state.roundedrectangle.drawRoundedRect(50, 110, 1400, 510);
 }
 
 function forIsoEquTriangle(state) {
@@ -263,4 +285,20 @@ function forState12(valueA, valueB, valueC) {
     
 }
 
+function boxTryAgain () {
+  var drawGraphics = game.add.graphics(0,0);
+    drawGraphics.lineStyle(1,0X000000,1);
+    drawGraphics.drawRect(130,140,120,30);
+    drawGraphics.endFill();
+    
+};
+
+function boxTryAgainRotation (state) {
+    state.drawGraphics = game.add.graphics(0,0);
+    state.drawGraphics.lineStyle(1,0X000000,1);
+    state.drawGraphics.drawRect(0,0,drawGraphicsLength,30);
+   
+    state.drawGraphics.endFill();
+    
+};
 

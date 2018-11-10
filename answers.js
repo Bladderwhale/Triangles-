@@ -19,9 +19,9 @@ function isoscelesTriangleAns(state) {
     state.pinkbox11 = game.add.graphics(0,0);
     state.pinkbox11.beginFill(0xF2C2B5, 1);
     state.pinkbox11.lineStyle(1, 0x000000,1);
-    state.pinkbox11.drawRect(840,723, 275, 80);
+    state.pinkbox11.drawRect(840,738, 275, 80);
     state.pinkbox11.alpha = 1;
-    state.isoAns11 = game.add.text(849,728, "An isosceles triangle \nhas two equal sides. ");
+    state.isoAns11 = game.add.text(849,743, "An isosceles triangle \nhas two equal sides. ");
    // state.isoAns1.addfontWeight = ('bold',0);
     state.isoAns11.addFontWeight('normal',0);
    // state.isoAns1.fontWeight = 'normal';
@@ -34,9 +34,9 @@ function isoscelesTriangleAns(state) {
     state.pinkbox1b = game.add.graphics(0,0);
     state.pinkbox1b.beginFill(0xF2C2B5, 1);
     state.pinkbox1b.lineStyle(1, 0x000000,1);
-    state.pinkbox1b.drawRect(820,723, 230, 140);
+    state.pinkbox1b.drawRect(810,723, 325, 120);
     state.pinkbox1b.alpha = 1;
-    state.isoAns1b = game.add.text(820,728, "Correct. \nAn isosceles triangle  \nalso has two equal angles. ");
+    state.isoAns1b = game.add.text(815,731, "Correct. \nAn isosceles triangle  \nalso has two equal angles. ");
    // state.isoAns1.addfontWeight = ('bold',0);
     state.isoAns1b.addFontWeight('bold',0);
     state.isoAns1b.addFontWeight('normal',8);
@@ -46,6 +46,20 @@ function isoscelesTriangleAns(state) {
     state.isoAns1b.alpha = 0;
     state.pinkbox1b.alpha = 0;
     
+    state.pinkbox1bi = game.add.graphics(0,0);
+    state.pinkbox1bi.beginFill(0xF2C2B5, 1);
+    state.pinkbox1bi.lineStyle(1, 0x000000,1);
+    state.pinkbox1bi.drawRect(810,735, 325, 80);
+    state.pinkbox1bi.alpha = 1;
+    state.isoAns1bi = game.add.text(815,738, "An isosceles triangle  \nalso has two equal angles. ");
+   // state.isoAns1.addfontWeight = ('bold',0);
+    state.isoAns1bi.addFontWeight('normal',0);
+   // state.isoAns1.fontWeight = 'normal';
+    state.isoAns1bi.align = 'left';
+    state.pinkbox1bi.endFill();
+    state.isoAns1bi.alpha = 0;
+    state.pinkbox1bi.alpha = 0;
+    
 
 };
 
@@ -53,9 +67,9 @@ function isoscelesTriangleAns2(state) {
     state.pinkbox2 = game.add.graphics(0,0);
     state.pinkbox2.beginFill(0xF2C2B5, 1);
     state.pinkbox2.lineStyle(1, 0x000000,1);
-    state.pinkbox2.drawRect(150,649, 380,80);
+    state.pinkbox2.drawRect(150,649, 390,80);
     state.pinkbox2.alpha = 1;
-    state.isoAns2 = game.add.text(150,649, "Correct. This is an isosceles\ntriangle. It has two equal sides. ");
+    state.isoAns2 = game.add.text(155,653, "Correct. This is an isosceles\ntriangle. It has two equal sides. ");
     state.isoAns2.fontWeight = 'normal';
     state.isoAns2.align = 'left';
     state.isoAns2.addFontWeight('bold',0);
@@ -64,12 +78,25 @@ function isoscelesTriangleAns2(state) {
     state.isoAns2.alpha = 0;
     state.pinkbox2.alpha = 0;
     
+    state.pinkbox2i = game.add.graphics(0,0);
+    state.pinkbox2i.beginFill(0xF2C2B5, 1);
+    state.pinkbox2i.lineStyle(1, 0x000000,1);
+    state.pinkbox2i.drawRect(180,649, 350,80);
+    state.pinkbox2i.alpha = 1;
+    state.isoAns2i = game.add.text(185,653, "This is an isosceles triangle.\nIt has two equal sides. ");
+    state.isoAns2i.fontWeight = 'normal';
+    state.isoAns2i.align = 'left';
+    state.isoAns2i.addFontWeight('normal',0);
+    state.pinkbox2i.endFill();
+    state.isoAns2i.alpha = 0;
+    state.pinkbox2i.alpha = 0;
+    
     state.pinkbox2a = game.add.graphics(0,0);
     state.pinkbox2a.beginFill(0xF2C2B5, 1);
     state.pinkbox2a.lineStyle(1, 0x000000,1);
-    state.pinkbox2a.drawRect(960,649, 380,80);
+    state.pinkbox2a.drawRect(960,649, 390,80);
     state.pinkbox2a.alpha = 1;
-    state.isoAns2a = game.add.text(960,649, "Correct. This is an isosceles\ntriangle. It has two equal sides. ");
+    state.isoAns2a = game.add.text(965,653, "Correct. This is an isosceles\ntriangle. It has two equal sides. ");
     state.isoAns2a.fontWeight = 'normal';
     state.isoAns2a.align = 'left';
     state.isoAns2a.addFontWeight('bold',0);
@@ -78,13 +105,27 @@ function isoscelesTriangleAns2(state) {
     state.isoAns2a.alpha = 0;
     state.pinkbox2a.alpha = 0;
     
+    state.pinkbox2ai = game.add.graphics(0,0);
+    state.pinkbox2ai.beginFill(0xF2C2B5, 1);
+    state.pinkbox2ai.lineStyle(1, 0x000000,1);
+    state.pinkbox2ai.drawRect(960,649, 350,80);
+    state.pinkbox2ai.alpha = 1;
+    state.isoAns2ai = game.add.text(965,653, "This is an isosceles triangle.\nIt has two equal sides. ");
+    state.isoAns2ai.fontWeight = 'normal';
+    state.isoAns2ai.align = 'left';
+   // state.isoAns2ai.addFontWeight('bold',0);
+    state.isoAns2ai.addFontWeight('normal',0);
+    state.pinkbox2ai.endFill();
+    state.isoAns2ai.alpha = 0;
+    state.pinkbox2ai.alpha = 0;
+    
     //slide 9 and state 4
     state.pinkbox2b = game.add.graphics(0,0);
     state.pinkbox2b.beginFill(0xF2C2B5, 1);
     state.pinkbox2b.lineStyle(1, 0x000000,1);
-    state.pinkbox2b.drawRect(600,670, 380,80);
+    state.pinkbox2b.drawRect(592,670, 395,80);
     state.pinkbox2b.alpha = 1;
-    state.isoAns2b = game.add.text(600,670, "Correct. This is an isosceles\ntriangle. It has two equal sides. ");
+    state.isoAns2b = game.add.text(597,673, "Correct. This is an isosceles\ntriangle. It has two equal sides. ");
     state.isoAns2b.fontWeight = 'normal';
     state.isoAns2b.align = 'left';
     state.isoAns2b.addFontWeight('bold',0);
@@ -93,13 +134,26 @@ function isoscelesTriangleAns2(state) {
     state.isoAns2b.alpha = 0;
     state.pinkbox2b.alpha = 0;
     
+    state.pinkbox2bi = game.add.graphics(0,0);
+    state.pinkbox2bi.beginFill(0xF2C2B5, 1);
+    state.pinkbox2bi.lineStyle(1, 0x000000,1);
+    state.pinkbox2bi.drawRect(615,670, 350,80);
+    state.pinkbox2bi.alpha = 1;
+    state.isoAns2bi = game.add.text(620,673,"This is an isosceles triangle.\nIt has two equal sides. ");
+    state.isoAns2bi.fontWeight = 'normal';
+    state.isoAns2bi.align = 'left';
+    state.isoAns2bi.addFontWeight('normal',0);
+    state.pinkbox2bi.endFill();
+    state.isoAns2bi.alpha = 0;
+    state.pinkbox2bi.alpha = 0;
+    
     //slide 9 and state 4
     state.pinkbox2bb = game.add.graphics(0,0);
     state.pinkbox2bb.beginFill(0xF2C2B5, 1);
     state.pinkbox2bb.lineStyle(1, 0x000000,1);
     state.pinkbox2bb.drawRect(200,670, 380,80);
     state.pinkbox2bb.alpha = 1;
-    state.isoAns2bb = game.add.text(200,670, "Correct. This is an isosceles\ntriangle. It has two equal sides. ");
+    state.isoAns2bb = game.add.text(205,673, "Correct. This is an isosceles\ntriangle. It has two equal sides. ");
     state.isoAns2bb.fontWeight = 'normal';
     state.isoAns2bb.align = 'left';
     state.isoAns2bb.addFontWeight('bold',0);
@@ -108,13 +162,26 @@ function isoscelesTriangleAns2(state) {
     state.isoAns2bb.alpha = 0;
     state.pinkbox2bb.alpha = 0;
     
+    state.pinkbox2bbi = game.add.graphics(0,0);
+    state.pinkbox2bbi.beginFill(0xF2C2B5, 1);
+    state.pinkbox2bbi.lineStyle(1, 0x000000,1);
+    state.pinkbox2bbi.drawRect(220,670, 350,80);
+    state.pinkbox2bbi.alpha = 1;
+    state.isoAns2bbi = game.add.text(225,673, "This is an isosceles triangle.\nIt has two equal sides.");
+    state.isoAns2bbi.fontWeight = 'normal';
+    state.isoAns2bbi.align = 'left';
+    state.isoAns2bbi.addFontWeight('normal',0);
+    state.pinkbox2bbi.endFill();
+    state.isoAns2bbi.alpha = 0;
+    state.pinkbox2bbi.alpha = 0;
+    
     //state 6
     state.pinkbox2d = game.add.graphics(0,0);
     state.pinkbox2d.beginFill(0xF2C2B5, 1);
     state.pinkbox2d.lineStyle(1, 0x000000,1);
     state.pinkbox2d.drawRect(200,710, 380,110);
     state.pinkbox2d.alpha = 1;
-    state.isoAns2d = game.add.text(200,710, "Correct. This is an isosceles\ntriangle. It has two equal sides \nand two equal angles.");
+    state.isoAns2d = game.add.text(205,713, "Correct. This is an isosceles\ntriangle. It has two equal sides \nand two equal angles.");
     state.isoAns2d.fontWeight = 'normal';
     state.isoAns2d.align = 'left';
     state.isoAns2d.addFontWeight('bold',0);
@@ -123,13 +190,26 @@ function isoscelesTriangleAns2(state) {
     state.isoAns2d.alpha = 0;
     state.pinkbox2d.alpha = 0;
     
+    state.pinkbox2di = game.add.graphics(0,0);
+    state.pinkbox2di.beginFill(0xF2C2B5, 1);
+    state.pinkbox2di.lineStyle(1, 0x000000,1);
+    state.pinkbox2di.drawRect(200,710, 360,110);
+    state.pinkbox2di.alpha = 1;
+    state.isoAns2di = game.add.text(215,713, "This is an isosceles triangle.\nIt has two equal sides \nand two equal angles.");
+    state.isoAns2di.fontWeight = 'normal';
+    state.isoAns2di.align = 'left';
+    state.isoAns2di.addFontWeight('normal',0);
+    state.pinkbox2di.endFill();
+    state.isoAns2di.alpha = 0;
+    state.pinkbox2di.alpha = 0;
+    
     //state 6
     state.pinkbox2dd = game.add.graphics(0,0);
     state.pinkbox2dd.beginFill(0xF2C2B5, 1);
     state.pinkbox2dd.lineStyle(1, 0x000000,1);
     state.pinkbox2dd.drawRect(610,710, 380,110);
     state.pinkbox2dd.alpha = 1;
-    state.isoAns2dd = game.add.text(610,710, "Correct. This is an isosceles\ntriangle. It has two equal sides \nand two equal angles.");
+    state.isoAns2dd = game.add.text(615,713, "Correct. This is an isosceles\ntriangle. It has two equal sides \nand two equal angles.");
     state.isoAns2dd.fontWeight = 'normal';
     state.isoAns2dd.align = 'left';
     state.isoAns2dd.addFontWeight('bold',0);
@@ -138,13 +218,26 @@ function isoscelesTriangleAns2(state) {
     state.isoAns2dd.alpha = 0;
     state.pinkbox2dd.alpha = 0;
     
+    state.pinkbox2ddi = game.add.graphics(0,0);
+    state.pinkbox2ddi.beginFill(0xF2C2B5, 1);
+    state.pinkbox2ddi.lineStyle(1, 0x000000,1);
+    state.pinkbox2ddi.drawRect(610,710, 380,110);
+    state.pinkbox2ddi.alpha = 1;
+    state.isoAns2ddi = game.add.text(625,713, "This is an isosceles triangle.  \nIt has two equal sides \nand two equal angles.");
+    state.isoAns2ddi.fontWeight = 'normal';
+    state.isoAns2ddi.align = 'left';
+    state.isoAns2ddi.addFontWeight('normal',0);
+    state.pinkbox2ddi.endFill();
+    state.isoAns2ddi.alpha = 0;
+    state.pinkbox2ddi.alpha = 0;
+    
      //state 6
     state.pinkbox2ddd = game.add.graphics(0,0);
     state.pinkbox2ddd.beginFill(0xF2C2B5, 1);
     state.pinkbox2ddd.lineStyle(1, 0x000000,1);
-    state.pinkbox2ddd.drawRect(400,710, 380,110);
+    state.pinkbox2ddd.drawRect(400,710, 390,110);
     state.pinkbox2ddd.alpha = 1;
-    state.isoAns2ddd = game.add.text(400,710, "Correct. They are isosceles\ntriangles. It has two equal sides \nand two equal angles.");
+    state.isoAns2ddd = game.add.text(405,713, "Correct. They are isosceles\ntriangles. It has two equal sides \nand two equal angles.");
     state.isoAns2ddd.fontWeight = 'normal';
     state.isoAns2ddd.align = 'left';
     state.isoAns2ddd.addFontWeight('bold',0);
@@ -158,9 +251,9 @@ function isoscelesTriangleAns2(state) {
     state.pinkbox3 = game.add.graphics(0,0);
     state.pinkbox3.beginFill(0xF2C2B5, 1);
     state.pinkbox3.lineStyle(1, 0x000000,1);
-    state.pinkbox3.drawRect(550,649,390,80);
+    state.pinkbox3.drawRect(550,649,400,80);
     state.pinkbox3.alpha = 1;
-    state.isoAns3 = game.add.text(550,649, "Incorrect. All three sides of this \ntriangle are different.");
+    state.isoAns3 = game.add.text(555,653, "Incorrect. All three sides of this  \ntriangle are different.");
     state.isoAns3.fontWeight = 'normal';
     state.isoAns3.align = 'left';
     state.pinkbox3.endFill();
@@ -175,7 +268,7 @@ function isoscelesTriangleAns2(state) {
     state.pinkbox3b.lineStyle(1, 0x000000,1);
     state.pinkbox3b.drawRect(1000,670,390,80);
     state.pinkbox3b.alpha = 1;
-    state.isoAns3b = game.add.text(1000,670, "Incorrect. All three sides of this \ntriangle are different.");
+    state.isoAns3b = game.add.text(1005,673, "Incorrect. All three sides of this  \ntriangle are different.");
     state.isoAns3b.fontWeight = 'normal';
     state.isoAns3b.align = 'left';
     state.pinkbox3b.endFill();
@@ -188,9 +281,9 @@ function isoscelesTriangleAns2(state) {
     state.pinkbox3c = game.add.graphics(0,0);
     state.pinkbox3c.beginFill(0xF2C2B5, 1);
     state.pinkbox3c.lineStyle(1, 0x000000,1);
-    state.pinkbox3c.drawRect(1040,710,350,80);
+    state.pinkbox3c.drawRect(1040,710,355,80);
     state.pinkbox3c.alpha = 1;
-    state.isoAns3c = game.add.text(1040,710, "Incorrect. \nAll three angles are different.");
+    state.isoAns3c = game.add.text(1045,713, "Incorrect. \nAll three angles are different.");
     state.isoAns3c.fontWeight = 'normal';
     state.isoAns3c.align = 'left';
     state.pinkbox3c.endFill();
@@ -202,9 +295,9 @@ function isoscelesTriangleAns2(state) {
     state.pinkbox4 = game.add.graphics(0,0);
     state.pinkbox4.beginFill(0xF2C2B5,1);
     state.pinkbox4.lineStyle(1, 0x000000,1);
-    state.pinkbox4.drawRect(550,649,450,80);
+    state.pinkbox4.drawRect(550,649,460,80);
     state.pinkbox4.alpha = 1;
-    state.isoAns4 = game.add.text(550,649, "Correct. They are isosceles triangles. \nEach triangle has two equal sides");
+    state.isoAns4 = game.add.text(555,653, "Correct. They are isosceles triangles. \nEach triangle has two equal sides.");
     state.isoAns4.fontWeight = 'normal';
     state.isoAns4.align = 'left';
      state.isoAns4.addFontWeight('bold',0);
@@ -216,9 +309,9 @@ function isoscelesTriangleAns2(state) {
     state.pinkbox4a = game.add.graphics(0,0);
     state.pinkbox4a.beginFill(0xF2C2B5,1);
     state.pinkbox4a.lineStyle(1, 0x000000,1);
-    state.pinkbox4a.drawRect(400,670,450,80);
+    state.pinkbox4a.drawRect(350,670,460,80);
     state.pinkbox4a.alpha = 1;
-    state.isoAns4a = game.add.text(400,670, "Correct. They are isosceles triangles. \nEach triangle has two equal sides");
+    state.isoAns4a = game.add.text(355,673, "Correct. They are isosceles triangles.  \nEach triangle has two equal sides.");
     state.isoAns4a.fontWeight = 'normal';
     state.isoAns4a.align = 'left';
      state.isoAns4a.addFontWeight('bold',0);

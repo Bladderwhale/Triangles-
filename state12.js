@@ -177,8 +177,8 @@ demo.state12.prototype = {rectLength:0,rectLength2:0, btnTryAgain: null, txtTryA
         this.dot3.position.setTo(this.dot1.x, this.dot1.y-200);
         polygon = new Phaser.Polygon();
         
-        this.rectLength = (this.dot1.x - this.dot2.x)/10; //-20
-        this.rectLength2 = (this.dot1.y - this.dot3.y)/10; //20
+       // this.rectLength = (this.dot1.x - this.dot2.x)/10; //-20
+       // this.rectLength2 = (this.dot1.y - this.dot3.y)/10; //20
         
         
         
@@ -291,6 +291,8 @@ demo.state12.prototype = {rectLength:0,rectLength2:0, btnTryAgain: null, txtTryA
          alx = new forState12(this.dot1, this.dot2, this.dot3);
          alx.init();
         
+        startingAngle1 = Math.PI+Math.PI/2;
+        
         startingAngle2 = Math.PI;
         
         startingAngle3 =  Math.PI/2 - alx.dotProductC;
@@ -302,9 +304,10 @@ demo.state12.prototype = {rectLength:0,rectLength2:0, btnTryAgain: null, txtTryA
         graphics.beginFill(0xACD9E2, 0.4);
         graphics.drawPolygon(polygon.points);
         graphics.beginFill(2, 0xFF3300);
-        graphics.drawRect(this.dot1.x-this.rectLength,this.dot1.y+this.rectLength, this.rectLength, this.rectLength2);
+       // graphics.drawRect(this.dot1.x-this.rectLength,this.dot1.y+this.rectLength, this.rectLength, this.rectLength2);
         graphics1 = game.add.graphics(0,0);
         graphics1.lineStyle(2, 0xFF3300);
+        graphics1.arc(this.dot1.x,this.dot1.y,30,startingAngle1,startingAngle1+alx.dotProductA,false);
         graphics1.arc(this.dot2.x, this.dot2.y, 50,startingAngle2,startingAngle2+alx.dotProductB ,false );
         graphics1.arc(this.dot3.x, this.dot3.y, 50, startingAngle3, startingAngle3+alx.dotProductC, false);
         
