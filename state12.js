@@ -12,9 +12,8 @@ demo.state12.prototype = {rectLength:0,rectLength2:0, btnTryAgain: null, txtTryA
         game.stage.backgroundColor = '#ffffff';
         console.log("state12");
         addChangeStateEventListers();
-        addTexts(this);
         fixedGUI(this);
-        this.headingTexts.text = "Right Angled Triangles";
+        this.headingTexts.text = "Right-Angled Triangles";
         fixedGUI2();
         addBtnRadio(this);
         addTickCross(this);
@@ -120,14 +119,17 @@ demo.state12.prototype = {rectLength:0,rectLength2:0, btnTryAgain: null, txtTryA
         this.game.canvas.style.cursor = "default";
         }, this);*/
         
-        
+          addTexts(this);
          for (var i = 0; i < 11; i++){
             this.texts[i] = game.add.text(i*100,i*100, "6");
         }
-        this.texts[0].text = "Try this";
+        this.texts[0].text = "Try this...";
         this.texts[0].position.setTo(140, 140);
         this.texts[0].setStyle({ fill: '#008000'});
         dotAttributes(this);
+        
+        boxTryAgainRotation(this);
+        this.texts[0].addChild(this.drawGraphics);
         
         this.texts[1].text = "Drag any one of the red points to change the size of the right-angled triangle.\nObserve how the angles change.";
         this.texts[1].position.setTo(300, 125);
@@ -135,13 +137,13 @@ demo.state12.prototype = {rectLength:0,rectLength2:0, btnTryAgain: null, txtTryA
         this.texts[1].fontWeight = 'normal';
        
         this.texts[2].position.setTo(this.dot1.x+70,this.dot1.y-50);
-        this.texts[2].setText("90\xB0.");
+        this.texts[2].setText("90\xB0");
         
         this.texts[3].position.setTo(this.dot3.x+10, this.dot3.y+50);
-        this.texts[3].text = "56\xB0.";
+        this.texts[3].text = "56\xB0";
         
         this.texts[4].position.setTo(this.dot2.x+65, this.dot2.y-40);
-        this.texts[4].text = "34\xB0.";
+        this.texts[4].text = "34\xB0";
         
         
         this.texts[5].position.setTo(240,670);
@@ -302,6 +304,7 @@ demo.state12.prototype = {rectLength:0,rectLength2:0, btnTryAgain: null, txtTryA
         graphics.destroy();
         graphics = game.add.graphics(0,0);
         graphics.beginFill(0xACD9E2, 0.4);
+         graphics.lineStyle(1, 0x000000,1);
         graphics.drawPolygon(polygon.points);
         graphics.beginFill(2, 0xFF3300);
        // graphics.drawRect(this.dot1.x-this.rectLength,this.dot1.y+this.rectLength, this.rectLength, this.rectLength2);

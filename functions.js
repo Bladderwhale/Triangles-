@@ -67,6 +67,7 @@ function loadAssets(){
     game.load.image('hand', 'assets/hand.png');
     game.load.image('sp2', 'assets/speechbubble2.png');
     game.load.image('lightbulb', 'assets/lightbulb.png');
+    game.load.image('sp3', 'assets/speechbubble3.png');
 };
 function addLightImage(){
     var lightbulb = game.add.sprite(60,95,'lightbulb');
@@ -106,6 +107,14 @@ function fixedGUI(state){
         game.state.start('state1');
     },this)
     
+    
+    home.events.onInputOver.add(function(){
+        home.input.useHandCursor = true;
+        }, this);
+    home.events.onInputOut.add(function(){
+        this.game.canvas.style.cursor = "default";
+        }, this); 
+    
     state.headingTexts = game.add.text(game.world.centerX, game.world.centerY-477.5, "");
     state.headingTexts.anchor.setTo(0.5,0.5);
 };
@@ -137,7 +146,7 @@ function fixedGUI3i() {
 }
 function fixedGUI3state11() {
     game.stage.backgroundColor = '#ffffff';
-    var bar = game.add.graphics(0,0);3
+    var bar = game.add.graphics(0,0);
     bar.beginFill(0x98FB98, 0.2);
     bar.lineStyle(2, 0x98FB98, 1);
     bar.drawRect(50, 90, 1200, 125);

@@ -135,7 +135,7 @@ demo.state5.prototype = {
         this.texts[4].anchor.x = 0.5;
         
         this.texts[5].position.setTo(240,640);
-        this.texts[5].text = "No matter how the size of the isosceles triangle changes \ntwo sides are always equal and _________________."
+        this.texts[5].text = "No matter how the height of the isosceles triangle changes,\ntwo sides are always equal and _________________."
         this.texts[5].alpha = 0;
         this.texts[5].align = 'left';
         this.texts[5].fontWeight = 'normal';
@@ -163,13 +163,13 @@ demo.state5.prototype = {
         this.texts[10].position.setTo(1175,820);
         this.texts[10].alpha = 0;
         
-        this.texts[11].text = "55";
+        this.texts[11].text = "55\xB0";
         this.texts[11].position.setTo(this.dot2.x-10,this.dot2.y-50);
         
-        this.texts[12].text = "55";
+        this.texts[12].text = "55\xB0";
         this.texts[12].position.setTo(this.dot1.x-25,this.dot1.y-50);
         
-        this.texts[13].text = "70";
+        this.texts[13].text = "70\xB0";
         this.texts[13].position.setTo(this.dot3.x-15, this.dot3.y+70);
         
         
@@ -388,7 +388,7 @@ demo.state5.prototype = {
         
         graphics1.lineStyle(2, 0xFF3300);
         var startAngle = (Math.PI/2-this.final/2);
-        graphics1.arc(this.dot3.x, this.dot3.y, 70, startAngle, startAngle+ this.final, false);
+        graphics1.arc(this.dot3.x, this.dot3.y, 60, startAngle, startAngle+ this.final, false);
         graphics1.endFill();
         console.log("Top Angle: "+ Math.asd(this.final) );
         this.resize = true;

@@ -84,10 +84,13 @@ demo.state10.prototype = {
         for (var i = 0; i < 14; i++){6
             this.texts[i] = game.add.text(i*100,i*100, "6");
         }
-        this.texts[0].text = "Try this";
+        this.texts[0].text = "Try this...";
         this.texts[0].position.setTo(140, 140);
         this.texts[0].setStyle({ fill: '#008000'});
         dotAttributes(this);
+        
+        boxTryAgainRotation(this);
+        this.texts[0].addChild(this.drawGraphics);
         
         this.texts[1].text = "Drag any one of the red points to change the size of the equilateral triangle.\nObserve how the lengths of the sides change.";
         this.texts[1].position.setTo(300, 125);
@@ -224,8 +227,8 @@ demo.state10.prototype = {
         this.btnTryAgain.events.onInputDown.add(function(){this.boolTryAgain = false;this.k++;}, this); 
 
         tickTween = this.game.add.tween(this.tick1).to({alpha:1},1000,Phaser.Easing.Linear.None);
-        tickTween2 = this.game.add.tween(this.pinkbox5).to({alpha:1},1500,Phaser.Easing.Linear.None);
-         tickTween2 = this.game.add.tween(this.isoAns5).to({alpha:1},1500,Phaser.Easing.Linear.None);
+        tickTween2 = this.game.add.tween(this.pinkbox5i).to({alpha:1},1500,Phaser.Easing.Linear.None);
+         tickTween2 = this.game.add.tween(this.isoAns5i).to({alpha:1},1500,Phaser.Easing.Linear.None);
     },
     update:function(){
           if (this.fakeHandle1.input.pointerOver()) {
@@ -284,8 +287,8 @@ demo.state10.prototype = {
             tickTween.start();
             tickTween2.start();
             this.btnNext.visible = true;
-            this.pinkbox5.alpha=1;
-            this.isoAns5.alpha = 1;
+            this.pinkbox5i.alpha=1;
+            this.isoAns5i.alpha = 1;
             
             linegraphics.beginFill(0x000000);
             linegraphics.lineStyle(7, '#FF3300', 1);
@@ -651,8 +654,8 @@ demo.state10.prototype = {
             this.texts[10].text = "Continue";
             this.texts[10].position.x = 1170;
             this.btnNext.visible = true;
-            this.pinkbox5.alpha=1;
-            this.isoAns5.alpha=1;
+            this.pinkbox5i.alpha=1;
+            this.isoAns5i.alpha=1;
             
             linegraphics.beginFill(0x000000);
             linegraphics.lineStyle(7, '#FF3300', 1);

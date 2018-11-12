@@ -12,19 +12,19 @@ demo.state13.prototype = {
         addChangeStateEventListers();
         fixedGUI(this);
         addTexts(this);
-        this.headingTexts.text = "Right Angled Triangles";
-        fixedGUI3();
+        this.headingTexts.text = "Right-Angled Triangles";
+        fixedGUI3i();
         dotAttributes(this);
         addBtnRadio(this);
         addTickCross(this);
         rightangleAns(this);
-        addLightImage();
+        addLightImage1i();
 
-        var firstTrianglePoints = [350, 325+250,350+150 ,325 ];
+        var firstTrianglePoints = [350-70, 325+250,350+150-70+30 ,325 ];
         var firstTriDraw = game.add.graphics(0,0);
         firstTriDraw.beginFill(0xe0ffff);
         firstTriDraw.lineStyle(2,0x000000,1);
-        firstTriDraw.moveTo(350,325);
+        firstTriDraw.moveTo(350-70,325);
         for (var i = 0; i < firstTrianglePoints.length; i++) {
             firstTriDraw.lineTo(firstTrianglePoints[i], firstTrianglePoints[i+1]); 
             i++;
@@ -53,7 +53,7 @@ demo.state13.prototype = {
         }
         thirdTriDraw.endFill();
         
-        var alx13 = new forState11(350,325,350,575,500,325);
+        var alx13 = new forState11(350,325,350,575,500+30,325);
         alx13.init();
         starttAngle1 = Math.PI/2 - alx13.dotProductA;
         starttAngle2 = Math.PI + Math.PI/2;
@@ -73,10 +73,10 @@ demo.state13.prototype = {
         
         graphics1 = game.add.graphics(0,0);
         graphics1.lineStyle(2, 0xFF3300);
-      //  graphics1.arc(350,325,50,starttAngle1,starttAngle1+alx13.dotProductA,false);
-        graphics1.drawRect(350,325,20,20);
-        graphics1.arc(350,575,50,starttAngle2,starttAngle2+alx13.dotProductB,false);
-        graphics1.arc(500,325,50,starttAngle3,starttAngle3+alx13.dotProductC,false);
+      graphics1.arc(350-70,325,30,starttAngle1,starttAngle1+alx13.dotProductA,false);
+       // graphics1.drawRect(350,325,20,20);
+        graphics1.arc(350-70,575,50,starttAngle2,starttAngle2+alx13.dotProductB,false);
+        graphics1.arc(500-70+30,325,50,starttAngle3,starttAngle3+alx13.dotProductC,false);
         graphics1.arc(785.5, 325, 50, starttAngle4, starttAngle4 + alx14.dotProductA,false);
         graphics1.arc(785.5, 550, 50, starttAngle5, starttAngle5 + alx14.dotProductB,false);
         graphics1.arc(600, 437.5, 50, starttAngle6, starttAngle6 + alx14.dotProductC,false);
@@ -100,7 +100,7 @@ demo.state13.prototype = {
         for (var i = 0; i < 13; i++){
             this.texts[i] = game.add.text(i*10,i*10, "1");
         }
-        this.texts[0].position.setTo(210,140);
+        this.texts[0].position.setTo(325,140);
         this.texts[0].text = "If a triangle has a 90\xB0 angle, it is a right-angled triangle."
         this.texts[0].lineSpacing = 30;
         this.texts[0].fontWeight = 'normal';
@@ -112,17 +112,20 @@ demo.state13.prototype = {
         
         this.texts[2].position.setTo(130,255);
         this.texts[2].text = "Try this..."
-        this.texts[2].lineSpacing = 30;
+       // this.texts[2].lineSpacing = 30;
         this.texts[2].angle = -10;
         this.texts[2].setStyle({ fill: '#008000'});
         
-        this.texts[3].position.setTo(362, 345);
+        boxTryAgainRotation(this);
+        this.texts[2].addChild(this.drawGraphics);
+        
+        this.texts[3].position.setTo(362-70, 355);
         this.texts[3].text = "90\xB0";
         
-        this.texts[4].position.setTo(414, 351);
+        this.texts[4].position.setTo(414-70+30, 351);
         this.texts[4].text = "61\xB0";
         
-        this.texts[5].position.setTo(355, 486);
+        this.texts[5].position.setTo(355-70, 486);
         this.texts[5].text = "29\xB0";
         
         this.texts[6].position.setTo(655, 428);
@@ -131,27 +134,27 @@ demo.state13.prototype = {
         this.texts[7].position.setTo(723, 371);
         this.texts[7].text = "60\xB0";
         
-        this.texts[8].position.setTo(719, 484);
+        this.texts[8].position.setTo(719+15, 484-5);
         this.texts[8].text = "60\xB0";
         
-        this.texts[9].position.setTo(1070,471);
+        this.texts[9].position.setTo(1070,455);
         this.texts[9].text = "96\xB0";
         
-        this.texts[10].position.setTo(1010,495);
+        this.texts[10].position.setTo(1010-5,495);
         this.texts[10].text = "42\xB0";
         
-        this.texts[11].position.setTo(1104,504);
+        this.texts[11].position.setTo(1104+10,504);
         this.texts[11].text = "42\xB0";
         
         this.texts[12].position.setTo(1060,805);
         this.texts[12].text = "Check";
         this.texts[12].alpha = 0.3;
         
-        this.btnRadio1.position.setTo(373,610);
+        this.btnRadio1.position.setTo(373-70,610);
         this.btnRadio2.position.setTo(700,610);
         this.btnRadio3.position.setTo(1075,610);
         
-        this.tick1.position.setTo(373,610);
+        this.tick1.position.setTo(373-70,610);
         this.tick1.anchor.setTo(0.25,0.25);
         this.tick1.alpha = 0;
         

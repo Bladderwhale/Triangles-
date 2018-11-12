@@ -180,10 +180,10 @@ demo.state4.prototype = {
         
          tickTween = this.game.add.tween(this.tick2).to({alpha:1},1000,Phaser.Easing.Linear.None);
          tickTween2 = this.game.add.tween(this.tick1).to({alpha:1},1000,Phaser.Easing.Linear.None);
-        tickTween3 = this.game.add.tween(this.pinkbox2bi).to({alpha:1},1000,Phaser.Easing.Linear.None);
-         tickTween4 = this.game.add.tween(this.isoAns2bi).to({alpha:1},1000,Phaser.Easing.Linear.None);
-        tickTween5 = this.game.add.tween(this.pinkbox2bbi).to({alpha:1},1000,Phaser.Easing.Linear.None);
-         tickTween6 = this.game.add.tween(this.isoAns2bbi).to({alpha:1},1000,Phaser.Easing.Linear.None);
+        tickTween3 = this.game.add.tween(this.pinkbox2b).to({alpha:1},1000,Phaser.Easing.Linear.None);
+         tickTween4 = this.game.add.tween(this.isoAns2b).to({alpha:1},1000,Phaser.Easing.Linear.None);
+        tickTween5 = this.game.add.tween(this.pinkbox2bb).to({alpha:1},1000,Phaser.Easing.Linear.None);
+         tickTween6 = this.game.add.tween(this.isoAns2bb).to({alpha:1},1000,Phaser.Easing.Linear.None);
          
     
     },

@@ -12,12 +12,13 @@ demo.state11.prototype = {
         addBtnRadio(this);
         addTickCross(this);
         fixedGUI(this);
-        fixedGUI3state11();
+        fixedGUI3i();
         dotAttributes(this);
         this.headingTexts.text = "Equilateral Triangles";
-        addTexts(this);
+        
         equilateralTrianglesAns(this);
-        addLightImage();
+        addLightImage1i();
+        
         this.btnPlay = game.add.button(0,0,"btn2");
         this.btnPlay.frame = 1;
         this.btnPlay.position.setTo(1140, 800);
@@ -29,59 +30,7 @@ demo.state11.prototype = {
         this.btnNext.position.setTo(1140, 800);
         this.btnNext.scale.setTo(0.8,0.5);
         this.btnNext.visible = false;
-        
-           for (var i = 0; i < 13; i++){
-            this.texts[i] = game.add.text(i*10,i*10, "1");
-        }
-        this.texts[0].position.setTo(210,120);
-        this.texts[0].text = "If a triangle has three equal sides or three equal angles,\nit is an equilaterial triangle."
-        this.texts[0].lineSpacing = 0;
-        this.texts[0].fontWeight = 'normal';
-        
-        this.texts[1].position.setTo(270,240);
-        this.texts[1].text = "Which two of these triangles are equilaterial?"
-        this.texts[1].lineSpacing = 30;
-        this.texts[1].fontWeight = 'normal';
-        
-        this.texts[2].position.setTo(130,255);
-        this.texts[2].text = "Try this..."
-        this.texts[2].lineSpacing = 30;
-        this.texts[2].angle = -10;
-        this.texts[2].setStyle({ fill: '#008000'});
-        
-        this.texts[3].position.setTo(310, 410);
-        this.texts[3].text = "45\xB0";
-        
-        this.texts[4].position.setTo(400, 518);
-        this.texts[4].text = "45\xB0";
-        
-        this.texts[5].position.setTo(310, 506);
-        this.texts[5].text = "90\xB0";
-        
-        this.texts[6].position.setTo(648, 352);
-        this.texts[6].text = "60\xB0";
-        
-        this.texts[7].position.setTo(780, 355);
-        this.texts[7].text = "60\xB0";
-        
-        this.texts[8].position.setTo(720, 461);
-        this.texts[8].text = "60\xB0";
-        
-        this.texts[9].position.setTo(1085,451);
-        this.texts[9].text = "60\xB0";
-        
-        this.texts[10].position.setTo(1120,372);
-        this.texts[10].text = "60\xB0";
-        
-        this.texts[11].position.setTo(1130,483);
-        this.texts[11].text = "60\xB0";
-        
-       /* this.texts[13].position.setTo(1008,540);
-        this.texts[13].text = "4.23 cm";*/
-        
-        this.texts[12].position.setTo(1175,805);
-        this.texts[12].text = "Check";
-        this.texts[12].alpha = 0.3;
+      
         
         h1 = new Phaser.Point(300,555); //Base
         h2 = new Phaser.Point(300,355); //Top
@@ -119,16 +68,78 @@ demo.state11.prototype = {
         }
         secondTriangleDraw.endFill();
         
-        var thirdTrianglePoints = [1200,548,1031,480];
+        var thirdTrianglePoints = [1200+20,548+20,1031+20,480+20];
         var thirdTriangleDraw = game.add.graphics(0,0); 
         thirdTriangleDraw.beginFill(0xFF6A6A,0.5);
         thirdTriangleDraw.lineStyle(2, 0x000000,1);
-        thirdTriangleDraw.moveTo(1160,324);
+        thirdTriangleDraw.moveTo(1160+20,324+20);
         for (var i =0; i<firstTrianglePoints.length; i++){
             thirdTriangleDraw.lineTo(thirdTrianglePoints[i], thirdTrianglePoints[i+1]);
             i++
         }
         thirdTriangleDraw.endFill();
+        
+          addTexts(this);
+           for (var i = 0; i < 13; i++){
+            this.texts[i] = game.add.text(i*10,i*10, "1");
+        }
+        this.texts[0].position.setTo(210+110,120);
+        this.texts[0].text = "If a triangle has three equal sides or three equal angles,\nit is an equilaterial triangle."
+        this.texts[0].lineSpacing = 0;
+        this.texts[0].fontWeight = 'normal';
+        
+        this.texts[1].position.setTo(270,240);
+        this.texts[1].text = "Which two of these triangles are equilaterial?"
+        this.texts[1].lineSpacing = 30;
+        this.texts[1].fontWeight = 'normal';
+        
+        this.texts[2].position.setTo(130,255);
+        this.texts[2].text = "Try this..."
+        //this.texts[2].lineSpacing = 30;
+        this.texts[2].angle = -10;
+        this.texts[2].setStyle({ fill: '#008000'});
+        
+        boxTryAgainRotation(this);
+        this.texts[2].addChild(this.drawGraphics);
+        
+        this.texts[3].position.setTo(310, 410);
+        this.texts[3].text = "45\xB0";
+        
+        this.texts[4].position.setTo(400, 518);
+        this.texts[4].text = "45\xB0";
+        
+        this.texts[5].position.setTo(320, 506);
+        this.texts[5].text = "90\xB0";
+        
+        this.texts[6].position.setTo(648, 352);
+        this.texts[6].text = "60\xB0";
+        
+        this.texts[7].position.setTo(780, 355);
+        this.texts[7].text = "60\xB0";
+        
+        this.texts[8].position.setTo(720, 461);
+        this.texts[8].text = "60\xB0";
+        
+        this.texts[9].position.setTo(1085+20,451+20);
+        this.texts[9].text = "60\xB0";
+        
+        this.texts[10].position.setTo(1120+20,372+20);
+        this.texts[10].text = "60\xB0";
+        
+        this.texts[11].position.setTo(1130+20,483+20);
+        this.texts[11].text = "60\xB0";
+        
+       /* this.texts[13].position.setTo(1008,540);
+        this.texts[13].text = "4.23 cm";*/
+        
+        this.texts[12].position.setTo(1175,805);
+        this.texts[12].text = "Check";
+        this.texts[12].alpha = 0.3;
+        
+        
+        
+        
+        
         h1toh3length = (new Phaser.Point.subtract(h1,h3)).getMagnitude();
       
         h1toh3length = h1toh3length/10;
@@ -137,7 +148,8 @@ demo.state11.prototype = {
         h1toh2length = (new Phaser.Point.subtract(h1,h2)).getMagnitude();
          
         h1toh2length = h1toh2length/10;
-       console.log("what length2: " + h1toh2length)
+       console.log("what length2: " + h1toh2length);
+        
         
         var alx = new forState11(300,555,300,355,500,555);
         alx.init();
@@ -159,16 +171,16 @@ demo.state11.prototype = {
         console.log("What is angle b " + alx.dotProductA);
         graphics1 = game.add.graphics(0,0);
         graphics1.lineStyle(2, 0xFF3300);
-       // graphics1.arc(300,555,50,starttAngle,starttAngle+baseAngle,false);
-        graphics1.drawRect(300,555-h1toh2length,h1toh2length,h1toh3length)
+        graphics1.arc(300,555,30,starttAngle,starttAngle+baseAngle,false);
+       // graphics1.drawRect(300,555-h1toh2length,h1toh2length,h1toh3length)
         graphics1.arc(300,355,50,startAnglee1,startAnglee1 + alx.dotProductB,false);
         graphics1.arc(500,555,50,startAnglee2,startAnglee2 + alx.dotProductC,false);
         graphics1.arc(600,335,50,startAnglee3,startAnglee3 + alx2.dotProductA,false);
         graphics1.arc(738,548,50,startAnglee4,startAnglee4 + alx2.dotProductB,false);
         graphics1.arc(874,335,50,startAnglee5,startAnglee5 + alx2.dotProductC,false);
-        graphics1.arc(1160,324,50,startAnglee6, startAnglee6 + alx3.dotProductA, false);
-        graphics1.arc(1200,548,50,startAnglee7, startAnglee7 + alx3.dotProductB,false);
-        graphics1.arc(1031,480,50,startAnglee8, startAnglee8 + alx3.dotProductC, false);
+        graphics1.arc(1160+20,324+20,50,startAnglee6, startAnglee6 + alx3.dotProductA, false);
+        graphics1.arc(1200+20,548+20,50,startAnglee7, startAnglee7 + alx3.dotProductB,false);
+        graphics1.arc(1031+20,480+20,50,startAnglee8, startAnglee8 + alx3.dotProductC, false);
         
         this.btnRadio1.position.setTo(378,610);
         this.btnRadio2.position.setTo(750,610);

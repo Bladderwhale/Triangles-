@@ -13,12 +13,12 @@ demo.state9.prototype = {
         fixedGUI(this);
         
         this.headingTexts.text = "Equilaterial Triangles";
-        fixedGUI3();
+        fixedGUI3i();
         dotAttributes(this);
         addBtnRadio(this);
         addTickCross(this);
         equilateralTrianglesAns(this);
-        addLightImage();
+        addLightImage1i();
         this.btnPlay = game.add.button(0,0,"btn2");
         this.btnPlay.frame = 1;
         this.btnPlay.position.setTo(1140, 800);
@@ -36,7 +36,7 @@ demo.state9.prototype = {
         for (var i = 0; i < 13; i++){
             this.texts[i] = game.add.text(i*10,i*10, "1");
         }
-        this.texts[0].position.setTo(210,140);
+        this.texts[0].position.setTo(300,140);
         this.texts[0].text = "If a triangle has three equal sides, it is an equilaterial triangle."
         this.texts[0].lineSpacing = 30;
         this.texts[0].fontWeight = 'normal';
@@ -48,9 +48,12 @@ demo.state9.prototype = {
         
         this.texts[2].position.setTo(130,255);
         this.texts[2].text = "Try this..."
-        this.texts[2].lineSpacing = 30;
+       // this.texts[2].lineSpacing = 30;
         this.texts[2].angle = -10;
         this.texts[2].setStyle({ fill: '#008000'});
+        
+          boxTryAgainRotation(this);
+        this.texts[2].addChild(this.drawGraphics);
         
         this.texts[3].position.setTo(200, 425);
         this.texts[3].text = "4 cm";
@@ -61,13 +64,13 @@ demo.state9.prototype = {
         this.texts[5].position.setTo(373, 496);
         this.texts[5].text = "4 cm";
         
-        this.texts[6].position.setTo(591, 475);
+        this.texts[6].position.setTo(599+20, 450);
         this.texts[6].text = "5 cm";
         
-        this.texts[7].position.setTo(788, 475);
+        this.texts[7].position.setTo(795+20, 450);
         this.texts[7].text = "5 cm";
         
-        this.texts[8].position.setTo(695, 553);
+        this.texts[8].position.setTo(695+20, 553);
         this.texts[8].text = "6 cm";
         
         this.texts[9].position.setTo(1050,510);
@@ -100,10 +103,10 @@ demo.state9.prototype = {
         }
         firstTriDraw.endFill(); 
 
-        var secondTrianglePoints = [840, 550, 727, 450];
+        var secondTrianglePoints = [840+20, 550, 727+20, 380];
         var secondTriDraw = game.add.graphics(0,0);
         secondTriDraw.beginFill(0x7FBF7F);
-        secondTriDraw.moveTo(615,550);
+        secondTriDraw.moveTo(615+20,550);
         secondTriDraw.lineStyle(2,0x000000,1);
         for (var i = 0; i < secondTrianglePoints.length; i++) {
             secondTriDraw.lineTo(secondTrianglePoints[i], secondTrianglePoints[i+1]);
@@ -125,7 +128,7 @@ demo.state9.prototype = {
      
         
         this.btnRadio1.position.setTo(373,610);
-        this.btnRadio2.position.setTo(700,610);
+        this.btnRadio2.position.setTo(700+25,610);
         this.btnRadio3.position.setTo(1075,610);
         
         this.tick1.position.setTo(373,610);
@@ -136,7 +139,7 @@ demo.state9.prototype = {
         this.tick2.anchor.setTo(0.25,0.25);
         this.tick2.alpha = 0;
         
-        this.cross1.position.setTo(700,610);
+        this.cross1.position.setTo(700+25,610);
         this.cross1.anchor.setTo(0.19,0.19);
         this.cross1.alpha = 0;
         this.cross2.alpha=0;
