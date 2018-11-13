@@ -21,7 +21,13 @@ demo.state5.prototype = {
         addTickCross(this);
         forIsoEquTriangle(this);
         isoscelesTriangleAns(this);
-        
+        this.home.events.onInputDown.add(function(){
+        n = 0; this.n=0; a =0;b=0;c=0; this.a=0; this.b =0; this.c=0;confusedCheck =0; this.confusedCheck=0;
+        this.boolTryAgain = false;
+        k =0;this.k=0;check=0;this.check=0;
+        game.state.start('state1');
+       
+    },this);
      /*   this.fakeHandle3.events.onInputOver.add(function(){
             this.game.canvas.style.cursor = "move";
           //  sprite.input.useHandCursor = true;
@@ -98,7 +104,9 @@ demo.state5.prototype = {
         this.btnNext.position.setTo(1150, 815);
         this.btnNext.scale.setTo(0.7,0.5);
         this.btnNext.visible = false;
-        this.btnNext.events.onInputDown.add(function(){check =0;a =0; b=0; c=0;
+        this.btnNext.events.onInputDown.add(function(){ n = 0; this.n=0; a =0;b=0;c=0; this.a=0; this.b =0; this.c=0;confusedCheck =0; this.confusedCheck=0;
+        this.boolTryAgain = false;
+        k =0;this.k=0;check=0;this.check=0;
             game.state.start('state6');
             touchCheck = false;
         },this)

@@ -346,9 +346,9 @@ function equilateralTrianglesAns(state) {
     state.pinkbox3c = game.add.graphics(0,0);
     state.pinkbox3c.beginFill(0xF2C2B5, 1);
     state.pinkbox3c.lineStyle(1, 0x000000,1);
-    state.pinkbox3c.drawRect(390,660, 360,80);
+    state.pinkbox3c.drawRect(390,660, 435,80);
     state.pinkbox3c.alpha = 1;
-    state.isoAns3c = game.add.text(395,660, "They are equilateral triangles. \nIt has three equal sides. ");
+    state.isoAns3c = game.add.text(395,660, "They are equilateral triangles. \nEach triangle has three equal sides. ");
     state.isoAns3c.fontWeight = 'normal';
     state.isoAns3c.align = 'left';
     state.isoAns3c.addFontWeight('normal',0);
@@ -398,9 +398,9 @@ function equilateralTrianglesAns(state) {
     state.pinkbox4c = game.add.graphics(0,0);
     state.pinkbox4c.beginFill(0xF2C2B5, 1);
     state.pinkbox4c.lineStyle(1, 0x000000,1);
-    state.pinkbox4c.drawRect(550,660, 360,80);
+    state.pinkbox4c.drawRect(550,660, 435,80);
     state.pinkbox4c.alpha = 1;
-    state.isoAns4c = game.add.text(555,660, "They are equilateral triangles. \nIt has three equal sides.");
+    state.isoAns4c = game.add.text(555,660, "They are equilateral triangles. \nEach Triangle has three equal sides.");
     state.isoAns4c.fontWeight = 'normal';
     state.isoAns4c.align = 'left';
     state.isoAns4c.addFontWeight('normal',0);
@@ -411,9 +411,9 @@ function equilateralTrianglesAns(state) {
     state.pinkbox5 = game.add.graphics(0,0);
     state.pinkbox5.beginFill(0xF2C2B5, 1);
     state.pinkbox5.lineStyle(1, 0x000000,1);
-    state.pinkbox5.drawRect(770,660, 350,110);
+    state.pinkbox5.drawRect(770,660, 470,110);
     state.pinkbox5.alpha = 1;
-    state.isoAns5 = game.add.text(775,660, "An equilateral triangle \nalso has three equal angles.\nEach angle is 60\xB0.");
+    state.isoAns5 = game.add.text(775,660, "They are equilateral triangles. \nThey each have three equal sides and \nthree equal angles. Each angle is 60˚.");
     state.isoAns5.fontWeight = 'normal';
     state.isoAns5.align = 'left';
     state.isoAns5.addFontWeight('normal',0);

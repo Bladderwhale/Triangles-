@@ -95,23 +95,24 @@ function fixedGUI(state){
     rectangle.drawRect(0,0,game.world.width,game.world.height/25);
     rectangle.endFill();
     
-    var home = game.add.sprite(game.world.centerX+700, game.world.centerY-500, "home");
-    home.scale.setTo(0.03,0.03);
-    home.inputEnabled = true;
-    home.events.onInputDown.add(function(){
-        touchCheck = false;
-        n =0;
-        a =0;
-        b =0;
-        c =0;
+    state.home = game.add.sprite(game.world.centerX+700, game.world.centerY-500, "home");
+    state.home.scale.setTo(0.03,0.03);
+    state.home.inputEnabled = true;
+    state.home.events.onInputDown.add(function(){
+        n = 0; this.n=0; a =0;b=0;c=0; this.a=0; this.b =0; this.c=0;confusedCheck =0; this.confusedCheck=0;
+        this.boolTryAgain = false;
+        k =0;this.k=0;check=0;this.check=0;
+      
+      
         game.state.start('state1');
+       
     },this)
     
     
-    home.events.onInputOver.add(function(){
-        home.input.useHandCursor = true;
+    state.home.events.onInputOver.add(function(){
+        state.home.input.useHandCursor = true;
         }, this);
-    home.events.onInputOut.add(function(){
+    state.home.events.onInputOut.add(function(){
         this.game.canvas.style.cursor = "default";
         }, this); 
     

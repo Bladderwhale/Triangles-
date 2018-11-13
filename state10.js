@@ -15,7 +15,13 @@ demo.state10.prototype = {
         addBtnRadio(this);
         addTickCross(this);
         equilateralTrianglesAns(this);
-        
+           this.home.events.onInputDown.add(function(){
+        n = 0; this.n=0; a =0;b=0;c=0; this.a=0; this.b =0; this.c=0;confusedCheck =0; this.confusedCheck=0;
+        this.boolTryAgain = false;
+        k =0;this.k=0;check=0;this.check=0;
+        game.state.start('state1');
+       
+    },this);
         this.headingTexts1 = game.add.text(300,60,"There is another property for an equilateral triangle.");
         this.headingTexts1.fontWeight = 'normal';
         
@@ -76,8 +82,9 @@ demo.state10.prototype = {
         this.btnNext.position.setTo(1150, 815);
         this.btnNext.scale.setTo(0.8,0.5);
         this.btnNext.visible = false;
-        this.btnNext.events.onInputDown.add(function(){check =0;a =0; b=0; c=0;
-            game.state.start('state11');touchCheck = false;
+        this.btnNext.events.onInputDown.add(function(){  n = 0; this.n=0; a =0;b=0;c=0; this.a=0; this.b =0; this.c=0;confusedCheck =0; this.confusedCheck=0;
+        this.boolTryAgain = false;
+        k =0;this.k=0;check=0;this.check=0;game.state.start('state11');touchCheck = false;
         },this)
         
         forIsoEquTriangle(this);
@@ -97,20 +104,23 @@ demo.state10.prototype = {
         boxTryAgainRotation(this);
         this.texts[0].addChild(this.drawGraphics);
         
-        this.texts[1].text = "Drag any one of the red points to change the size of the equilateral triangle.\nObserve how the lengths of the sides change.";
+        this.texts[1].text = "Drag any one of the red points to change the size of the equilateral triangle.\nObserve how the angles of the sides change.";
         this.texts[1].position.setTo(300, 125);
         this.texts[1].align = 'left';
         this.texts[1].fontWeight = 'normal';
        
         this.texts[2].position.setTo(this.x2+50,this.y2-50);
-        this.texts[2].setText("3 cm");
+        this.texts[2].setText("5 cm");
+        this.texts[2].setStyle({fill: '#A0AAAD'});
         
         this.texts[3].position.setTo(this.x3-50, this.y3-50);
-        this.texts[3].text = "3 cm";
+        this.texts[3].text = "5 cm";
+           this.texts[3].setStyle({fill: '#A0AAAD'});
         
         this.texts[4].position.setTo(this.x4, this.y4);
         this.texts[4].text = "5 cm";
         this.texts[4].anchor.x = 0.5;
+          this.texts[4].setStyle({fill: '#A0AAAD'});
         
         this.texts[5].position.setTo(240,670);
         this.texts[5].text = "No matter how the size of the triangle changes, the length of _________________."
@@ -295,13 +305,7 @@ demo.state10.prototype = {
             this.pinkbox5i.alpha=1;
             this.isoAns5i.alpha = 1;
             
-            linegraphics.beginFill(0x000000);
-            linegraphics.lineStyle(7, '#FF3300', 1);
-            linegraphics.moveTo(this.dot1.x,this.dot1.y);
-            linegraphics.lineTo(this.dot3.x,this.dot3.y);
-            linegraphics.moveTo(this.dot2.x,this.dot2.y);
-            linegraphics.lineTo(this.dot3.x,this.dot3.y);
-            linegraphics.endFill();}
+            }
         
         console.log("what is the value of a: " + a + " what is the value of b: " + this.b + "what is the value of c: " + c);
         console.log("X: " + this.dot.x + "Y: "+ this.dot.y);
@@ -595,15 +599,7 @@ demo.state10.prototype = {
                     if (a==1)
                     {
                         this.btnRadio1.loadTexture('btnradiochecked',0);
-                        linegraphics.beginFill(0x000000);
-                        linegraphics.lineStyle(7, '#FF3300', 1);
-                        linegraphics.moveTo(this.dot1.x,this.dot1.y);
-                        linegraphics.lineTo(this.dot3.x,this.dot3.y);
-                        linegraphics.moveTo(this.dot2.x,this.dot2.y);
-                        linegraphics.lineTo(this.dot3.x,this.dot3.y);
-                        linegraphics.moveTo(this.dot1.x,this.dot1.y);
-                        linegraphics.lineTo(this.dot2.x,this.dot2.y);
-                        linegraphics.endFill();
+                       
                         
                     } 
                     else if (b==1)
@@ -634,16 +630,7 @@ demo.state10.prototype = {
                     else if (b==1)
                     {
                         this.btnRadio3.loadTexture('btnradiochecked',0);  
-                        linegraphics.beginFill(0x000000);
-                        linegraphics.lineStyle(7, '#FF3300', 1);
-                        linegraphics.moveTo(this.dot1.x,this.dot1.y);
-                        linegraphics.lineTo(this.dot3.x,this.dot3.y);
-                        linegraphics.moveTo(this.dot2.x,this.dot2.y);
-                        linegraphics.lineTo(this.dot3.x,this.dot3.y);
-                        linegraphics.moveTo(this.dot1.x,this.dot1.y);
-                        linegraphics.lineTo(this.dot2.x,this.dot2.y);
-                        
-                        linegraphics.endFill();
+                   
                         
                     }
                     break;
@@ -661,16 +648,7 @@ demo.state10.prototype = {
             this.btnNext.visible = true;
             this.pinkbox5i.alpha=1;
             this.isoAns5i.alpha=1;
-            
-            linegraphics.beginFill(0x000000);
-            linegraphics.lineStyle(7, '#FF3300', 1);
-            linegraphics.moveTo(this.dot1.x,this.dot1.y);
-            linegraphics.lineTo(this.dot3.x,this.dot3.y);
-            linegraphics.moveTo(this.dot2.x,this.dot2.y);
-            linegraphics.lineTo(this.dot3.x,this.dot3.y);
-            linegraphics.moveTo(this.dot1.x,this.dot1.y);
-            linegraphics.lineTo(this.dot2.x,this.dot2.y);
-            linegraphics.endFill();
+        
         }
           if (this.btnRadio1.input.pointerOver()) {
            this.btnRadio1.input.useHandCursor = true;

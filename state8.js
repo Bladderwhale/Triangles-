@@ -17,6 +17,15 @@ demo.state8.prototype = {  btnPlay: null, btnNext: null, a: 0, b:0, c:0, ans1:nu
         addTexts(this);
         equilateralTrianglesAns(this);
         addLightImage1i();
+      this.home.events.onInputDown.add(function(){
+        n = 0; this.n=0; a =0;b=0;c=0; this.a=0; this.b =0; this.c=0;confusedCheck =0; this.confusedCheck=0;
+        this.boolTryAgain = false;
+        k =0;this.k=0;check=0;this.check=0;
+        game.state.start('state1');
+       
+    },this);
+        
+        
         this.btnPlay = game.add.button(0,0,"btn2");
         this.btnPlay.frame = 1;
         this.btnPlay.position.setTo(1140, 750);
@@ -51,7 +60,7 @@ demo.state8.prototype = {  btnPlay: null, btnNext: null, a: 0, b:0, c:0, ans1:nu
           boxTryAgainRotation(this);
         this.texts[2].addChild(this.drawGraphics);
         
-        this.texts[3].position.setTo(200-40, 425+10);
+        this.texts[3].position.setTo(200-20, 425+10);
         this.texts[3].text = "5.6 m";
         
         this.texts[4].position.setTo(480-40, 425+10);
@@ -145,7 +154,8 @@ demo.state8.prototype = {  btnPlay: null, btnNext: null, a: 0, b:0, c:0, ans1:nu
         
         this.btnPlay.events.onInputDown.add(function(){if (check>=2 && a == 1 && b ==1){this.pinkbox3c.alpha = 1; this.isoAns3c.alpha = 1;this.tick1.alpha = 1; this.tick2.alpha = 1; this.btnPlay.visible = false; this.btnNext.visible = true; this.texts[12].alpha = 1;this.texts[12].position.setTo(1160,755); this.texts[12].text = "Continue"; this.texts[3].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[4].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[6].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[7].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[3].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[8].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[9].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[5].setStyle({backgroundColor: 'rgba(255,255,0,1)'});} else if (check >=2 && c ==1 && b == 1){this.pinkbox3a.alpha = 1; this.isoAns3a.alpha =1;this.pinkbox2.alpha = 1;this.isoAns2.alpha = 1;this.confusedCheck++;this.boolTryAgain = true;this.cross1.alpha = 1; this.tick1.alpha = 0; this.tick2.alpha = 1; this.btnPlay.visible = false; this.btnNext.visible = true;this.texts[12].alpha = 1; this.texts[12].position.setTo(1160,755); this.texts[12].text = "Continue";this.texts[3].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[4].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[6].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[7].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[3].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[8].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[9].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[5].setStyle({backgroundColor: 'rgba(255,255,0,1)'});} else if (check >=2 && c ==1 && a == 1){this.pinkbox3.alpha = 1; this.isoAns3.alpha =1;this.pinkbox2.alpha = 1;this.isoAns2.alpha = 1;this.confusedCheck++;this.boolTryAgain = true;this.cross1.alpha = 1; this.tick1.alpha = 1; this.tick2.alpha = 0; this.btnPlay.visible = false; this.btnNext.visible = true;this.texts[12].alpha = 1; this.texts[12].position.setTo(1160,755); this.texts[12].text = "Continue";this.texts[3].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[4].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[6].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[7].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[3].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[8].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[9].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[5].setStyle({backgroundColor: 'rgba(255,255,0,1)'});}},this);
         
-        this.btnNext.events.onInputDown.add(function(){check =0;a=0;b=0;c=0;game.state.start('state9'); n = 0; this.n=0;},this);
+        this.btnNext.events.onInputDown.add(function(){  n = 0; this.n=0; a =0;b=0;c=0; this.a=0; this.b =0; this.c=0;confusedCheck =0; k=0; this.k=0;this.confusedCheck=0; check =0; this.check = 0;
+      game.state.start('state9');},this);
         
           //Creating the try again button
         this.btnTryAgain = game.add.button(0,0, 'btn2');
@@ -181,6 +191,7 @@ demo.state8.prototype = {  btnPlay: null, btnNext: null, a: 0, b:0, c:0, ans1:nu
     },
     update: function(){
         console.log("The value of x is: " + this.dot.x + " Y: " + this.dot.y);
+        console.log("what is the value of k: "+ this.k)
           if (this.boolTryAgain == true) {
               if (this.k < 1 ) {
             this.btnTryAgain.visible = true;

@@ -19,7 +19,13 @@ demo.state13.prototype = {
         addTickCross(this);
         rightangleAns(this);
         addLightImage1i();
-
+this.home.events.onInputDown.add(function(){
+        n = 0; this.n=0; a =0;b=0;c=0; this.a=0; this.b =0; this.c=0;confusedCheck =0; this.confusedCheck=0;
+        this.boolTryAgain = false;
+        k =0;this.k=0;check=0;this.check=0;
+        game.state.start('state1');
+       
+    },this);
         var firstTrianglePoints = [350-70, 325+250,350+150-70+30 ,325 ];
         var firstTriDraw = game.add.graphics(0,0);
         firstTriDraw.beginFill(0xe0ffff);
@@ -212,7 +218,9 @@ demo.state13.prototype = {
             }
                },this);
         
-        this.btnNext.events.onInputDown.add(function(){check =0; this.a=0; this.b=0; this.c=0;a =0;b=0;c=0;n=0;game.state.start('state14');},this);
+        this.btnNext.events.onInputDown.add(function(){ n = 0; this.n=0; a =0;b=0;c=0; this.a=0; this.b =0; this.c=0;confusedCheck =0; this.confusedCheck=0;
+        this.boolTryAgain = false;this.n1=0;
+        k =0;this.k=0;check=0;this.check=0;game.state.start('state14');},this);
         
            //Creating the try again button
         this.btnTryAgain = game.add.button(0,0, 'btn2');

@@ -18,7 +18,7 @@ demo.state7.prototype = {
         addTickCross(this);
         equilateralTrianglesAns(this);
         
-        
+        this.k=0;
         this.cross1.position.setTo(310,768);
         this.cross1.anchor.setTo(0.15,0.15);
         this.cross1.alpha = 0;
@@ -66,7 +66,7 @@ demo.state7.prototype = {
         this.btnStart.events.onInputDown.add(function(){
             if (n==1){this.boolTryAgain = true;this.cross1.alpha = 1; this.texts[2].setStyle({backgroundColor: 'rgba(255, 255, 0,1)'});this.texts[3].setStyle({backgroundColor: 'rgba(255, 255, 0,1)'});this.texts[4].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.btnStart.frame = 1;   this.texts[10].alpha = 0.3; a+=1;}
             if (n==2){this.tick1.alpha = 1;this.texts[2].setStyle({backgroundColor: 'rgba(255, 255, 0,1)'});this.texts[3].setStyle({backgroundColor: 'rgba(255, 255, 0,1)'});this.texts[4].setStyle({backgroundColor: 'rgba(255,255,0,1)'}); c+=1;}
-            if (n==3){this.boolTryAgain = true;this.cross2.alpha = 1; this.texts[2].setStyle({backgroundColor: 'rgba(255, 255, 0,1)'});this.texts[3].setStyle({backgroundColor: 'rgba(255, 255, 0,1)'}); this.texts[4].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.btnStart.frame = 1;  this.texts[10].alpha = 0.3; this.b+=1;}
+            if (n==3){this.boolTryAgain = true;this.cross2.alpha = 1; this.texts[2].setStyle({backgroundColor: 'rgba(255, 255, 0,1)'});this.texts[3].setStyle({backgroundColor: 'rgba(255, 255, 0,1)'}); this.texts[4].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.btnStart.frame = 1;  this.texts[10].alpha = 0.3; this.b=1;}
         }
                                              ,this);
         
@@ -76,7 +76,8 @@ demo.state7.prototype = {
         this.btnNext.position.setTo(1150, 815);
         this.btnNext.scale.setTo(0.8,0.5);
         this.btnNext.visible = false;
-        this.btnNext.events.onInputDown.add(function(){check =0;a =0; b=0; c=0; n=0; this.n=0; this.n1=0;
+        this.btnNext.events.onInputDown.add(function(){ n = 0; this.n=0; a =0;b=0;c=0; this.a=0; this.b =0; this.c=0;confusedCheck =0; this.confusedCheck=0;
+        k =0;this.k=0;check=0;this.check=0;
             game.state.start('state8');touchCheck = false;
         },this)
         
@@ -237,6 +238,7 @@ demo.state7.prototype = {
         if (this.fakeHandle3.input.pointerOver()) {
            this.fakeHandle3.input.useHandCursor = true;
        }
+        console.log("what is the value of k: "+ this.k)
           //Try again function
         if (this.boolTryAgain == true) {
             if (this.k < 1){
