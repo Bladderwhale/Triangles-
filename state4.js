@@ -208,6 +208,8 @@ demo.state4.prototype = {
         else if (this.boolTryAgain == false) {
             this.btnTryAgain.visible = false;
             this.txtTryAgain.alpha = 0;
+              this.btnPlay.frame = 1;
+            this.texts[12].alpha = 0.3;
              if (this.k == 2){this.tick1.alpha = 1; this.tick2.alpha = 1; this.btnPlay.visible = false; this.btnNext.visible = true; this.texts[12].position.setTo(1160, 805); this.texts[12].text = "Continue"; this.texts[12].alpha = 1; this.texts[3].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[4].setStyle({backgroundColor: 'rgba(255,255,0,1)'});
             
             }

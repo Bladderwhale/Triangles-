@@ -52,6 +52,26 @@ demo.state11.prototype = {
         baseAngle = Math.acos(baseAngle);
         starttAngle = Math.PI + Math.PI/2;
         
+        this.dotA =game.add.sprite(874,335,undefined);
+        this.dotB = game.add.sprite(600,335,undefined);
+        this.dotC = game.add.sprite(0,0,undefined);
+         center = new Phaser.Point.add(this.dotA ,this.dotB);
+        center = center.divide(2,2);
+        length = new Phaser.Point.subtract(this.dotA, this.dotB).getMagnitude();
+         bbbb = (length * length) - (length/2 * length/2);
+        bbbb = (Math.sqrt(bbbb));
+        this.dotC.position = new Phaser.Point(center.x, center.y+bbbb);
+        
+           this.dotD =game.add.sprite(1200+20,548+20,undefined);
+        this.dotE = game.add.sprite(1160+20,324+20,undefined);
+        this.dotF = game.add.sprite(0,0,undefined);
+         center1 = new Phaser.Point.add(this.dotD ,this.dotE);
+        center1 = center1.divide(2,2);
+        length1 = new Phaser.Point.subtract(this.dotD, this.dotE).getMagnitude();
+         bbbb1 = (length1 * length1) - (length1/2 * length1/2);
+        bbbb1 = (Math.sqrt(bbbb1));
+        this.dotF.position = new Phaser.Point(center1.x-bbbb1, center1.y);
+        
         var firstTrianglePoints = [300,355,500,555];
         var firstTriangleDraw = game.add.graphics(0,0); 
         firstTriangleDraw.beginFill(0x003366,0.3);
@@ -63,7 +83,7 @@ demo.state11.prototype = {
         }
         firstTriangleDraw.endFill();
         
-        var secondTrianglePoints = [738-5,548,874,335];
+        var secondTrianglePoints = [this.dotC.position.x,this.dotC.position.y,874,335];
         var secondTriangleDraw = game.add.graphics(0,0); 
         secondTriangleDraw.beginFill(0xffa500,0.5);
         secondTriangleDraw.lineStyle(2, 0x000000,1);
@@ -74,7 +94,7 @@ demo.state11.prototype = {
         }
         secondTriangleDraw.endFill();
         
-        var thirdTrianglePoints = [1200+20,548+20,1031+20,480+5];
+        var thirdTrianglePoints = [1200+20,548+20, this.dotF.position.x , this.dotF.position.y +30 ];
         var thirdTriangleDraw = game.add.graphics(0,0); 
         thirdTriangleDraw.beginFill(0xFF6A6A,0.5);
         thirdTriangleDraw.lineStyle(2, 0x000000,1);
@@ -123,10 +143,10 @@ demo.state11.prototype = {
         this.texts[7].position.setTo(780, 355);
         this.texts[7].text = "60\xB0";
         
-        this.texts[8].position.setTo(720, 461);
+        this.texts[8].position.setTo(720, 461+27);
         this.texts[8].text = "60\xB0";
         
-        this.texts[9].position.setTo(1085+20,451+15);
+        this.texts[9].position.setTo(1085-30,451+15);
         this.texts[9].text = "60\xB0";
         
         this.texts[10].position.setTo(1120+20,372+20);
@@ -163,17 +183,17 @@ demo.state11.prototype = {
         var alx2 = new forState11(600,335,738,548,874,335)
         alx2.init();
         
-        var alx3 = new forState11(1160,324,1200,548,1031,480)
+        var alx3 = new forState11(1160,324,1200,548,this.dotF.position.x,this.dotF.position.y)
         alx3.init();
         console.log(alx);
         startAnglee1 = Math.PI/2 - alx.dotProductB;
         startAnglee2 = Math.PI/2 + Math.PI/2 - alx.dotProductC/15;
-        startAnglee3 = Math.PI/2 + Math.PI/2 + Math.PI/2 + Math.PI/2 - alx2.dotProductA/20;
+        startAnglee3 = Math.PI/2 + Math.PI/2 + Math.PI/2 + Math.PI/1.9 - alx2.dotProductA/20;
         startAnglee4 = Math.PI/2 + Math.PI/2 + Math.PI/2 - alx2.dotProductB/2;
         startAnglee5 = Math.PI/2 + Math.PI/2 - alx2.dotProductC;
-        startAnglee6 = Math.PI/2 + Math.PI/4.5- alx3.dotProductA;
-        startAnglee7 = Math.PI/2 + Math.PI/2 + Math.PI/2.2 - alx3.dotProductB;
-        startAnglee8 = Math.PI + Math.PI/2 + Math.PI/2 - alx3.dotProductC/1.5;
+        startAnglee6 = Math.PI/2 + Math.PI/4.9- alx3.dotProductA/1.3;
+        startAnglee7 = Math.PI/2 + Math.PI/2 + Math.PI/2.3 - alx3.dotProductB;
+        startAnglee8 = Math.PI + Math.PI/2 + Math.PI/2 - alx3.dotProductC/3;
         console.log("What is angle b " + alx.dotProductA);
         graphics1 = game.add.graphics(0,0);
         graphics1.lineStyle(2, 0xFF3300);
@@ -182,12 +202,12 @@ demo.state11.prototype = {
         graphics1.arc(300,355,50,startAnglee1,startAnglee1 + alx.dotProductB,false);
         graphics1.arc(500,555,50,startAnglee2,startAnglee2 + alx.dotProductC,false);
         graphics1.arc(600,335,50,startAnglee3,startAnglee3 + alx2.dotProductA,false);
-        graphics1.arc(738-5,548,50,startAnglee4,startAnglee4 + alx2.dotProductB,false);
-        graphics1.arc(738-5,548,50,startAnglee4,startAnglee4 + alx2.dotProductB,false);
+      //  graphics1.arc(738-5,548,50,startAnglee4,startAnglee4 + alx2.dotProductB,false);
+        graphics1.arc(this.dotC.position.x,this.dotC.position.y,50,startAnglee4,startAnglee4 + alx2.dotProductB,false);
         graphics1.arc(874,335,50,startAnglee5,startAnglee5 + alx2.dotProductC,false);
         graphics1.arc(1160+20,324+20,50,startAnglee6, startAnglee6 + alx3.dotProductA, false);
         graphics1.arc(1200+20,548+20,50,startAnglee7, startAnglee7 + alx3.dotProductB,false);
-        graphics1.arc(1031+20,480+5,50,startAnglee8, startAnglee8 + alx3.dotProductC, false);
+        graphics1.arc(990,474,60,startAnglee8, startAnglee8 + alx3.dotProductC-0.3, false);
         
         this.btnRadio1.position.setTo(378,610);
         this.btnRadio2.position.setTo(750,610);
@@ -216,13 +236,13 @@ demo.state11.prototype = {
         this.btnPlay.events.onInputDown.add(function(){if (check>=2 && a == 1 && b ==1){this.pinkbox5c.alpha =1; this.isoAns5c.alpha=1;this.pinkbox5a.alpha=1;this.isoAns5a.alpha=1;this.confusedCheck++;this.boolTryAgain = true; this.tick2.alpha = 1; this.cross1.alpha = 1; this.btnPlay.visible = false; this.btnNext.visible = true; this.texts[12].alpha = 1;this.texts[12].position.setTo(1160,805); this.texts[12].text = "Continue"; this.texts[6].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[7].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[8].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[9].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[10].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[11].setStyle({backgroundColor: 'rgba(255,255,0)'});} else if (check >=2 && c ==1 && b ==1){linegraphics = game.add.graphics(0,0);
             linegraphics.lineStyle(3,0xffff00,1);
             linegraphics.moveTo(600,335);
-            linegraphics.lineTo(733,548);
+            linegraphics.lineTo(this.dotC.x,this.dotC.y);
             linegraphics.lineTo(874,335);
             linegraphics.lineTo(600,335);
             linegraphics.lineStyle(3,0xffff00,1);
             linegraphics.moveTo(1180,344);
             linegraphics.lineTo(1220,568);
-            linegraphics.lineTo(1051,485);
+            linegraphics.lineTo(this.dotF.x,this.dotF.y+30);
             linegraphics.lineTo(1180,344);
             linegraphics.endFill();this.pinkbox5.alpha =1;this.isoAns5.alpha =1;this.cross1.alpha = 0; this.tick1.alpha = 1; this.tick2.alpha = 1; this.btnPlay.visible = false; this.btnNext.visible = true;this.texts[12].alpha = 1; this.texts[12].position.setTo(1160,805); this.texts[12].text = "Continue";this.texts[6].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[7].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[8].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[9].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[10].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[11].setStyle({backgroundColor: 'rgba(255,255,0)'});}else if (check >=2 && c ==1 && a ==1){this.pinkbox5c.alpha =1; this.isoAns5c.alpha=1;this.pinkbox5b.alpha =1; this.isoAns5b.alpha=1;this.confusedCheck++;this.boolTryAgain = true; this.cross1.alpha = 1; this.tick1.alpha = 1; this.tick2.alpha = 0; this.btnPlay.visible = false; this.btnNext.visible = true;this.texts[12].alpha = 1; this.texts[12].position.setTo(1160,805); this.texts[12].text = "Continue";this.texts[6].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[7].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[8].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[9].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[10].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[11].setStyle({backgroundColor: 'rgba(255,255,0)'});}},this);
         
@@ -270,15 +290,15 @@ demo.state11.prototype = {
             this.btnTryAgain.visible = true;
             this.txtTryAgain.alpha = 1;
             linegraphics = game.add.graphics(0,0);
-            linegraphics.lineStyle(3,0xffff00,1);
+             linegraphics.lineStyle(3,0xffff00,1);
             linegraphics.moveTo(600,335);
-            linegraphics.lineTo(733,548);
+            linegraphics.lineTo(this.dotC.x,this.dotC.y);
             linegraphics.lineTo(874,335);
             linegraphics.lineTo(600,335);
             linegraphics.lineStyle(3,0xffff00,1);
             linegraphics.moveTo(1180,344);
             linegraphics.lineTo(1220,568);
-            linegraphics.lineTo(1051,485);
+            linegraphics.lineTo(this.dotF.x,this.dotF.y+30);
             linegraphics.lineTo(1180,344);
             linegraphics.endFill();
             n = 4;}

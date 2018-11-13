@@ -102,7 +102,7 @@ demo.state5.prototype = {
         this.btnNext = game.add.button(0,0, 'btn2');
         this.btnNext.frame = 0;
         this.btnNext.position.setTo(1150, 815);
-        this.btnNext.scale.setTo(0.7,0.5);
+        this.btnNext.scale.setTo(0.78,0.5);
         this.btnNext.visible = false;
         this.btnNext.events.onInputDown.add(function(){ n = 0; this.n=0; a =0;b=0;c=0; this.a=0; this.b =0; this.c=0;confusedCheck =0; this.confusedCheck=0;
         this.boolTryAgain = false;
@@ -240,7 +240,7 @@ demo.state5.prototype = {
         this.btnTryAgain = game.add.button(0,0, 'btn2');
         this.btnTryAgain.frame = 0;
         this.btnTryAgain.position.setTo(1150, 815);
-        this.btnTryAgain.scale.setTo(0.785,0.5);
+        this.btnTryAgain.scale.setTo(0.79,0.5);
         this.btnTryAgain.visible = false;
         this.txtTryAgain = game.add.text(1150,815,"Try Again");
         this.txtTryAgain.alpha = 0;
@@ -301,7 +301,7 @@ demo.state5.prototype = {
             this.btnRadio3.loadTexture('btnradio',0);
             this.texts[10].alpha=1;
             this.texts[10].text = "Continue";
-            this.texts[10].position.x = 1160;
+            this.texts[10].position.x = 1170;
             tickTween.start();
             tickTween2.start();
             tickTween3.start();
@@ -588,7 +588,7 @@ demo.state5.prototype = {
             this.btnRadio2.loadTexture('btnradiochecked',0);
             this.btnRadio3.loadTexture('btnradio',0);
             this.texts[10].text = "Continue";
-            this.texts[10].position.x = 1160;
+            this.texts[10].position.x = 1170;
             this.btnNext.visible = true;
             this.pinkbox1b.alpha = 1;
             this.isoAns1b.alpha = 1;

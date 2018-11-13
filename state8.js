@@ -104,6 +104,16 @@ demo.state8.prototype = {  btnPlay: null, btnNext: null, a: 0, b:0, c:0, ans1:nu
         bbbb = (Math.sqrt(bbbb));
         this.dotC.position = new Phaser.Point(center.x, center.y - bbbb);
         
+        this.dotD =game.add.sprite(600,335+10,undefined);
+        this.dotE = game.add.sprite(874,335+10,undefined);
+        this.dotF = game.add.sprite(0,0,undefined);
+         center1 = new Phaser.Point.add(this.dotD ,this.dotE);
+        center1 = center1.divide(2,2);
+        length1 = new Phaser.Point.subtract(this.dotD, this.dotE).getMagnitude();
+         bbbb1 = (length1 * length1) - (length1/2 * length1/2);
+        bbbb1 = (Math.sqrt(bbbb1));
+        this.dotF.position = new Phaser.Point(center1.x, center1.y + bbbb);
+        
         var firstTrianglePoints = [252-40,548+10,511-40,548+10];
         var firstTriangleDraw = game.add.graphics(0,0); 
         firstTriangleDraw.beginFill(0x003366);
@@ -115,11 +125,11 @@ demo.state8.prototype = {  btnPlay: null, btnNext: null, a: 0, b:0, c:0, ans1:nu
         }
         firstTriangleDraw.endFill();
         
-        var secondTrianglePoints = [738,548+10,874,335+10];
+        var secondTrianglePoints = [this.dotF.position.x,this.dotF.position.y,870,335+10];
         var secondTriangleDraw = game.add.graphics(0,0); 
         secondTriangleDraw.beginFill(0xffa500);
         secondTriangleDraw.lineStyle(2, 0x000000,1);
-        secondTriangleDraw.moveTo(600,335+10);
+        secondTriangleDraw.moveTo(610,335+10);
         for (var i =0; i<firstTrianglePoints.length; i++){
             secondTriangleDraw.lineTo(secondTrianglePoints[i], secondTrianglePoints[i+1]);
             i++
@@ -211,6 +221,8 @@ demo.state8.prototype = {  btnPlay: null, btnNext: null, a: 0, b:0, c:0, ans1:nu
         else if (this.boolTryAgain == false) {
             this.btnTryAgain.visible = false;
             this.txtTryAgain.alpha = 0;
+              this.btnPlay.frame = 1;
+            this.texts[12].alpha = 0.3;
              if (this.k == 2){this.tick1.alpha = 1; this.tick2.alpha = 1; this.btnPlay.visible = false; this.btnNext.visible = true; this.texts[12].position.setTo(1160, 805); this.texts[12].text = "Continue"; this.texts[12].alpha = 1; this.texts[3].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[4].setStyle({backgroundColor: 'rgba(255,255,0,1)'});
             
             }

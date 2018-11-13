@@ -213,8 +213,8 @@ this.home.events.onInputDown.add(function(){
                 this.btnPlay.alpha = 1;
                 this.boolTryAgain = true;
                 this.confusedCheck++;
-                 this.pinkbox7.alpha =1;
-                 this.isoAns7.alpha =1;
+                 this.pinkbox7i.alpha =1;
+                 this.isoAns7i.alpha =1;
             }
                },this);
         

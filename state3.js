@@ -171,7 +171,7 @@ demo.state3.prototype = {
         this.btnTryAgain = game.add.button(0,0, 'btn2');
         this.btnTryAgain.frame = 0;
         this.btnTryAgain.position.setTo(1035, 800);
-        this.btnTryAgain.scale.setTo(0.785,0.5);
+        this.btnTryAgain.scale.setTo(0.8,0.5);
         this.btnTryAgain.visible = false;
         this.txtTryAgain = game.add.text(1150,815,"Try Again");
         this.txtTryAgain.alpha = 0;

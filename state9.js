@@ -98,8 +98,28 @@ demo.state9.prototype = {
         h3 = new Phaser.Point(500,555); //right
         
         
+             this.dotA =game.add.sprite(288,341,undefined);
+        this.dotB = game.add.sprite(288,531,undefined);
+        this.dotC = game.add.sprite(0,0,undefined);
+         center = new Phaser.Point.add(this.dotA ,this.dotB);
+        center = center.divide(2,2);
+        length = new Phaser.Point.subtract(this.dotA, this.dotB).getMagnitude();
+         bbbb = (length * length) - (length/2 * length/2);
+        bbbb = (Math.sqrt(bbbb));
+        this.dotC.position = new Phaser.Point(center.x+bbbb, center.y);
         
-        var firstTrianglePoints = [288, 531,500 ,436 ];
+        this.dotD =game.add.sprite(1178,334,undefined);
+        this.dotE = game.add.sprite(1178,530,undefined);
+        this.dotF = game.add.sprite(0,0,undefined);
+         center1 = new Phaser.Point.add(this.dotD ,this.dotE);
+        center1 = center1.divide(2,2);
+        length1 = new Phaser.Point.subtract(this.dotD, this.dotE).getMagnitude();
+         bbbb1 = (length1 * length1) - (length1/2 * length1/2);
+        bbbb1 = (Math.sqrt(bbbb1));
+        this.dotF.position = new Phaser.Point(center1.x-bbbb1, center1.y);
+        
+        
+        var firstTrianglePoints = [288, 531,this.dotC.x ,this.dotC.y ];
         var firstTriDraw = game.add.graphics(0,0);
         firstTriDraw.beginFill(0xe0ffff);
         firstTriDraw.lineStyle(2,0x000000,1);
@@ -124,7 +144,7 @@ demo.state9.prototype = {
         var thirdTrianglePoints = [1178,334, 1178,530];
         var thirdTriDraw = game.add.graphics(0,0);
         thirdTriDraw.beginFill(0xFFFF66);
-        thirdTriDraw.moveTo(997, 440);
+        thirdTriDraw.moveTo(this.dotF.position.x, this.dotF.position.y);
         thirdTriDraw.lineStyle(2,0x000000,1);
             for (var i = 0; i<thirdTrianglePoints.length; i++) {
             thirdTriDraw.lineTo(thirdTrianglePoints[i], thirdTrianglePoints[i+1] );
@@ -200,7 +220,8 @@ demo.state9.prototype = {
         else if (this.boolTryAgain == false) {
             this.btnTryAgain.visible = false;
             this.txtTryAgain.alpha = 0;
-            
+              this.btnPlay.frame = 1;
+            this.texts[12].alpha = 0.3;
             if (this.k == 3){this.tick1.alpha = 1; this.tick2.alpha = 1; this.btnPlay.visible = false; this.btnNext.visible = true; this.texts[12].position.setTo(1055,805); this.texts[12].text = "Continue"; this.texts[12].alpha = 1; this.texts[3].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[4].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[10].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[9].setStyle({backgroundColor: 'rgba(255,255,0,1)'});
                             }
         }
