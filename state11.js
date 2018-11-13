@@ -90,12 +90,12 @@ demo.state11.prototype = {
             this.texts[i] = game.add.text(i*10,i*10, "1");
         }
         this.texts[0].position.setTo(210+110,120);
-        this.texts[0].text = "If a triangle has three equal sides or three equal angles,\nit is an equilaterial triangle."
+        this.texts[0].text = "If a triangle has three equal sides or three equal angles,\nit is an equilateral triangle."
         this.texts[0].lineSpacing = 0;
         this.texts[0].fontWeight = 'normal';
         
         this.texts[1].position.setTo(270,240);
-        this.texts[1].text = "Which two of these triangles are equilaterial?"
+        this.texts[1].text = "Which two of these triangles are equilateral?"
         this.texts[1].lineSpacing = 30;
         this.texts[1].fontWeight = 'normal';
         

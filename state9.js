@@ -12,7 +12,7 @@ demo.state9.prototype = {
         addChangeStateEventListers();
         fixedGUI(this);
         
-        this.headingTexts.text = "Equilaterial Triangles";
+        this.headingTexts.text = "Equilateral Triangles";
         fixedGUI3i();
         dotAttributes(this);
         addBtnRadio(this);
@@ -44,12 +44,12 @@ demo.state9.prototype = {
             this.texts[i] = game.add.text(i*10,i*10, "1");
         }
         this.texts[0].position.setTo(300,140);
-        this.texts[0].text = "If a triangle has three equal sides, it is an equilaterial triangle."
+        this.texts[0].text = "If a triangle has three equal sides, it is an equilateral triangle."
         this.texts[0].lineSpacing = 30;
         this.texts[0].fontWeight = 'normal';
         
         this.texts[1].position.setTo(270,250);
-        this.texts[1].text = "Which two of these triangles are equilaterial?"
+        this.texts[1].text = "Which two of these triangles are equilateral?"
         this.texts[1].lineSpacing = 30;
         this.texts[1].fontWeight = 'normal';
         

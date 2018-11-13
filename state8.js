@@ -42,12 +42,12 @@ demo.state8.prototype = {  btnPlay: null, btnNext: null, a: 0, b:0, c:0, ans1:nu
             this.texts[i] = game.add.text(i*10,i*10, "1");
         }
         this.texts[0].position.setTo(305,140);
-        this.texts[0].text = "If a triangle has three equal sides, it is an equilaterial triangle."
+        this.texts[0].text = "If a triangle has three equal sides, it is an equilateral triangle."
         this.texts[0].lineSpacing = 30;
         this.texts[0].fontWeight = 'normal';
         
         this.texts[1].position.setTo(270,250);
-        this.texts[1].text = "Which two of these triangles are equilaterial?"
+        this.texts[1].text = "Which two of these triangles are equilateral?"
         this.texts[1].lineSpacing = 30;
         this.texts[1].fontWeight = 'normal';
         
@@ -100,9 +100,9 @@ demo.state8.prototype = {  btnPlay: null, btnNext: null, a: 0, b:0, c:0, ans1:nu
          center = new Phaser.Point.add(this.dotA ,this.dotB);
         center = center.divide(2,2);
         length = new Phaser.Point.subtract(this.dotA, this.dotB).getMagnitude();
-         bbbb = length * length - length/2 * length/2;
-        bbbb = -(Math.sqrt(bbbb));
-        this.dotC.position = new Phaser.Point(center.x, center.y + bbbb);
+         bbbb = (length * length) - (length/2 * length/2);
+        bbbb = (Math.sqrt(bbbb));
+        this.dotC.position = new Phaser.Point(center.x, center.y - bbbb);
         
         var firstTrianglePoints = [252-40,548+10,511-40,548+10];
         var firstTriangleDraw = game.add.graphics(0,0); 

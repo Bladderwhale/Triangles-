@@ -400,7 +400,7 @@ function equilateralTrianglesAns(state) {
     state.pinkbox4c.lineStyle(1, 0x000000,1);
     state.pinkbox4c.drawRect(550,660, 435,80);
     state.pinkbox4c.alpha = 1;
-    state.isoAns4c = game.add.text(555,660, "They are equilateral triangles. \nEach Triangle has three equal sides.");
+    state.isoAns4c = game.add.text(555,660, "They are equilateral triangles. \nEach triangle has three equal sides.");
     state.isoAns4c.fontWeight = 'normal';
     state.isoAns4c.align = 'left';
     state.isoAns4c.addFontWeight('normal',0);
