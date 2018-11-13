@@ -305,7 +305,7 @@ function boxTryAgain () {
 
 function boxTryAgainRotation (state) {
     state.drawGraphics = game.add.graphics(0,0);
-    state.drawGraphics.lineStyle(1,0X000000,1);
+    state.drawGraphics.lineStyle(2,0x008000,1);
     state.drawGraphics.drawRect(0,0,drawGraphicsLength,30);
    
     state.drawGraphics.endFill();

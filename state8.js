@@ -94,11 +94,21 @@ demo.state8.prototype = {  btnPlay: null, btnNext: null, a: 0, b:0, c:0, ans1:nu
         this.texts[12].text = "Check";
         this.texts[12].alpha = 0.3;
         
+        this.dotA =game.add.sprite(252-40,548+10,undefined);
+        this.dotB = game.add.sprite(511-40,548+10,undefined);
+        this.dotC = game.add.sprite(0,0,undefined);
+         center = new Phaser.Point.add(this.dotA ,this.dotB);
+        center = center.divide(2,2);
+        length = new Phaser.Point.subtract(this.dotA, this.dotB).getMagnitude();
+         bbbb = length * length - length/2 * length/2;
+        bbbb = -(Math.sqrt(bbbb));
+        this.dotC.position = new Phaser.Point(center.x, center.y + bbbb);
+        
         var firstTrianglePoints = [252-40,548+10,511-40,548+10];
         var firstTriangleDraw = game.add.graphics(0,0); 
         firstTriangleDraw.beginFill(0x003366);
         firstTriangleDraw.lineStyle(2, 0x000000,1);
-        firstTriangleDraw.moveTo(381-40,335+10);
+        firstTriangleDraw.moveTo(this.dotC.position.x,this.dotC.position.y);
         for (var i =0; i<firstTrianglePoints.length; i++){
             firstTriangleDraw.lineTo(firstTrianglePoints[i], firstTrianglePoints[i+1]);
             i++

@@ -104,10 +104,10 @@ demo.state7.prototype = {
         this.texts[1].fontWeight = 'normal';
        
         this.texts[2].position.setTo(this.dot3.x+85,this.dot3.y+50);
-        this.texts[2].setText("3.0 cm");
+        this.texts[2].setText("5.0 cm");
         
         this.texts[3].position.setTo(this.dot3.x-170, this.dot3.y+50);
-        this.texts[3].text = "3.0 cm";
+        this.texts[3].text = "5.0 cm";
         
         this.texts[4].position.setTo(this.x4, this.y4);
         this.texts[4].text = "5.0 cm";
