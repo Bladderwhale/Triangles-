@@ -108,12 +108,13 @@ demo.state5.prototype = {
         for (var i = 0; i < 14; i++){
             this.texts[i] = game.add.text(i*100,i*100, "6");
         }
-        this.texts[0].text = "Try this";
-        this.texts[0].position.setTo(140, 140);
+        this.texts[0].text = "Try this...";
+        this.texts[0].position.setTo(140, 150);
         this.texts[0].setStyle({ fill: '#008000'});
+        this.texts[0].angle = -10;
         dotAttributes(this);
         
-        drawGraphicsLength = 100;
+        drawGraphicsLength = 130;
          boxTryAgainRotation(this);
         this.texts[0].addChild(this.drawGraphics);
         

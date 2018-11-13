@@ -28,7 +28,7 @@ demo.state2.prototype = {
         fixedGUI2();
         addBtnRadio(this);
         addTickCross(this);
-        boxTryAgain();
+       
         
         this.cross1.position.setTo(310,722.5);
         this.cross1.anchor.setTo(0.15,0.15);
@@ -98,9 +98,14 @@ demo.state2.prototype = {
         for (var i = 0; i < 11; i++){
             this.texts[i] = game.add.text(i*100,i*100, "6");
         }
-        this.texts[0].text = "Try this";
-        this.texts[0].position.setTo(140, 140);
+        this.texts[0].text = "Try this...";
+        this.texts[0].position.setTo(140, 150);
         this.texts[0].setStyle({ fill: '#008000'});
+        this.texts[0].angle = -10;
+        
+        boxTryAgainRotation(this);
+        this.texts[0].addChild(this.drawGraphics);
+        
         dotAttributes(this);
         
         this.texts[1].text = "Drag any one of the red points to change the size of the isosceles triangle.\nObserve how the lengths of the sides change.";

@@ -11,10 +11,14 @@ demo.state10.prototype = {
         addTexts(this);
         fixedGUI(this);
         this.headingTexts.text = "Equilateral Triangles";
-        fixedGUI2();
+        fixedGUI4i(this);
         addBtnRadio(this);
         addTickCross(this);
         equilateralTrianglesAns(this);
+        
+        this.headingTexts1 = game.add.text(300,60,"There is another property for an equilateral triangle.");
+        this.headingTexts1.fontWeight = 'normal';
+        
         this.cross1.position.setTo(310,768);
         this.cross1.anchor.setTo(0.15,0.15);
         this.cross1.alpha = 0;
@@ -85,7 +89,8 @@ demo.state10.prototype = {
             this.texts[i] = game.add.text(i*100,i*100, "6");
         }
         this.texts[0].text = "Try this...";
-        this.texts[0].position.setTo(140, 140);
+        this.texts[0].position.setTo(140, 150);
+        this.texts[0].angle = -10
         this.texts[0].setStyle({ fill: '#008000'});
         dotAttributes(this);
         
@@ -135,13 +140,13 @@ demo.state10.prototype = {
         this.texts[10].position.setTo(1175,820);
         this.texts[10].alpha = 0;
         
-        this.texts[11].text = "60 \xB0";
+        this.texts[11].text = "60\xB0";
         this.texts[11].position.setTo(this.dot2.x-105,this.dot2.y-50);
         
-        this.texts[12].text = "60 \xB0";
+        this.texts[12].text = "60\xB0";
         this.texts[12].position.setTo(this.dot1.x+80,this.dot1.y-50);
         
-        this.texts[13].text = "60 \xB0";
+        this.texts[13].text = "60\xB0";
         this.texts[13].position.setTo(this.dot3.x-15, this.dot3.y+20);
         
         graphics = game.add.graphics(0,0);;
@@ -413,7 +418,7 @@ demo.state10.prototype = {
             this.dot1.x-= 1.15;
             this.texts[2].position.setTo(this.dot3.x+60,this.dot3.y+50);
             this.texts[2].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(1) + " cm");
-            this.texts[3].position.setTo(this.dot3.x-130, this.dot3.y+50);
+            this.texts[3].position.setTo(this.dot3.x-150, this.dot3.y+50);
             this.texts[3].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(1) + " cm");
             this.texts[4].position.setTo(this.dot3.x, this.y4);
             this.texts[4].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(1) + " cm");
@@ -441,7 +446,7 @@ demo.state10.prototype = {
             
             this.texts[2].position.setTo(this.dot3.x+60,this.dot3.y+50);
             this.texts[2].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(1) + " cm");
-            this.texts[3].position.setTo(this.dot3.x-130, this.dot3.y+50);
+            this.texts[3].position.setTo(this.dot3.x-150, this.dot3.y+50);
             this.texts[3].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(1) + " cm");
             this.texts[4].position.setTo(this.dot3.x, this.y4);
             this.texts[4].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(1) + " cm");
@@ -462,7 +467,7 @@ demo.state10.prototype = {
     
             this.texts[2].position.setTo(this.dot3.x+60,this.dot3.y+50);
             this.texts[2].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(1) + " cm");
-            this.texts[3].position.setTo(this.dot3.x-130, this.dot3.y+50);
+            this.texts[3].position.setTo(this.dot3.x-150, this.dot3.y+50);
             this.texts[3].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(1) + " cm");
             this.texts[4].position.setTo(this.dot3.x, this.y4);
             this.texts[4].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(1) + " cm");
@@ -481,7 +486,7 @@ demo.state10.prototype = {
             
             this.texts[2].position.setTo(this.dot3.x+60,this.dot3.y+50);
             this.texts[2].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(1) + " cm");
-            this.texts[3].position.setTo(this.dot3.x-130, this.dot3.y+50);
+            this.texts[3].position.setTo(this.dot3.x-150, this.dot3.y+50);
             this.texts[3].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(1) + " cm");
             this.texts[4].position.setTo(this.dot3.x, this.y4);
             this.texts[4].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(1) + " cm");
@@ -500,7 +505,7 @@ demo.state10.prototype = {
             
             this.texts[2].position.setTo(this.dot3.x+60,this.dot3.y+50);
             this.texts[2].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(1) + " cm");
-            this.texts[3].position.setTo(this.dot3.x-130, this.dot3.y+50);
+            this.texts[3].position.setTo(this.dot3.x-150, this.dot3.y+50);
             this.texts[3].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(1) + " cm");
             this.texts[4].position.setTo(this.dot3.x, this.y4);
           //  this.texts[4].setText(((Math.round( this.line.length* 10 ) / 100)-15).toFixed(2) + "cm");
@@ -519,7 +524,7 @@ demo.state10.prototype = {
             
             this.texts[2].position.setTo(this.dot3.x+60,this.dot3.y+50);
             this.texts[2].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(1) + " cm");
-            this.texts[3].position.setTo(this.dot3.x-130, this.dot3.y+50);
+            this.texts[3].position.setTo(this.dot3.x-150, this.dot3.y+50);
             this.texts[3].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(1) + " cm");
             this.texts[4].position.setTo(this.dot3.x, this.y4);
             this.texts[4].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(1) + " cm");
@@ -538,7 +543,7 @@ demo.state10.prototype = {
             
             this.texts[2].position.setTo(this.dot3.x+60,this.dot3.y+50);
             this.texts[2].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(1) + " cm");
-            this.texts[3].position.setTo(this.dot3.x-130, this.dot3.y+50);
+            this.texts[3].position.setTo(this.dot3.x-150, this.dot3.y+50);
             this.texts[3].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(1) + " cm");
             this.texts[4].position.setTo(this.dot3.x, this.y4);
             this.texts[4].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(1) + " cm");
@@ -555,7 +560,7 @@ demo.state10.prototype = {
             
             this.texts[2].position.setTo(this.dot3.x+60,this.dot3.y+50);
             this.texts[2].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(1) + " cm");
-            this.texts[3].position.setTo(this.dot3.x-130, this.dot3.y+50);
+            this.texts[3].position.setTo(this.dot3.x-150, this.dot3.y+50);
             this.texts[3].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(1) + " cm");
             this.texts[4].position.setTo(this.dot3.x, this.y4);
             this.texts[4].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(1) + " cm");

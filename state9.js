@@ -41,12 +41,12 @@ demo.state9.prototype = {
         this.texts[0].lineSpacing = 30;
         this.texts[0].fontWeight = 'normal';
         
-        this.texts[1].position.setTo(270,240);
+        this.texts[1].position.setTo(270,250);
         this.texts[1].text = "Which two of these triangles are equilaterial?"
         this.texts[1].lineSpacing = 30;
         this.texts[1].fontWeight = 'normal';
         
-        this.texts[2].position.setTo(130,255);
+        this.texts[2].position.setTo(130,265);
         this.texts[2].text = "Try this..."
        // this.texts[2].lineSpacing = 30;
         this.texts[2].angle = -10;

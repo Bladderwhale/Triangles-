@@ -37,12 +37,12 @@ demo.state8.prototype = {  btnPlay: null, btnNext: null, a: 0, b:0, c:0, ans1:nu
         this.texts[0].lineSpacing = 30;
         this.texts[0].fontWeight = 'normal';
         
-        this.texts[1].position.setTo(270,240);
+        this.texts[1].position.setTo(270,250);
         this.texts[1].text = "Which two of these triangles are equilaterial?"
         this.texts[1].lineSpacing = 30;
         this.texts[1].fontWeight = 'normal';
         
-        this.texts[2].position.setTo(130,255);
+        this.texts[2].position.setTo(130,265);
         this.texts[2].text = "Try this..."
         this.texts[2].lineSpacing = 30;
         this.texts[2].angle = -10;
@@ -51,67 +51,67 @@ demo.state8.prototype = {  btnPlay: null, btnNext: null, a: 0, b:0, c:0, ans1:nu
           boxTryAgainRotation(this);
         this.texts[2].addChild(this.drawGraphics);
         
-        this.texts[3].position.setTo(200-40, 425);
-        this.texts[3].text = "5.6 cm";
+        this.texts[3].position.setTo(200-40, 425+10);
+        this.texts[3].text = "5.6 m";
         
-        this.texts[4].position.setTo(480-40, 425);
-        this.texts[4].text = "5.6 cm";
+        this.texts[4].position.setTo(480-40, 425+10);
+        this.texts[4].text = "5.6 m";
         
-        this.texts[5].position.setTo(355-40, 562);
-        this.texts[5].text = "5.6 cm";
+        this.texts[5].position.setTo(355-40, 562+10);
+        this.texts[5].text = "5.6 m";
         
-        this.texts[6].position.setTo(680, 425);
-        this.texts[6].text = "4.15 cm";
+        this.texts[6].position.setTo(680, 425+10);
+        this.texts[6].text = "4.15 m";
         
-        this.texts[7].position.setTo(571, 468);
-        this.texts[7].text = "4.15 cm";
+        this.texts[7].position.setTo(571, 468+10);
+        this.texts[7].text = "4.15 m";
         
-        this.texts[8].position.setTo(692, 290);
-        this.texts[8].text = "4.15 cm";
+        this.texts[8].position.setTo(692, 290+20);
+        this.texts[8].text = "4.15 m";
         
-        this.texts[9].position.setTo(819,468);
-        this.texts[9].text = "4.15 cm";
+        this.texts[9].position.setTo(819,468+10);
+        this.texts[9].text = "4.15 m";
         
-        this.texts[10].position.setTo(993,365);
-        this.texts[10].text = "5.08 cm";
+        this.texts[10].position.setTo(993,365+20);
+        this.texts[10].text = "5.08 m";
         
-        this.texts[11].position.setTo(1194,425);
-        this.texts[11].text = "6.12 cm";
+        this.texts[11].position.setTo(1194,425+10);
+        this.texts[11].text = "6.12 m";
         
-        this.texts[13].position.setTo(1008,540);
-        this.texts[13].text = "4.23 cm";
+        this.texts[13].position.setTo(1008,540-20);
+        this.texts[13].text = "4.23 m";
         
         this.texts[12].position.setTo(1175,755);
         this.texts[12].text = "Check";
         this.texts[12].alpha = 0.3;
         
-        var firstTrianglePoints = [252-40,548,511-40,548];
+        var firstTrianglePoints = [252-40,548+10,511-40,548+10];
         var firstTriangleDraw = game.add.graphics(0,0); 
         firstTriangleDraw.beginFill(0x003366);
         firstTriangleDraw.lineStyle(2, 0x000000,1);
-        firstTriangleDraw.moveTo(381-40,335);
+        firstTriangleDraw.moveTo(381-40,335+10);
         for (var i =0; i<firstTrianglePoints.length; i++){
             firstTriangleDraw.lineTo(firstTrianglePoints[i], firstTrianglePoints[i+1]);
             i++
         }
         firstTriangleDraw.endFill();
         
-        var secondTrianglePoints = [738,548,874,335];
+        var secondTrianglePoints = [738,548+10,874,335+10];
         var secondTriangleDraw = game.add.graphics(0,0); 
         secondTriangleDraw.beginFill(0xffa500);
         secondTriangleDraw.lineStyle(2, 0x000000,1);
-        secondTriangleDraw.moveTo(600,335);
+        secondTriangleDraw.moveTo(600,335+10);
         for (var i =0; i<firstTrianglePoints.length; i++){
             secondTriangleDraw.lineTo(secondTrianglePoints[i], secondTrianglePoints[i+1]);
             i++
         }
         secondTriangleDraw.endFill();
         
-        var thirdTrianglePoints = [1200,548,1031,480];
+        var thirdTrianglePoints = [1200,548+10,1031,480+10];
         var thirdTriangleDraw = game.add.graphics(0,0); 
         thirdTriangleDraw.beginFill(0xFF6A6A);
         thirdTriangleDraw.lineStyle(2, 0x000000,1);
-        thirdTriangleDraw.moveTo(1160,324);
+        thirdTriangleDraw.moveTo(1160,324+10);
         for (var i =0; i<firstTrianglePoints.length; i++){
             thirdTriangleDraw.lineTo(thirdTrianglePoints[i], thirdTrianglePoints[i+1]);
             i++
@@ -145,7 +145,7 @@ demo.state8.prototype = {  btnPlay: null, btnNext: null, a: 0, b:0, c:0, ans1:nu
         
         this.btnPlay.events.onInputDown.add(function(){if (check>=2 && a == 1 && b ==1){this.pinkbox3c.alpha = 1; this.isoAns3c.alpha = 1;this.tick1.alpha = 1; this.tick2.alpha = 1; this.btnPlay.visible = false; this.btnNext.visible = true; this.texts[12].alpha = 1;this.texts[12].position.setTo(1160,755); this.texts[12].text = "Continue"; this.texts[3].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[4].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[6].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[7].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[3].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[8].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[9].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[5].setStyle({backgroundColor: 'rgba(255,255,0,1)'});} else if (check >=2 && c ==1 && b == 1){this.pinkbox3a.alpha = 1; this.isoAns3a.alpha =1;this.pinkbox2.alpha = 1;this.isoAns2.alpha = 1;this.confusedCheck++;this.boolTryAgain = true;this.cross1.alpha = 1; this.tick1.alpha = 0; this.tick2.alpha = 1; this.btnPlay.visible = false; this.btnNext.visible = true;this.texts[12].alpha = 1; this.texts[12].position.setTo(1160,755); this.texts[12].text = "Continue";this.texts[3].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[4].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[6].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[7].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[3].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[8].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[9].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[5].setStyle({backgroundColor: 'rgba(255,255,0,1)'});} else if (check >=2 && c ==1 && a == 1){this.pinkbox3.alpha = 1; this.isoAns3.alpha =1;this.pinkbox2.alpha = 1;this.isoAns2.alpha = 1;this.confusedCheck++;this.boolTryAgain = true;this.cross1.alpha = 1; this.tick1.alpha = 1; this.tick2.alpha = 0; this.btnPlay.visible = false; this.btnNext.visible = true;this.texts[12].alpha = 1; this.texts[12].position.setTo(1160,755); this.texts[12].text = "Continue";this.texts[3].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[4].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[6].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[7].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[3].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[8].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[9].setStyle({backgroundColor: 'rgba(255,255,0,1)'});this.texts[5].setStyle({backgroundColor: 'rgba(255,255,0,1)'});}},this);
         
-        this.btnNext.events.onInputDown.add(function(){check =0;a=0;b=0;c=0;game.state.start('state9');},this);
+        this.btnNext.events.onInputDown.add(function(){check =0;a=0;b=0;c=0;game.state.start('state9'); n = 0; this.n=0;},this);
         
           //Creating the try again button
         this.btnTryAgain = game.add.button(0,0, 'btn2');

@@ -348,7 +348,7 @@ function equilateralTrianglesAns(state) {
     state.pinkbox3c.lineStyle(1, 0x000000,1);
     state.pinkbox3c.drawRect(390,660, 360,80);
     state.pinkbox3c.alpha = 1;
-    state.isoAns3c = game.add.text(395,660, "They are equilateral triangle. \nIt has three equal sides. ");
+    state.isoAns3c = game.add.text(395,660, "They are equilateral triangles. \nIt has three equal sides. ");
     state.isoAns3c.fontWeight = 'normal';
     state.isoAns3c.align = 'left';
     state.isoAns3c.addFontWeight('normal',0);
@@ -359,9 +359,9 @@ function equilateralTrianglesAns(state) {
     state.pinkbox4 = game.add.graphics(0,0);
     state.pinkbox4.beginFill(0xF2C2B5, 1);
     state.pinkbox4.lineStyle(1, 0x000000,1);
-    state.pinkbox4.drawRect(600,660,270,80);
+    state.pinkbox4.drawRect(580,660,350,80);
     state.pinkbox4.alpha = 1;
-    state.isoAns4 = game.add.text(605,660, "All three sides of this \ntriangle are different.");
+    state.isoAns4 = game.add.text(585,660, "Only two sides are equal. \nThis is an isosceles triangle.");
     state.isoAns4.fontWeight = 'normal';
     state.isoAns4.align = 'left';
     state.pinkbox4.endFill();
@@ -398,9 +398,9 @@ function equilateralTrianglesAns(state) {
     state.pinkbox4c = game.add.graphics(0,0);
     state.pinkbox4c.beginFill(0xF2C2B5, 1);
     state.pinkbox4c.lineStyle(1, 0x000000,1);
-    state.pinkbox4c.drawRect(550,660, 400,80);
+    state.pinkbox4c.drawRect(550,660, 360,80);
     state.pinkbox4c.alpha = 1;
-    state.isoAns4c = game.add.text(555,660, "They are equilateral\ntriangle. It has three equal sides. ");
+    state.isoAns4c = game.add.text(555,660, "They are equilateral triangles. \nIt has three equal sides.");
     state.isoAns4c.fontWeight = 'normal';
     state.isoAns4c.align = 'left';
     state.isoAns4c.addFontWeight('normal',0);
@@ -463,7 +463,7 @@ function equilateralTrianglesAns(state) {
     state.pinkbox5c = game.add.graphics(0,0);
     state.pinkbox5c.beginFill(0xF2C2B5, 1);
     state.pinkbox5c.lineStyle(1, 0x000000,1);
-    state.pinkbox5c.drawRect(175,660, 350,110);
+    state.pinkbox5c.drawRect(175,660, 350,80);
     state.pinkbox5c.alpha = 1;
     state.isoAns5c = game.add.text(180,660, "Only two angles are equal.\nThis is an isosceles triangle.");
     state.isoAns5c.fontWeight = 'normal';
