@@ -19,6 +19,8 @@ demo.state13.prototype = {
         addTickCross(this);
         rightangleAns(this);
         addLightImage1i();
+         highlighter(this);
+        this.highlight.position.setTo(510,140);
 this.home.events.onInputDown.add(function(){
         n = 0; this.n=0; a =0;b=0;c=0; this.a=0; this.b =0; this.c=0;confusedCheck =0; this.confusedCheck=0;
         this.boolTryAgain = false;
@@ -163,6 +165,7 @@ this.home.events.onInputDown.add(function(){
         this.tick1.position.setTo(373-70,610);
         this.tick1.anchor.setTo(0.25,0.25);
         this.tick1.alpha = 0;
+        this.tick2.alpha = 0;
         
         this.cross1.position.setTo(700,610);
         this.cross1.anchor.setTo(0.19,0.19);
@@ -172,7 +175,7 @@ this.home.events.onInputDown.add(function(){
         this.cross2.anchor.setTo(0.25,0.25);
         this.cross2.alpha = 0;
        
-        
+        this.dot.alpha = 0;
    
         
         
@@ -190,7 +193,8 @@ this.home.events.onInputDown.add(function(){
                this.pinkbox7a.alpha =1;
                  this.isoAns7a.alpha =1;
                
-                
+                this.highlight.alpha = 1;
+                this.texts[3].setStyle({backgroundColor: 'rgba(255,255,0,1)'})
             }
             if(this.n1 == 2) {
                 this.cross1.alpha = 1;
@@ -202,8 +206,8 @@ this.home.events.onInputDown.add(function(){
                 this.confusedCheck++;
                 this.pinkbox7.alpha =1;
                  this.isoAns7.alpha =1;
-                
-                
+                this.highlight.alpha = 1;
+                this.texts[3].setStyle({backgroundColor: 'rgba(255,255,0,1)'})
             }
             if(this.n1 == 3) {
                 this.cross2.alpha = 1;
@@ -215,6 +219,8 @@ this.home.events.onInputDown.add(function(){
                 this.confusedCheck++;
                  this.pinkbox7i.alpha =1;
                  this.isoAns7i.alpha =1;
+                this.highlight.alpha = 1;
+                this.texts[3].setStyle({backgroundColor: 'rgba(255,255,0,1)'})
             }
                },this);
         

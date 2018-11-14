@@ -132,10 +132,11 @@ demo.state12.prototype = {rectLength:0,rectLength2:0, btnTryAgain: null, txtTryA
             this.texts[i] = game.add.text(i*100,i*100, "6");
         }
         this.texts[0].text = "Try this...";
-        this.texts[0].position.setTo(140, 140);
+        this.texts[0].position.setTo(140, 150);
         this.texts[0].setStyle({ fill: '#008000'});
+        this.texts[0].angle = -10;
         dotAttributes(this);
-        
+        this.dot.alpha =0;
         boxTryAgainRotation(this);
         this.texts[0].addChild(this.drawGraphics);
         
@@ -155,7 +156,7 @@ demo.state12.prototype = {rectLength:0,rectLength2:0, btnTryAgain: null, txtTryA
         
         
         this.texts[5].position.setTo(240,670);
-        this.texts[5].text = "No matter how the size of the triangle changes, _________________."
+        this.texts[5].text = "No matter how the size of the right-angled triangle changes, _________________."
         this.texts[5].alpha = 0;
         this.texts[5].fontWeight = 'normal';
         
@@ -312,7 +313,7 @@ demo.state12.prototype = {rectLength:0,rectLength2:0, btnTryAgain: null, txtTryA
         graphics.destroy();
         graphics = game.add.graphics(0,0);
         graphics.beginFill(0xACD9E2, 0.4);
-         graphics.lineStyle(1, 0x000000,1);
+         graphics.lineStyle(2, 0x000000,1);
         graphics.drawPolygon(polygon.points);
         graphics.beginFill(2, 0xFF3300);
        // graphics.drawRect(this.dot1.x-this.rectLength,this.dot1.y+this.rectLength, this.rectLength, this.rectLength2);

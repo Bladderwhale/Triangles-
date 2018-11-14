@@ -24,6 +24,7 @@ demo.state10.prototype = {
     },this);
         this.headingTexts1 = game.add.text(300,60,"There is another property for an equilateral triangle.");
         this.headingTexts1.fontWeight = 'normal';
+              this.headingTexts1.setStyle({ fill: "#0000FF"});
         
         this.cross1.position.setTo(310,768);
         this.cross1.anchor.setTo(0.15,0.15);
@@ -104,7 +105,7 @@ demo.state10.prototype = {
         boxTryAgainRotation(this);
         this.texts[0].addChild(this.drawGraphics);
         
-        this.texts[1].text = "Drag any one of the red points to change the size of the equilateral triangle.\nObserve how the angles of the sides change.";
+        this.texts[1].text = "Drag any one of the red points to change the size of the equilateral triangle.\nObserve how the angles change.";
         this.texts[1].position.setTo(300, 125);
         this.texts[1].align = 'left';
         this.texts[1].fontWeight = 'normal';

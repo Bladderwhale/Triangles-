@@ -68,7 +68,14 @@ function loadAssets(){
     game.load.image('sp2', 'assets/speechbubble2.png');
     game.load.image('lightbulb', 'assets/lightbulb.png');
     game.load.image('sp3', 'assets/speechbubble3.png');
+    game.load.image('highlight', 'assets/highlight.png');
 };
+
+function highlighter(state){
+    state.highlight = game.add.sprite(0,0,'highlight');
+    state.highlight.alpha = 0;
+    state.highlight.scale.setTo(0.7,0.5);
+}
 function addLightImage(){
     var lightbulb = game.add.sprite(60,95,'lightbulb');
     lightbulb.scale.setTo(0.2,0.2);

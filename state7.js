@@ -114,7 +114,7 @@ demo.state7.prototype = {
         this.texts[4].anchor.x = 0.5;
         
         this.texts[5].position.setTo(240,670);
-        this.texts[5].text = "No matter how the size of the triangle changes, the length of _________________."
+        this.texts[5].text = "No matter how the size of the equilateral triangle changes, the length of _________________."
         this.texts[5].alpha = 0;
         this.texts[5].fontWeight = 'normal';
         

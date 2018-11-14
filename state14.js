@@ -12,6 +12,7 @@ demo.state14.prototype = {
         addChangeStateEventListers();
         fixedGUI(this);
         
+        
         this.headingTexts.text = "Right-Angled Triangles";
         fixedGUI3i();
         dotAttributes(this);
@@ -19,6 +20,8 @@ demo.state14.prototype = {
         addTickCross(this);
         rightangleAns(this);
         addLightImage1i();
+        highlighter(this);
+        this.highlight.position.setTo(510,140);
         this.home.events.onInputDown.add(function(){
         n = 0; this.n=0; a =0;b=0;c=0; this.a=0; this.b =0; this.c=0;confusedCheck =0; this.confusedCheck=0;
         this.boolTryAgain = false;
@@ -33,8 +36,10 @@ demo.state14.prototype = {
         this.box = graphics.drawRect(0,0,20,20);
         emptyobj.addChild(this.box);
         emptyobj.angle = -135
+        
+        
 
-        var firstTrianglePoints = [360, 325+250,350+150 ,325 ];
+        var firstTrianglePoints = [370, 555,420 ,290 ];
         var firstTriDraw = game.add.graphics(0,0);
         firstTriDraw.beginFill(0xe0ffff,0.4);
         firstTriDraw.lineStyle(2,0x000000,1);
@@ -56,7 +61,7 @@ demo.state14.prototype = {
         }
         secondTriDraw.endFill();
         
-        var thirdTrianglePoints = [1200,550, 1087,325];
+        var thirdTrianglePoints = [1250,550, 1100,350];
         var thirdTriDraw = game.add.graphics(0,0);
         thirdTriDraw.beginFill(0xFFFF66,0.4);
         thirdTriDraw.moveTo(950, 520);
@@ -67,11 +72,11 @@ demo.state14.prototype = {
         }
         thirdTriDraw.endFill();
         
-        var alx13 = new forState11(150,400,360,325+250,350+150,325);
+        var alx13 = new forState11(150,400,370,555,420,290);
         alx13.init();
-        starttAngle1 = Math.PI + Math.PI/2 + Math.PI/2 - alx13.dotProductA/4;
+        starttAngle1 = Math.PI + Math.PI/2 + Math.PI/2 - alx13.dotProductA/2.8;
         starttAngle2 = Math.PI + Math.PI/2 - alx13.dotProductA/1;
-        starttAngle3 = Math.PI/2 + Math.PI/2.29 - alx13.dotProductC;
+        starttAngle3 = Math.PI/2 + Math.PI/2.6 - alx13.dotProductC;
         
         var alx14 =new forState11(530,335,738,548,960,335);
         alx14.init();
@@ -79,7 +84,7 @@ demo.state14.prototype = {
         
         starttAngle6 = Math.PI/2 + Math.PI/2 - alx14.dotProductB/2;
         
-        var alx15 =new forState11(950, 520, 1200, 550, 1087, 325);
+        var alx15 =new forState11(950, 520, 1250, 550, 1100, 350);
         alx15.init();
         starttAngle7 = Math.PI + Math.PI/2 + Math.PI/2.7- alx15.dotProductA/2;
         starttAngle8 = Math.PI+0.1;
@@ -89,8 +94,8 @@ demo.state14.prototype = {
         graphics1.lineStyle(2, 0xFF3300);
         graphics1.arc(150,400,50,starttAngle1,starttAngle1+alx13.dotProductA,false);
       
-        graphics1.arc(360,325+250,50,starttAngle2,starttAngle2+alx13.dotProductB,false);
-        graphics1.arc(350+150,325,50,starttAngle3,starttAngle3+alx13.dotProductC,false);
+        graphics1.arc(370,555,50,starttAngle2,starttAngle2+alx13.dotProductB,false);
+        graphics1.arc(420,290,50,starttAngle3,starttAngle3+alx13.dotProductC,false);
         graphics1.arc(530,335, 50, starttAngle4, starttAngle4 + alx14.dotProductA,false);
         graphics1.arc(960, 335, 50, starttAngle6, starttAngle6 + alx14.dotProductC,false);
         
@@ -99,8 +104,8 @@ demo.state14.prototype = {
        // graphics1.arc(785.5, 550, 50, starttAngle5, starttAngle5 + alx14.dotProductB,false);
      //   graphics1.arc(600, 437.5, 50, starttAngle6, starttAngle6 + alx14.dotProductC,false);
         graphics1.arc(950, 520, 50, starttAngle7, starttAngle7 + alx15.dotProductA, false);
-        graphics1.arc(1200, 550, 50, starttAngle8, starttAngle8 + alx15.dotProductB,false);
-        graphics1.arc(1087, 325, 30, starttAngle9, starttAngle9 + alx15.dotProductC,false);
+        graphics1.arc( 1250, 550, 50, starttAngle8, starttAngle8 + alx15.dotProductB,false);
+        graphics1.arc(1100, 350, 50, starttAngle9, starttAngle9 + alx15.dotProductC,false);
         
         this.btnPlay = game.add.button(0,0,"btn2");
         this.btnPlay.frame = 1;
@@ -131,7 +136,7 @@ demo.state14.prototype = {
         this.texts[2].position.setTo(130,255);
         this.texts[2].text = "Try this..."
         this.texts[2].angle = -10;
-        this.texts[2].setStyle({ fill: '#008000'});
+        this.texts[2].setStyle({ fill: '#0000FF'});
         
         boxTryAgainRotation(this);
         this.texts[2].addChild(this.drawGraphics);
@@ -139,10 +144,10 @@ demo.state14.prototype = {
         this.texts[3].position.setTo(210, 399);
         this.texts[3].text = "63\xB0";
         
-        this.texts[4].position.setTo(414, 351);
+        this.texts[4].position.setTo(349, 334);
         this.texts[4].text = "63\xB0";
         
-        this.texts[5].position.setTo(340, 495);
+        this.texts[5].position.setTo(330, 480);
         this.texts[5].text = "54\xB0";
         
         this.texts[6].position.setTo(583, 347);
@@ -154,13 +159,13 @@ demo.state14.prototype = {
         this.texts[8].position.setTo(719, 484);
         this.texts[8].text = "";
         
-        this.texts[9].position.setTo(1063,370);
+        this.texts[9].position.setTo(1076,405);
         this.texts[9].text = "78\xB0";
         
         this.texts[10].position.setTo(1010-10,495-15);
         this.texts[10].text = "60\xB0";
         
-        this.texts[11].position.setTo(1104+10,504-10);
+        this.texts[11].position.setTo(1165,500);
         this.texts[11].text = "42\xB0";
         
         this.texts[12].position.setTo(1060,805);
@@ -174,7 +179,7 @@ demo.state14.prototype = {
         this.tick1.position.setTo(720,610);
         this.tick1.anchor.setTo(0.25,0.25);
         this.tick1.alpha = 0;
-        
+        this.tick2.alpha=0;
         this.cross1.position.setTo(373,610);
         this.cross1.anchor.setTo(0.19,0.19);
         this.cross1.alpha = 0;
@@ -182,6 +187,8 @@ demo.state14.prototype = {
         this.cross2.position.setTo(1075,610);
         this.cross2.anchor.setTo(0.25,0.25);
         this.cross2.alpha = 0;
+        
+        this.dot.alpha =0;
        
      
         
@@ -199,6 +206,16 @@ demo.state14.prototype = {
                 this.texts[12].position.setTo(1055,805);
                   this.pinkbox8c.alpha =1;
                 this.isoAns8c.alpha =1;
+                    this.highlight.alpha = 1;
+                
+                
+                 this.box = graphics.drawRect(0,0,20,20);
+            linegraphics = game.add.graphics(0,0);
+             linegraphics.lineStyle(4, 0xFF3300,1);
+              linegraphics.moveTo(751,532);
+              linegraphics.lineTo(737,520);
+                linegraphics.moveTo(723,533);
+          linegraphics.lineTo(737,521);
             
                 
             }
@@ -212,6 +229,16 @@ demo.state14.prototype = {
                 this.confusedCheck++;
                 this.pinkbox8b.alpha =1;
                 this.isoAns8b.alpha =1;
+                    this.highlight.alpha = 1;
+                
+                
+                 this.box = graphics.drawRect(0,0,20,20);
+            linegraphics = game.add.graphics(0,0);
+             linegraphics.lineStyle(4, 0xFF3300,1);
+              linegraphics.moveTo(751,532);
+              linegraphics.lineTo(737,520);
+                linegraphics.moveTo(723,533);
+          linegraphics.lineTo(737,521);
             }
             if(this.n1 == 3) {
                 this.cross2.alpha = 1;
@@ -223,6 +250,16 @@ demo.state14.prototype = {
                 this.confusedCheck++;
                 this.pinkbox8a.alpha =1;
                 this.isoAns8a.alpha =1;
+                    this.highlight.alpha = 1;
+                
+                
+                 this.box = graphics.drawRect(0,0,20,20);
+            linegraphics = game.add.graphics(0,0);
+             linegraphics.lineStyle(4, 0xFF3300,1);
+              linegraphics.moveTo(751,532);
+              linegraphics.lineTo(737,520);
+                linegraphics.moveTo(723,533);
+          linegraphics.lineTo(737,521);
                 
                 
             }
@@ -265,6 +302,7 @@ demo.state14.prototype = {
             if (this.k < 1) {
             this.btnTryAgain.visible = true;
             this.txtTryAgain.alpha = 1;
+                    this.highlight.alpha = 1;
             }
             this.n1 = 4;
         }

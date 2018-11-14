@@ -111,8 +111,10 @@ demo.state5.prototype = {
             touchCheck = false;
         },this)
         
-        this.txtHeading = game.add.text(140,60,"There is another property for an isosceles triangle.");
+        this.txtHeading = game.add.text(300,60,"There is another property for an isosceles triangle.");
         this.txtHeading.fontWeight = 'normal';
+        
+        this.txtHeading.setStyle({ fill: "#0000FF"});
         for (var i = 0; i < 14; i++){
             this.texts[i] = game.add.text(i*100,i*100, "6");
         }
