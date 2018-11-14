@@ -209,9 +209,9 @@ function isoscelesTriangleAns2(state) {
     state.pinkbox2ddd = game.add.graphics(0,0);
     state.pinkbox2ddd.beginFill(0xF2C2B5, 1);
     state.pinkbox2ddd.lineStyle(1, 0x000000,1);
-    state.pinkbox2ddd.drawRect(400,710, 360,110);
+    state.pinkbox2ddd.drawRect(400,710, 400,110);
     state.pinkbox2ddd.alpha = 1;
-    state.isoAns2ddd = game.add.text(405,713, "They are isosceles triangles. \nIt has two equal sides \nand two equal angles.");
+    state.isoAns2ddd = game.add.text(405,713, "They are isosceles triangles. \nThey each have two equal sides \nand two equal angles.");
     state.isoAns2ddd.fontWeight = 'normal';
     state.isoAns2ddd.align = 'left';
     state.isoAns2ddd.addFontWeight('normal',0);

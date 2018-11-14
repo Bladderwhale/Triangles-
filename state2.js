@@ -637,7 +637,7 @@ demo.state2.prototype = {
             this.isoAns1.alpha=1;
             
             linegraphics.beginFill(0x000000);
-            linegraphics.lineStyle(3, 0xFFFF00, 1);
+            linegraphics.lineStyle(5, 0xCCCC00, 1);
             linegraphics.moveTo(this.dot1.x,this.dot1.y);
             linegraphics.lineTo(this.dot3.x,this.dot3.y);
             linegraphics.moveTo(this.dot2.x,this.dot2.y);
@@ -657,7 +657,7 @@ demo.state2.prototype = {
         //extras
         if (a ==1) {
             linegraphics.beginFill(0x000000);
-                    linegraphics.lineStyle(3, 0xFFFF00, 1);
+                    linegraphics.lineStyle(5, 0xCCCC00, 1);
                     linegraphics.moveTo(this.dot1.x,this.dot1.y);
                     linegraphics.lineTo(this.dot3.x,this.dot3.y);
                     linegraphics.moveTo(this.dot2.x,this.dot2.y);
@@ -666,7 +666,7 @@ demo.state2.prototype = {
         }
           if (b ==1) {
             linegraphics.beginFill(0x000000);
-                    linegraphics.lineStyle(3, 0xFFFF00, 1);
+                    linegraphics.lineStyle(5, 0xCCCC00, 1);
                     linegraphics.moveTo(this.dot1.x,this.dot1.y);
                     linegraphics.lineTo(this.dot3.x,this.dot3.y);
                     linegraphics.moveTo(this.dot2.x,this.dot2.y);
