@@ -245,6 +245,8 @@ demo.state10.prototype = {
         tickTween = this.game.add.tween(this.tick1).to({alpha:1},1000,Phaser.Easing.Linear.None);
         tickTween2 = this.game.add.tween(this.pinkbox5i).to({alpha:1},1500,Phaser.Easing.Linear.None);
          tickTween2 = this.game.add.tween(this.isoAns5i).to({alpha:1},1500,Phaser.Easing.Linear.None);
+        
+         this.dot.alpha =0;
     },
     update:function(){
           if (this.fakeHandle1.input.pointerOver()) {

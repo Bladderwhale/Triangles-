@@ -214,6 +214,8 @@ demo.state9.prototype = {
             tickTween4 = this.game.add.tween(this.isoAns4a).to({alpha:1},1500,Phaser.Easing.Linear.None);
                 tickTween5 = this.game.add.tween(this.pinkbox4b).to({alpha:1},1000,Phaser.Easing.Linear.None);
             tickTween6 = this.game.add.tween(this.isoAns4b).to({alpha:1},1500,Phaser.Easing.Linear.None);
+        
+         this.dot.alpha =0;
     },
     update: function(){
         console.log(this.dot.x + " y: " + this.dot.y);

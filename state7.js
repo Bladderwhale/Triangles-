@@ -226,7 +226,7 @@ demo.state7.prototype = {
         tickTween2 = this.game.add.tween(this.pinkbox1).to({alpha:1},1000,Phaser.Easing.Linear.None);
          tickTween3 = this.game.add.tween(this.isoAns1).to({alpha:1},1000,Phaser.Easing.Linear.None);
 
-        
+         this.dot.alpha =0;
     },
     update:function(){
          if (this.fakeHandle1.input.pointerOver()) {

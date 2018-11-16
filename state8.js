@@ -212,7 +212,7 @@ demo.state8.prototype = {  btnPlay: null, btnNext: null, a: 0, b:0, c:0, ans1:nu
          tickTween7 = this.game.add.tween(this.tick1).to({alpha:1},1000,Phaser.Easing.Linear.None);
          tickTween8 = this.game.add.tween(this.tick2).to({alpha:1},1000,Phaser.Easing.Linear.None);
         
-        
+         this.dot.alpha =0;
     },
     update: function(){
         console.log("The value of x is: " + this.dot.x + " Y: " + this.dot.y);

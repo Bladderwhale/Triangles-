@@ -199,7 +199,7 @@ demo.state4.prototype = {
         tickTween5 = this.game.add.tween(this.pinkbox2bb).to({alpha:1},1000,Phaser.Easing.Linear.None);
          tickTween6 = this.game.add.tween(this.isoAns2bb).to({alpha:1},1000,Phaser.Easing.Linear.None);
          
-    
+     this.dot.alpha =0;
     },
     
   

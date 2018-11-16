@@ -376,7 +376,7 @@ demo.state6.prototype = {
         tickTween7 = this.game.add.tween(this.pinkbox2ddd).to({alpha:1},1000,Phaser.Easing.Linear.None);
          tickTween8 = this.game.add.tween(this.isoAns2ddd).to({alpha:1},1000,Phaser.Easing.Linear.None);
         
-     
+      this.dot.alpha =0;
         
          
     },

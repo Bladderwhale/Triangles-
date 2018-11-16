@@ -108,7 +108,7 @@ demo.state1.prototype = {
         this.texts[4].alpha = 0.5; 
         dads3.alpha = 1;
         }
-      
+     this.dot.alpha =0;
   
     },
     update: function(){

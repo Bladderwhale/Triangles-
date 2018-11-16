@@ -207,7 +207,7 @@ demo.state3.prototype = {
          tickTween5 = this.game.add.tween(this.pinkbox2ai).to({alpha:1, alpha:1},1500,Phaser.Easing.Linear.None);
          tickTween6 = this.game.add.tween(this.isoAns2ai).to({alpha:1, alpha:1},1500,Phaser.Easing.Linear.None);
             
-    
+     this.dot.alpha =0;
     },
     update: function(){
         console.log(this.dot.x + " y: " + this.dot.y);
