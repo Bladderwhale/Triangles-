@@ -75,15 +75,15 @@ demo.state8.prototype = {  btnPlay: null, btnNext: null, a: 0, b:0, c:0, ans1:nu
         this.texts[5].text = "5.6 m";
         
         this.texts[6].position.setTo(680, 425+10);
-        this.texts[6].text = "4.15 m";
+        this.texts[6].text = "";
         
-        this.texts[7].position.setTo(571, 468+10);
+        this.texts[7].position.setTo(571+10, 468-30);
         this.texts[7].text = "4.15 m";
         
         this.texts[8].position.setTo(692, 290+20);
         this.texts[8].text = "4.15 m";
         
-        this.texts[9].position.setTo(819,468+10);
+        this.texts[9].position.setTo(819-10,468-30);
         this.texts[9].text = "4.15 m";
         
         this.texts[10].position.setTo(993,365+20);
@@ -130,11 +130,11 @@ demo.state8.prototype = {  btnPlay: null, btnNext: null, a: 0, b:0, c:0, ans1:nu
         }
         firstTriangleDraw.endFill();
         
-        var secondTrianglePoints = [this.dotF.position.x,this.dotF.position.y,870,335+10];
+        var secondTrianglePoints = [this.dotF.position.x,this.dotF.position.y-30,870-20,335+10];
         var secondTriangleDraw = game.add.graphics(0,0); 
         secondTriangleDraw.beginFill(0xffa500);
         secondTriangleDraw.lineStyle(2, 0x000000,1);
-        secondTriangleDraw.moveTo(610,335+10);
+        secondTriangleDraw.moveTo(610+20,335+10);
         for (var i =0; i<firstTrianglePoints.length; i++){
             secondTriangleDraw.lineTo(secondTrianglePoints[i], secondTrianglePoints[i+1]);
             i++

@@ -74,7 +74,7 @@ demo.state4.prototype = {
         }
         firstTriangleDraw.endFill();
         
-        var secondTrianglePoints = [900,550,800,350];
+        var secondTrianglePoints = [900,550,800,325];
         var secondTriangleDraw = game.add.graphics(0,0); 
         secondTriangleDraw.beginFill(0xffa500);
         secondTriangleDraw.lineStyle(2, 0x000000,1);
@@ -96,13 +96,13 @@ demo.state4.prototype = {
         }
         thirdTriangleDraw.endFill();
         
-        this.texts[3].position.setTo(200-50, 425);
+        this.texts[3].position.setTo(200-30, 425);
         this.texts[3].text = "8.7 m";
         
         this.texts[4].position.setTo(500-50, 425);
         this.texts[4].text = "8.7 m";
         
-        this.texts[5].position.setTo(355-50, 310);
+        this.texts[5].position.setTo(355-40, 310);
         this.texts[5].text = "9.8 m";
         
         this.texts[6].position.setTo(716, 506);

@@ -318,4 +318,3 @@ function boxTryAgainRotation (state) {
     state.drawGraphics.endFill();
     
 };
-

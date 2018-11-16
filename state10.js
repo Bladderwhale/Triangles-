@@ -129,17 +129,17 @@ demo.state10.prototype = {
         this.texts[5].fontWeight = 'normal';
         
         this.texts[6].position.setTo(350,720);
-        this.texts[6].text = "all three sides are always equal";
+        this.texts[6].text = "all three angles are equal to 60\xB0";
         this.texts[6].alpha = 0;
         this.texts[6].fontWeight ='normal';
         
         this.texts[7].position.setTo(350,770);
-        this.texts[7].text = "only two sides are always equal";
+        this.texts[7].text = "only two angles are always equal";
         this.texts[7].alpha = 0;
         this.texts[7].fontWeight ='normal';
         
         this.texts[8].position.setTo(350,820);
-        this.texts[8].text = "all three sides are always different";
+        this.texts[8].text = "all three angles are always different";
         this.texts[8].alpha = 0;
         this.texts[8].fontWeight ='normal';
         

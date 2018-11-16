@@ -129,7 +129,7 @@ demo.state5.prototype = {
         this.texts[0].addChild(this.drawGraphics);
         
         
-        this.texts[1].text = "Drag the red point to change the height of the triangle.\nObserve how the length of the sides and the angles change.";
+        this.texts[1].text = "Drag the red point to change the height of the triangle.\nObserve how the lengths of the sides and the angles change.";
         this.texts[1].position.setTo(300, 125);
         this.texts[1].align = 'left';
         this.texts[1].fontWeight = 'normal';

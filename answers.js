@@ -211,7 +211,7 @@ function isoscelesTriangleAns2(state) {
     state.pinkbox2ddd.lineStyle(1, 0x000000,1);
     state.pinkbox2ddd.drawRect(400,710, 400,110);
     state.pinkbox2ddd.alpha = 1;
-    state.isoAns2ddd = game.add.text(405,713, "They are isosceles triangles. \nThey each have two equal sides \nand two equal angles.");
+    state.isoAns2ddd = game.add.text(405,713, "They are isosceles triangles. \nThey each have two equal sides \nand two equal angles. ");
     state.isoAns2ddd.fontWeight = 'normal';
     state.isoAns2ddd.align = 'left';
     state.isoAns2ddd.addFontWeight('normal',0);
@@ -267,7 +267,7 @@ function isoscelesTriangleAns2(state) {
     state.pinkbox4.lineStyle(1, 0x000000,1);
     state.pinkbox4.drawRect(550,649,430,80);
     state.pinkbox4.alpha = 1;
-    state.isoAns4 = game.add.text(555,653, "They are isosceles triangles. \nEach triangle has two equal sides.");
+    state.isoAns4 = game.add.text(555,653, "They are isosceles triangles. \nEach triangle has two equal sides. ");
     state.isoAns4.fontWeight = 'normal';
     state.isoAns4.align = 'left';
     state.isoAns4.addFontWeight('normal',0);
@@ -280,7 +280,7 @@ function isoscelesTriangleAns2(state) {
     state.pinkbox4a.lineStyle(1, 0x000000,1);
     state.pinkbox4a.drawRect(350,670,420,80);
     state.pinkbox4a.alpha = 1;
-    state.isoAns4a = game.add.text(355,673, "They are isosceles triangles.  \nEach triangle has two equal sides.");
+    state.isoAns4a = game.add.text(355,673, "They are isosceles triangles.  \nEach triangle has two equal sides. ");
     state.isoAns4a.fontWeight = 'normal';
     state.isoAns4a.align = 'left';
     state.isoAns4a.addFontWeight('normal',0);
@@ -400,7 +400,7 @@ function equilateralTrianglesAns(state) {
     state.pinkbox4c.lineStyle(1, 0x000000,1);
     state.pinkbox4c.drawRect(550,660, 435,80);
     state.pinkbox4c.alpha = 1;
-    state.isoAns4c = game.add.text(555,660, "They are equilateral triangles. \nEach triangle has three equal sides.");
+    state.isoAns4c = game.add.text(555,660, "They are equilateral triangles. \nEach triangle has three equal sides. ");
     state.isoAns4c.fontWeight = 'normal';
     state.isoAns4c.align = 'left';
     state.isoAns4c.addFontWeight('normal',0);
