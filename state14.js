@@ -216,7 +216,8 @@ demo.state14.prototype = {
               linegraphics.lineTo(737,520);
                 linegraphics.moveTo(723,533);
           linegraphics.lineTo(737,521);
-            
+            this.btnNext2.visible = true;
+                this.txtLayer.visible = true;
                 
             }
             if(this.n1 == 2) {
@@ -305,7 +306,10 @@ demo.state14.prototype = {
         this.txtLayer.visible = false;
         this.btnNext2.events.onInputDown.add(function(){n = 0; this.n=0; a =0;b=0;c=0; this.a=0; this.b =0; this.c=0;confusedCheck =0; this.confusedCheck=0;
         this.boolTryAgain = false;
-        k =0;this.k=0;check=0;this.check=0;game.state.start('state1'); sp2 =1;},this);
+        k =0;this.k=0;check=0;this.check=0;game.state.start('state1'); sp3 =1;},this);
+        
+          tickTween4 = this.game.add.tween(this.btnNext2).to({visible:true},0,Phaser.Easing.Linear.None);
+          tickTween5 = this.game.add.tween(this.txtLayer).to({visible:true},0,Phaser.Easing.Linear.None);
         //end
     },
     update: function(){
@@ -349,6 +353,8 @@ demo.state14.prototype = {
                 this.texts[12].position.setTo(1055,805);
             this.texts[12].alpha = 1;
              //   this.ans2.alpha = 1;
+             tickTween4.start();
+            tickTween5.start();
 
         }
             

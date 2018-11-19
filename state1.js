@@ -86,31 +86,38 @@ demo.state1.prototype = {
        
         if (sp1 == 1) {
         var dads = game.add.sprite(130,667,'sp1');
-        dads.scale.setTo(0.4,0.4)
+        dads.scale.setTo(0.45,0.4)
         dads.anchor.setTo(0.2,0.2);
         btnStart[0].alpha = 0.5;
-        this.texts[2].alpha= 0.5;}
+        this.texts[2].alpha= 0.2;
+        this.asd1 =game.add.text(210,720,"Each has two equal sides \nand two equal angles.");
+         this.asd1.fontWeight = 'normal';}
+       
         
         if (sp2 == 1) {
-        var dads1 = game.add.sprite(510,670,'sp2');
-        dads1.scale.setTo(0.4,0.4)
+        var dads1 = game.add.sprite(480,670,'sp2');
+        dads1.scale.setTo(0.5,0.4)
         dads1.anchor.setTo(0.2,0.2);
         btnStart[1].alpha = 0.5;
-        this.texts[3].alpha = 0.5; 
-        dads1.alpha = 1;}
+        this.texts[3].alpha = 0.2; 
+        dads1.alpha = 1;
+        this.asd2 = game.add.text(580,700,"Each has three equal sides \nand three equal angles. \nEach angle is 60\xB0.");
+        this.asd2.fontWeight = 'normal';}
      
   
-        if (sp3 == 1) {
-        var dads3 = game.add.sprite(880,670,'sp3');
+         if (sp3 == 1) {
+        var dads3 = game.add.sprite(900,670,'sp3');
         dads3.scale.setTo(0.4,0.4)
         dads3.anchor.setTo(0.2,0.2);
         btnStart[2].alpha = 0.5;
-        this.texts[4].alpha = 0.5; 
+        this.texts[4].alpha = 0.2; 
         dads3.alpha = 1;
-        }
+        this.asd3 = game.add.text(990,735,"Each has a 90\xB0 angle.");
+              this.asd3.fontWeight = 'normal';
+         }
      this.dot.alpha =0;
-  
     },
+    
     update: function(){
         console.log("X: "+this.dot.x , "Y: " + this.dot.y);
         
