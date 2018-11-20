@@ -90,7 +90,7 @@ demo.state1.prototype = {
         dads.anchor.setTo(0.2,0.2);
         btnStart[0].alpha = 0.5;
         this.texts[2].alpha= 0.45;
-        this.asd1 =game.add.text(210,720,"Each has two equal sides \nand two equal angles.");
+        this.asd1 =game.add.text(215,720,"Each has two equal sides \nand two equal angles.");
          this.asd1.fontWeight = 'normal';}
        
         
