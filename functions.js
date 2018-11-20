@@ -109,7 +109,7 @@ function fixedGUI(state){
         n = 0; this.n=0; a =0;b=0;c=0; this.a=0; this.b =0; this.c=0;confusedCheck =0; this.confusedCheck=0;
         this.boolTryAgain = false;
         k =0;this.k=0;check=0;this.check=0;
-      
+        touchCheck = false;
       
         game.state.start('state1');
        
