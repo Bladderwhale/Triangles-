@@ -110,7 +110,7 @@ function fixedGUI(state){
         this.boolTryAgain = false;
         k =0;this.k=0;check=0;this.check=0;
         touchCheck = false;
-      
+      aa = true;bb = true,cc=true;
         game.state.start('state1');
        
     },this)

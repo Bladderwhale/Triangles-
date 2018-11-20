@@ -243,9 +243,52 @@ demo.state11.prototype = {
         this.cross2.alpha=0;
         
         
-             this.btnRadio1.events.onInputDown.add(function(){if (check <2){this.btnRadio1.loadTexture("btnradiochecked",0); check++; a = 1}},this);
-        this.btnRadio2.events.onInputDown.add(function(){if (check <2){this.btnRadio2.loadTexture("btnradiochecked",0); check++; b = 1}},this);
-        this.btnRadio3.events.onInputDown.add(function(){if (check <2){this.btnRadio3.loadTexture("btnradiochecked",0); check++; c = 1}},this);
+           
+        this.btnRadio1.events.onInputDown.add(function(){if (check <2 && aa == true)
+            {
+                this.btnRadio1.loadTexture("btnradiochecked",0); 
+                check++;
+                a = 1;
+                aa=false;
+            }
+            else if (aa == false) {
+                this.btnRadio1.loadTexture("btnradio",0);
+                check--;
+                a = 0;
+                aa=true;
+            }           },this);
+        
+        this.btnRadio2.events.onInputDown.add(function(){
+            if (check <2 && bb == true)
+            {
+                this.btnRadio2.loadTexture("btnradiochecked",0); 
+                check++;
+                b = 1;
+                bb=false;
+            }
+            else if (bb == false) {
+                this.btnRadio2.loadTexture("btnradio",0);
+                check--;
+                b = 0;
+                bb=true;
+            }                                                     
+                                                                      },this);
+     
+
+        this.btnRadio3.events.onInputDown.add(function(){        if (check <2 && cc == true)
+            {
+                this.btnRadio3.loadTexture("btnradiochecked",0); 
+                check++;
+                c = 1;
+                cc=false;
+            }
+            else if (cc == false) {
+                this.btnRadio3.loadTexture("btnradio",0);
+                check--;
+                c = 0;
+                cc=true;
+            }           },this);
+        
         
         this.btnPlay.events.onInputDown.add(function(){if (check>=2 && a == 1 && b ==1){ this.highlight.alpha =1;this.pinkbox5c.alpha =1; this.isoAns5c.alpha=1;this.pinkbox5a.alpha=1;this.isoAns5a.alpha=1;this.confusedCheck++;this.boolTryAgain = true; this.tick2.alpha = 1; this.cross1.alpha = 1; this.btnPlay.visible = false; this.btnNext.visible = true; this.texts[12].alpha = 1;this.texts[12].position.setTo(1160,805); this.texts[12].text = "Continue"; this.texts[6].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[7].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[8].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[9].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[10].setStyle({backgroundColor: 'rgba(255,255,0)'});this.texts[11].setStyle({backgroundColor: 'rgba(255,255,0)'});} else if (check >=2 && c ==1 && b ==1){ this.btnNext2.visible = true;
             this.txtLayer.visible = true;this.highlight.alpha =1;linegraphics = game.add.graphics(0,0);
@@ -276,7 +319,7 @@ demo.state11.prototype = {
         this.txtTryAgain.alpha = 0;
         this.txtTryAgain.position.setTo(1155, 805);
         this.boolTryAgain = false;
-        this.btnTryAgain.events.onInputDown.add(function(){a=0; b=0;c=0;this.boolTryAgain = false;this.tick2.alpha = 0;
+        this.btnTryAgain.events.onInputDown.add(function(){ aa =true, bb = true, cc=true;a=0; b=0;c=0;this.boolTryAgain = false;this.tick2.alpha = 0;
             this.tick1.alpha = 0;
             this.tick2.alpha = 0;                                               
             this.cross1.alpha = 0;
@@ -303,7 +346,7 @@ demo.state11.prototype = {
         this.btnNext2.inputEnabled = true;
         this.txtLayer = game.add.text(1102, 815, "Another Type \n of Triangle");
         this.txtLayer.visible = false;
-        this.btnNext2.events.onInputDown.add(function(){n = 0; this.n=0; a =0;b=0;c=0; this.a=0; this.b =0; this.c=0;confusedCheck =0; this.confusedCheck=0;
+        this.btnNext2.events.onInputDown.add(function(){ aa =true, bb = true, cc=true;n = 0; this.n=0; a =0;b=0;c=0; this.a=0; this.b =0; this.c=0;confusedCheck =0; this.confusedCheck=0;
         this.boolTryAgain = false;
         k =0;this.k=0;check=0;this.check=0;game.state.start('state1'); sp2 =1;},this);
         //end
