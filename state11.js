@@ -301,7 +301,7 @@ demo.state11.prototype = {
         this.btnNext2.scale.setTo(1.2,1.2);
         this.btnNext2.visible = false;
         this.btnNext2.inputEnabled = true;
-        this.txtLayer = game.add.text(1102, 815, "Another Type \n of Triangle.");
+        this.txtLayer = game.add.text(1102, 815, "Another Type \n of Triangle");
         this.txtLayer.visible = false;
         this.btnNext2.events.onInputDown.add(function(){n = 0; this.n=0; a =0;b=0;c=0; this.a=0; this.b =0; this.c=0;confusedCheck =0; this.confusedCheck=0;
         this.boolTryAgain = false;

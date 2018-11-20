@@ -33,7 +33,7 @@ demo.state6.prototype = {
        
     },this);
         var arr1x = [373,190,425];
-        var arr2y = [350,470,592];
+        var arr2y = [335,470,592];
         for (var i =0; i<arr1x.length; i++) {
             this.newDot[i] = game.add.sprite(arr1x[i],arr2y[i],"");
             this.newDot[i].alpha =0;
@@ -124,7 +124,7 @@ demo.state6.prototype = {
         
         newFinal2 = newLine3.dot(newLine4); 
         newFinal2 = Math.acos(newFinal2);
-        startAngle2 = (Math.PI/2+Math.PI+Math.PI/2-newFinal2/2);
+        startAngle2 = (Math.PI/2+Math.PI+Math.PI/2-newFinal2/1.8);
         
         newFinal3 = newLine5.dot(newLine6);
         newFinal3 = Math.acos(newFinal3);
@@ -187,7 +187,7 @@ demo.state6.prototype = {
         graphics1 = game.add.graphics(0,0);
        // graphics1.beginFill('#EEE8AA');
         graphics1.lineStyle(2, 0xDE1C24,1);
-        graphics1.arc(373,350,50, startAngle,startAngle+newFinal,false);
+        graphics1.arc(373,335,50, startAngle,startAngle+newFinal,false);
         graphics1.arc(this.newDot[1].x,this.newDot[1].y,50, startAngle2,startAngle2+newFinal2,false);
         graphics1.arc(this.newDot[2].x,this.newDot[2].y,50, startAngle3,startAngle3+newFinal3,false);
         //2nd triangle
@@ -225,7 +225,7 @@ demo.state6.prototype = {
          boxTryAgainRotation(this);
         this.texts[2].addChild(this.drawGraphics);
         
-        this.texts[3].position.setTo(325, 409);
+        this.texts[3].position.setTo(325, 390);
         this.texts[3].text = "50\xB0";
         
         this.texts[4].position.setTo(245, 451);
@@ -389,7 +389,7 @@ demo.state6.prototype = {
         this.btnNext2.scale.setTo(1.2,1.2);
         this.btnNext2.visible = false;
         this.btnNext2.inputEnabled = true;
-        this.txtLayer = game.add.text(1102, 870, "Another Type \n of Triangle.");
+        this.txtLayer = game.add.text(1102, 870, "Another Type \n of Triangle");
         this.txtLayer.visible = false;
         this.btnNext2.events.onInputDown.add(function(){n = 0; this.n=0; a =0;b=0;c=0; this.a=0; this.b =0; this.c=0;confusedCheck =0; this.confusedCheck=0;
         this.boolTryAgain = false;

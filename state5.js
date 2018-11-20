@@ -456,7 +456,7 @@ demo.state5.prototype = {
             
             this.texts[13].position.setTo(this.dot3.x-15, this.dot3.y+70);
             
-            this.texts[13].text = finaldegrees.toFixed(0) + "\xB0";;
+            this.texts[13].text = 180-finaldegrees1.toFixed(0)*2 + "\xB0";;
             this.texts[12].text = finaldegrees1.toFixed(0) + "\xB0";;
             this.texts[11].text = finaldegrees1.toFixed(0)+ "\xB0";;
             touchCheck = true;
@@ -476,7 +476,7 @@ demo.state5.prototype = {
             this.texts[4].setText(((Math.round( this.line.length* 10 ) / 100)-15).toFixed(1) + " m");
             
             this.texts[13].position.setTo(this.dot3.x-15, this.dot3.y+70);
-            this.texts[13].text = finaldegrees.toFixed(0) + "\xB0";
+            this.texts[13].text = 180-finaldegrees1.toFixed(0)*2  + "\xB0";
             this.texts[12].text = finaldegrees1.toFixed(0) + "\xB0";;
             this.texts[11].text = finaldegrees1.toFixed(0) + "\xB0";;
             touchCheck = true
