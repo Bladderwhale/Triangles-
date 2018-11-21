@@ -663,6 +663,26 @@ demo.state10.prototype = {
            this.btnRadio3.input.useHandCursor = true;
        }
         console.log("Is this true/false: " + activation2);
+        
+         //physics
+        // this.game.physics.arcade.overlap(sprite1, this.dot3, this.collisionHandler, null, this);
+       var hasCollision3 = this.game.physics.arcade.overlap(sprite3, this.dot3 , this.collisionHandler, null, this )
+       if(!hasCollision3)
+           {
+              // game.stage.backgroundColor = '#000000';
+               
+           }
+        var hasCollision2 = this.game.physics.arcade.overlap(sprite2, this.dot2 , this.collisionHandler2, null, this )
+       if(!hasCollision2)
+           {
+             //  game.stage.backgroundColor = '#000000';
+              
+               
+           }
+        var hasCollision1 = this.game.physics.arcade.overlap(sprite1, this.dot1, this.collisionHandler1, null, this) 
+        if(!hasCollision1) {
+           // game.stage.backgroundColor = '#000000';
+        }
     },
     render: function() {
      /*   game.debug.body(sprite1);
@@ -692,8 +712,6 @@ demo.state10.prototype = {
         this.fakeHandle1.input.isDragged = false;
         this.dot1.x++;
         
-        this.texts[2].position.setTo(this.x2+=0.5,this.y2+=0.7);
-        this.texts[3].position.setTo(this.x3+=0.7, this.y3+=0.7);
-        this.texts[4].position.setTo(this.x4+=0.5, this.y4);
+
     }
 };

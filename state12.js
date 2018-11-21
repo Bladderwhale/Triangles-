@@ -77,9 +77,9 @@ demo.state12.prototype = {rectLength:0,rectLength2:0, btnTryAgain: null, txtTryA
         this.btnStart.visible = false;
         
         this.btnStart.events.onInputDown.add(function(){
-            if (n==1){this.boolTryAgain = true;this.cross1.alpha = 1; this.texts[2].setStyle({backgroundColor: 'rgba(255, 255, 0)'}); this.btnStart.frame = 1;   this.texts[10].alpha = 0.3; a+=1;}
-            if (n==2){this.tick1.alpha = 1; c+=1; this.texts[2].setStyle({backgroundColor: 'rgba(255, 255, 0)'});}
-            if (n==3){this.boolTryAgain = true;this.cross2.alpha = 1; this.texts[2].setStyle({backgroundColor: 'rgba(255, 255, 0)'});this.btnStart.frame = 1;  this.texts[10].alpha = 0.3; b+=1;}
+            if (n==1){this.boolTryAgain = true;this.cross1.alpha = 1; this.texts[2].setStyle({backgroundColor: 'rgba(255, 255, 0,1)'}); this.btnStart.frame = 1;   this.texts[10].alpha = 0.3; a+=1;}
+            if (n==2){this.tick1.alpha = 1; c+=1; this.texts[2].setStyle({backgroundColor: 'rgba(255, 255, 0,1)'});}
+            if (n==3){this.boolTryAgain = true;this.cross2.alpha = 1; this.texts[2].setStyle({backgroundColor: 'rgba(255, 255, 0,1)'});this.btnStart.frame = 1;  this.texts[10].alpha = 0.3; b+=1;}
         }
                                              ,this);
         
@@ -214,7 +214,25 @@ demo.state12.prototype = {rectLength:0,rectLength2:0, btnTryAgain: null, txtTryA
         
          tickTween3 = this.game.add.tween(this.pinkbox6).to({alpha:1},1000,Phaser.Easing.Linear.None);
         tickTween4 = this.game.add.tween(this.isoAns6).to({alpha:1},1500,Phaser.Easing.Linear.None);
+              //physics
+        sprite3 = game.add.sprite(0,0,"");
+        this.game.physics.enable(sprite3, Phaser.Physics.ARCADE);
+        sprite3.body.setSize(1400, 100, 50, 90);
+        sprite3.body.immovable = true;
+        this.game.physics.enable(this.dot3, Phaser.Physics.ARCADE);
+        //this.dot3.body.velocity.y = -100;
         
+        sprite1 = game.add.sprite(0,0,"");
+        this.game.physics.enable(sprite1, Phaser.Physics.ARCADE);
+        sprite1.body.setSize(450, 550, 50, 90);
+        sprite1.body.immovable = true;
+        this.game.physics.enable(this.dot1, Phaser.Physics.ARCADE);
+        
+        sprite2 = game.add.sprite(0,0,"");
+        this.game.physics.enable(sprite2, Phaser.Physics.ARCADE);
+        sprite2.body.setSize(450, 550, 1000, 90);
+        sprite2.body.immovable = true;
+        this.game.physics.enable(this.dot2, Phaser.Physics.ARCADE);
     },
     update: function(){
           if (this.fakeHandle1.input.pointerOver()) {
@@ -493,6 +511,46 @@ demo.state12.prototype = {rectLength:0,rectLength2:0, btnTryAgain: null, txtTryA
            this.btnRadio3.input.useHandCursor = true;
        }
         
-       
+              //physics
+        // this.game.physics.arcade.overlap(sprite1, this.dot3, this.collisionHandler, null, this);
+       var hasCollision3 = this.game.physics.arcade.overlap(sprite3, this.dot3 , this.collisionHandler, null, this )
+       if(!hasCollision3)
+           {
+              // game.stage.backgroundColor = '#000000';
+               
+           }
+        var hasCollision2 = this.game.physics.arcade.overlap(sprite2, this.dot2 , this.collisionHandler2, null, this )
+       if(!hasCollision2)
+           {
+             //  game.stage.backgroundColor = '#000000';
+              
+               
+           }
+        var hasCollision1 = this.game.physics.arcade.overlap(sprite1, this.dot1, this.collisionHandler1, null, this) 
+        if(!hasCollision1) {
+           // game.stage.backgroundColor = '#000000';
+        }
+    },
+    collisionHandler: function(obj1, obj2) 
+    {
+        console.log("collide")
+     //   game.stage.backgroundColor = '#992d2d';
+        this.fakeHandle3.input.isDragged = false;
+        this.dot3.y++;
+    },
+    collisionHandler2: function(obj1,obj2) {
+        console.log("collide")
+     //   game.stage.backgroundColor = '#992d2d';
+        this.fakeHandle2.input.isDragged = false;
+        this.dot2.x--;
+        
+        
+    },
+    collisionHandler1: function(obj1,obj2) {
+        console.log("collide")
+     //   game.stage.backgroundColor = '#992d2d';
+        this.fakeHandle1.input.isDragged = false;
+        this.dot1.x++;
+        
     }
 };
