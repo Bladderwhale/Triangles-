@@ -432,7 +432,7 @@ demo.state7.prototype = {
             this.texts[3].position.setTo(this.dot3.x-150, this.dot3.y+50);
             this.texts[3].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(1) + " cm");
             this.texts[4].position.setTo(this.dot3.x, this.y4);
-          //  this.texts[4].setText(((Math.round( this.line.length* 10 ) / 100)-15).toFixed(2) + "cm");
+            this.texts[4].setText(((Math.round( this.line.length* 10 ) / 100)-17).toFixed(1) + " cm");
             
             touchCheck = true
             
