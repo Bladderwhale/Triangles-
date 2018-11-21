@@ -71,9 +71,9 @@ demo.state10.prototype = {
         this.btnStart.visible = false;
         
         this.btnStart.events.onInputDown.add(function(){
-            if (n==1){this.boolTryAgain = true;this.cross1.alpha = 1; this.texts[11].setStyle({backgroundColor: 'rgba(255, 255, 0)'});this.texts[12].setStyle({backgroundColor: 'rgba(255, 255, 0)'}); this.texts[13].setStyle({backgroundColor: 'rgba(255, 255, 0)'}); this.btnStart.frame = 1;   this.texts[10].alpha = 0.3; a+=1;}
-            if (n==2){this.tick1.alpha = 1; c+=1;this.texts[11].setStyle({backgroundColor: 'rgba(255, 255, 0)'});this.texts[12].setStyle({backgroundColor: 'rgba(255, 255, 0)'}); this.texts[13].setStyle({backgroundColor: 'rgba(255, 255, 0)'});}
-            if (n==3){this.boolTryAgain = true;this.cross2.alpha = 1; this.texts[11].setStyle({backgroundColor: 'rgba(255, 255, 0)'});this.texts[12].setStyle({backgroundColor: 'rgba(255, 255, 0)'}); this.texts[13].setStyle({backgroundColor: 'rgba(255, 255, 0)'});this.btnStart.frame = 1;  this.texts[10].alpha = 0.3; this.b+=1;}
+            if (n==1){this.boolTryAgain = true;this.cross1.alpha = 1; this.texts[11].setStyle({backgroundColor: 'rgba(255, 255, 0,1)'});this.texts[12].setStyle({backgroundColor: 'rgba(255, 255, 0,1)'}); this.texts[13].setStyle({backgroundColor: 'rgba(255, 255, 0,1)'}); this.btnStart.frame = 1;   this.texts[10].alpha = 0.3; a+=1;}
+            if (n==2){this.tick1.alpha = 1; c+=1;this.texts[11].setStyle({backgroundColor: 'rgba(255, 255, 0,1)'});this.texts[12].setStyle({backgroundColor: 'rgba(255, 255, 0,1)'}); this.texts[13].setStyle({backgroundColor: 'rgba(255, 255, 0,1)'});}
+            if (n==3){this.boolTryAgain = true;this.cross2.alpha = 1; this.texts[11].setStyle({backgroundColor: 'rgba(255, 255, 0,1)'});this.texts[12].setStyle({backgroundColor: 'rgba(255, 255, 0,1)'}); this.texts[13].setStyle({backgroundColor: 'rgba(255, 255, 0,1)'});this.btnStart.frame = 1;  this.texts[10].alpha = 0.3; this.b+=1;}
         }
                                              ,this);
         
