@@ -123,7 +123,7 @@ demo.state10.prototype = {
         this.texts[4].anchor.x = 0.5;
           this.texts[4].setStyle({fill: '#A0AAAD'});
         
-        this.texts[5].position.setTo(200,660);
+        this.texts[5].position.setTo(170,660);
         this.texts[5].text = "No matter how the size of the equilateral triangle changes, three sides are always equal and _________."
         this.texts[5].alpha = 0;
         this.texts[5].fontWeight = 'normal';

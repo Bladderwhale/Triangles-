@@ -424,9 +424,9 @@ function equilateralTrianglesAns(state) {
       state.pinkbox5i = game.add.graphics(0,0);
     state.pinkbox5i.beginFill(0xF2C2B5, 1);
     state.pinkbox5i.lineStyle(1, 0x000000,1);
-    state.pinkbox5i.drawRect(770,720, 350,110);
+    state.pinkbox5i.drawRect(785,720, 350,110);
     state.pinkbox5i.alpha = 1;
-    state.isoAns5i = game.add.text(775,720, "An equilateral triangle \nalso has three equal angles.\nEach angle is 60\xB0.");
+    state.isoAns5i = game.add.text(790,720, "An equilateral triangle \nalso has three equal angles.\nEach angle is 60\xB0.");
     state.isoAns5i.fontWeight = 'normal';
     state.isoAns5i.align = 'left';
     state.isoAns5i.addFontWeight('normal',0);
