@@ -89,7 +89,7 @@ demo.state1.prototype = {
         dads.scale.setTo(0.45,0.4)
         dads.anchor.setTo(0.2,0.2);
         btnStart[0].alpha = 0.5;
-        this.texts[2].alpha= 0.45;
+        this.texts[2].alpha= 0.8;
         this.asd1 =game.add.text(215,720,"Each has two equal sides \nand two equal angles.");
          this.asd1.fontWeight = 'normal';}
        
@@ -99,7 +99,7 @@ demo.state1.prototype = {
         dads1.scale.setTo(0.5,0.4)
         dads1.anchor.setTo(0.2,0.2);
         btnStart[1].alpha = 0.5;
-        this.texts[3].alpha = 0.45; 
+        this.texts[3].alpha = 0.8; 
         dads1.alpha = 1;
         this.asd2 = game.add.text(580,700,"Each has three equal sides \nand three equal angles. \nEach angle is 60\xB0.");
         this.asd2.fontWeight = 'normal';}
@@ -110,7 +110,7 @@ demo.state1.prototype = {
         dads3.scale.setTo(0.4,0.4)
         dads3.anchor.setTo(0.2,0.2);
         btnStart[2].alpha = 0.5;
-        this.texts[4].alpha = 0.45; 
+        this.texts[4].alpha = 0.8; 
         dads3.alpha = 1;
         this.asd3 = game.add.text(990,735,"Each has a 90\xB0 angle.");
               this.asd3.fontWeight = 'normal';
