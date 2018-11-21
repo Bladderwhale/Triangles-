@@ -145,7 +145,7 @@ demo.state5.prototype = {
         this.texts[4].text = "5.0 m";
         this.texts[4].anchor.x = 0.5;
         
-        this.texts[5].position.setTo(180,660);
+        this.texts[5].position.setTo(140,660);
         this.texts[5].text = "No matter how the height of the isosceles triangle changes, two sides are always equal and __________."
         this.texts[5].alpha = 0;
         this.texts[5].align = 'left';
