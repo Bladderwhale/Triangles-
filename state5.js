@@ -442,7 +442,7 @@ demo.state5.prototype = {
         var finaldegrees = Math.asd(this.final)
         var finaldegrees1 = Math.asd(this.final2)
         //Handle3 - pull up
-        if (this.fakeHandle3.y < this.dot3.y &&this.fakeHandle3.input.isDragged) {
+        if (this.line.length<=294&&this.fakeHandle3.y < this.dot3.y &&this.fakeHandle3.input.isDragged) {
             
             this.dot3.y-=0.5;
           
