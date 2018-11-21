@@ -237,7 +237,7 @@ demo.state12.prototype = {rectLength:0,rectLength2:0, btnTryAgain: null, txtTryA
         //extras for the bottom
         sprite4 = game.add.sprite(0,0,"");
         this.game.physics.enable(sprite4, Phaser.Physics.ARCADE);
-        sprite4.body.setSize(450, 550, 1400, 100);
+        sprite4.body.setSize(1400, 100, 50, 550);
         sprite4.body.immovable = true;
         this.game.physics.enable(this.dot2, Phaser.Physics.ARCADE);
     },
@@ -517,7 +517,13 @@ demo.state12.prototype = {rectLength:0,rectLength2:0, btnTryAgain: null, txtTryA
         if (this.btnRadio3.input.pointerOver()) {
            this.btnRadio3.input.useHandCursor = true;
        }
-        
+        //extra
+       var hasCollision4 = this.game.physics.arcade.overlap(sprite4, this.dot2 , this.collisionHandler4, null, this )
+       if(!hasCollision4)
+           {
+              // game.stage.backgroundColor = '#000000';
+               
+           }
               //physics
         // this.game.physics.arcade.overlap(sprite1, this.dot3, this.collisionHandler, null, this);
        var hasCollision3 = this.game.physics.arcade.overlap(sprite3, this.dot3 , this.collisionHandler, null, this )
@@ -539,17 +545,18 @@ demo.state12.prototype = {rectLength:0,rectLength2:0, btnTryAgain: null, txtTryA
         }
     },
          render: function() {
-        game.debug.body(sprite1);
+      /*  game.debug.body(sprite1);
         game.debug.body(sprite2);
         game.debug.body(sprite3);
         game.debug.body(sprite4);
-        game.debug.body(this.dot3);
+        game.debug.body(this.dot3);*/
     },   
    collisionHandler: function(obj1, obj2) 
     {
         console.log("collide3")
       //  game.stage.backgroundColor = '#992d2d';
         this.fakeHandle3.input.isDragged = false;
+        this.fakeHandle1.input.isDragged = false;
         this.dot3.y++;
     },
     collisionHandler2: function(obj1,obj2) {
@@ -568,5 +575,15 @@ demo.state12.prototype = {rectLength:0,rectLength2:0, btnTryAgain: null, txtTryA
         this.fakeHandle3.input.isDragged = false;
         this.dot1.x++;
       
+    },
+    collisionHandler4: function(obj1,obj2) {
+        console.log("collide4")
+     //   game.stage.backgroundColor = '#992d2d';
+        this.fakeHandle2.input.isDragged = false;
+        this.dot2.y--;
+        
+       
+      
     }
+                          
 };
