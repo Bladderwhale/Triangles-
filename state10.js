@@ -691,27 +691,28 @@ demo.state10.prototype = {
         game.debug.body(this.dot3); */
     },
     
-    collisionHandler: function(obj1, obj2) 
+     collisionHandler: function(obj1, obj2) 
     {
-        console.log("collide")
-     //   game.stage.backgroundColor = '#992d2d';
+        console.log("collide3")
+        game.stage.backgroundColor = '#992d2d';
         this.fakeHandle3.input.isDragged = false;
         this.dot3.y++;
     },
     collisionHandler2: function(obj1,obj2) {
-        console.log("collide")
+        console.log("collide2")
      //   game.stage.backgroundColor = '#992d2d';
         this.fakeHandle2.input.isDragged = false;
+        this.fakeHandle3.input.isDragged = false;
         this.dot2.x--;
         
         
     },
     collisionHandler1: function(obj1,obj2) {
-        console.log("collide")
+        console.log("collide1")
      //   game.stage.backgroundColor = '#992d2d';
         this.fakeHandle1.input.isDragged = false;
+        this.fakeHandle3.input.isDragged = false;
         this.dot1.x++;
-        
-
+      
     }
 };

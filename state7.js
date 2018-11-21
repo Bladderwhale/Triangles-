@@ -149,13 +149,13 @@ demo.state7.prototype = {
         
        
         
-        //height of a triangle
-        console.log(this.dot2.y - this.dot3.y);
+       //height of a triangle
+       /* console.log(this.dot2.y - this.dot3.y);
         this.height = this.dot2.y - this.dot3.y;
         
         //length
         console.log(this.dot2.x - this.dot1.x);
-        this.length = this.dot2.x - this.dot1.x;
+        this.length = this.dot2.x - this.dot1.x;*/
         
        /* this.fakeHandle1.events.onInputOver.add(function(){
             this.game.canvas.style.cursor = "move";
@@ -238,7 +238,7 @@ demo.state7.prototype = {
         if (this.fakeHandle3.input.pointerOver()) {
            this.fakeHandle3.input.useHandCursor = true;
        }
-        console.log("what is the value of k: "+ this.k)
+      //  console.log("what is the value of k: "+ this.k)
           //Try again function
         if (this.boolTryAgain == true) {
             if (this.k < 1){
@@ -293,9 +293,9 @@ demo.state7.prototype = {
             linegraphics.lineTo(this.dot3.x,this.dot3.y);
             linegraphics.endFill();}
         
-        console.log("What is the value of a: " + a + "what is the value of b: "+ this.b);
+     /*   console.log("What is the value of a: " + a + "what is the value of b: "+ this.b);
         console.log("X: " + this.dot.x + "Y: "+ this.dot.y);
-        console.log(this.dot2.x - this.dot1.x);
+        console.log(this.dot2.x - this.dot1.x);*/
         polygon.setTo([new Phaser.Point(this.dot1.x, this.dot1.y), new Phaser.Point(this.dot2.x, this.dot2.y),new Phaser.Point(this.dot3.x, this.dot3.y)])
         graphics.destroy();
         graphics = game.add.graphics(0,0);;
@@ -323,16 +323,16 @@ demo.state7.prototype = {
         this.line2.fromSprite(this.dot2,this.dot3,false);
         this.line3.fromSprite(this.dot1,this.dot2,false);
         
-        console.log("Dot1.x: " +this.dot1.x + "Dot1.y: "+ this.dot1.y);
+       /* console.log("Dot1.x: " +this.dot1.x + "Dot1.y: "+ this.dot1.y);
         console.log("Dot2.x: " +this.dot2.x + "Dot2.y: "+ this.dot2.y);
         //console.log("Dot3.x: " +this.dot3.x + "Dot3.y: "+ this.dot3.y);
         console.log("Left Length:" + this.line.length);
-        console.log("Bottom Length: " + this.line3.length);
+        console.log("Bottom Length: " + this.line3.length);*/
 
         center = new Phaser.Point.add(this.dot1, this.dot2);
-        console.log("what is the  center1: " + center)
+       // console.log("what is the  center1: " + center)
         center = center.divide(2,2);
-        console.log("what is the new center: " + center)
+     //   console.log("what is the new center: " + center)
         length = (new Phaser.Point.subtract(this.dot1,this.dot2)).getMagnitude();
         
         var b = (length * length) - (length/2)*(length/2);//python  pythagoras
@@ -348,10 +348,10 @@ demo.state7.prototype = {
      //   b = new Phaser.Point.divide(length, length);
         //b = new Phaser.Point.divide(length/2);
         
-        console.log("What is the center" + center.x);
+     /*   console.log("What is the center" + center.x);
         console.log("What is the length between dot1 and dot2: " + length);
         console.log('What is b: ' + b);
-         console.log("Dot3.x: " +this.dot3.x + "Dot3.y: "+ this.dot3.y)
+         console.log("Dot3.x: " +this.dot3.x + "Dot3.y: "+ this.dot3.y)*/
        
         //Handle1 - pull left
         if (this.line.length <= 320&&this.fakeHandle1.x < this.dot1.x &&  this.fakeHandle1.input.isDragged) {
@@ -616,10 +616,10 @@ demo.state7.prototype = {
         if(!hasCollision1) {
            // game.stage.backgroundColor = '#000000';
         }
-        console.log("Is this true/false: " + activation2);
+      
     },
     render: function() {
-     /*   game.debug.body(sprite1);
+       /* game.debug.body(sprite1);
         game.debug.body(sprite2);
         game.debug.body(sprite3);
         game.debug.body(this.dot3); */
@@ -627,23 +627,25 @@ demo.state7.prototype = {
     
     collisionHandler: function(obj1, obj2) 
     {
-        console.log("collide")
+        console.log("collide3")
         game.stage.backgroundColor = '#992d2d';
         this.fakeHandle3.input.isDragged = false;
         this.dot3.y++;
     },
     collisionHandler2: function(obj1,obj2) {
-        console.log("collide")
+        console.log("collide2")
      //   game.stage.backgroundColor = '#992d2d';
         this.fakeHandle2.input.isDragged = false;
+        this.fakeHandle3.input.isDragged = false;
         this.dot2.x--;
         
         
     },
     collisionHandler1: function(obj1,obj2) {
-        console.log("collide")
+        console.log("collide1")
      //   game.stage.backgroundColor = '#992d2d';
         this.fakeHandle1.input.isDragged = false;
+        this.fakeHandle3.input.isDragged = false;
         this.dot1.x++;
       
     }

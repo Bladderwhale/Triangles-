@@ -233,6 +233,13 @@ demo.state12.prototype = {rectLength:0,rectLength2:0, btnTryAgain: null, txtTryA
         sprite2.body.setSize(450, 550, 1000, 90);
         sprite2.body.immovable = true;
         this.game.physics.enable(this.dot2, Phaser.Physics.ARCADE);
+        
+        //extras for the bottom
+        sprite4 = game.add.sprite(0,0,"");
+        this.game.physics.enable(sprite4, Phaser.Physics.ARCADE);
+        sprite4.body.setSize(450, 550, 1400, 100);
+        sprite4.body.immovable = true;
+        this.game.physics.enable(this.dot2, Phaser.Physics.ARCADE);
     },
     update: function(){
           if (this.fakeHandle1.input.pointerOver()) {
@@ -246,7 +253,7 @@ demo.state12.prototype = {rectLength:0,rectLength2:0, btnTryAgain: null, txtTryA
        }
         
        // console.log("what is the bool of the handcursor: " + this.hand1.input.useHandCursor);
-        console.log("what is tick tween: " +tickTween);
+      //  console.log("what is tick tween: " +tickTween);
         //Try again function
         if (this.boolTryAgain == true) {
             if (this.k < 1){
@@ -303,7 +310,7 @@ demo.state12.prototype = {rectLength:0,rectLength2:0, btnTryAgain: null, txtTryA
             linegraphics.lineTo(this.dot3.x,this.dot3.y);
             linegraphics.endFill();*/
             }
-       console.log("What is this x: " + this.dot.x + " y: " + this.dot.y);
+     //  console.log("What is this x: " + this.dot.x + " y: " + this.dot.y);
             if (this.fakeHandle3.input.isDragged == false) {
             this.fakeHandle3.y = this.dot3.y; 
             this.fakeHandle3.x = this.dot3.x;
@@ -348,7 +355,7 @@ demo.state12.prototype = {rectLength:0,rectLength2:0, btnTryAgain: null, txtTryA
         
         this.gradient = (this.dot3.y - this.dot2.y) / (this.dot3.x - this.dot2.x)
         this.dot3.y = (this.gradient * (this.dot3.x - this.dot2.x))+this.dot2.y; 
-        console.log(this.gradient);
+       // console.log(this.gradient);
         lineLength = new Phaser.Line();
         lineLength.fromSprite(this.dot1,this.dot2,false);
       // console.log(lineLength.length);
@@ -531,26 +538,35 @@ demo.state12.prototype = {rectLength:0,rectLength2:0, btnTryAgain: null, txtTryA
            // game.stage.backgroundColor = '#000000';
         }
     },
-    collisionHandler: function(obj1, obj2) 
+         render: function() {
+        game.debug.body(sprite1);
+        game.debug.body(sprite2);
+        game.debug.body(sprite3);
+        game.debug.body(sprite4);
+        game.debug.body(this.dot3);
+    },   
+   collisionHandler: function(obj1, obj2) 
     {
-        console.log("collide")
-     //   game.stage.backgroundColor = '#992d2d';
+        console.log("collide3")
+      //  game.stage.backgroundColor = '#992d2d';
         this.fakeHandle3.input.isDragged = false;
         this.dot3.y++;
     },
     collisionHandler2: function(obj1,obj2) {
-        console.log("collide")
+        console.log("collide2")
      //   game.stage.backgroundColor = '#992d2d';
         this.fakeHandle2.input.isDragged = false;
+        this.fakeHandle3.input.isDragged = false;
         this.dot2.x--;
         
         
     },
     collisionHandler1: function(obj1,obj2) {
-        console.log("collide")
+        console.log("collide1")
      //   game.stage.backgroundColor = '#992d2d';
         this.fakeHandle1.input.isDragged = false;
+        this.fakeHandle3.input.isDragged = false;
         this.dot1.x++;
-        
+      
     }
 };

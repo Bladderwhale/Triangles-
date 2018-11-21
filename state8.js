@@ -258,8 +258,7 @@ demo.state8.prototype = {  btnPlay: null, btnNext: null, a: 0, b:0, c:0, ans1:nu
          this.dot.alpha =0;
     },
     update: function(){
-        console.log("The value of x is: " + this.dot.x + " Y: " + this.dot.y);
-        console.log("what is the value of k: "+ this.k)
+
           if (this.boolTryAgain == true) {
               if (this.k < 1 ) {
             this.btnTryAgain.visible = true;
@@ -288,8 +287,7 @@ demo.state8.prototype = {  btnPlay: null, btnNext: null, a: 0, b:0, c:0, ans1:nu
         }
      
         
-        console.log("what is value of a: " + a + " what is value of b: " + b + " what is the value of c: " + c);
-        console.log("what is value of k: "+ this.k + "what is the value of confusedcheck: " + this.confusedCheck);
+
         if (check >= 2) {
             this.btnPlay.frame = 0;
             this.texts[12].alpha = 1;
