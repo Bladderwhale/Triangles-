@@ -447,7 +447,7 @@ demo.state10.prototype = {
         }
         
         //Handle1 - pull right
-        if (this.line.length >= 202&&this.fakeHandle1.x > this.dot1.x && this.fakeHandle1.input.isDragged) {
+        if (this.line.length >= 250&&this.fakeHandle1.x > this.dot1.x && this.fakeHandle1.input.isDragged) {
             this.dot1.x+=1.15;
            
             
@@ -487,7 +487,7 @@ demo.state10.prototype = {
             
         }
         //Handle2 - pull left
-        if (this.line.length >= 202&&this.fakeHandle2.x < this.dot2.x && this.fakeHandle2.input.isDragged) {
+        if (this.line.length >= 250&&this.fakeHandle2.x < this.dot2.x && this.fakeHandle2.input.isDragged) {
             this.dot2.x-=1.15;
           
             
@@ -544,7 +544,7 @@ demo.state10.prototype = {
             
         }
         //Handle3 - pull right down
-        if (this.line.length >= 201&&this.fakeHandle3.x < this.dot3.x && this.fakeHandle3.y > this.dot3.y+0.99 &&this.fakeHandle3.input.isDragged) {
+        if (this.line.length >= 250&&this.fakeHandle3.x < this.dot3.x && this.fakeHandle3.y > this.dot3.y+0.99 &&this.fakeHandle3.input.isDragged) {
             this.dot2.x-=1.15;
           
             
@@ -561,7 +561,7 @@ demo.state10.prototype = {
             
         }
         //Handle3 - pull left down
-        if (this.line.length >= 201 &&this.fakeHandle3.x > this.dot3.x && this.fakeHandle3.y > this.dot3.y+0.99 &&this.fakeHandle3.input.isDragged) {
+        if (this.line.length >= 250 &&this.fakeHandle3.x > this.dot3.x && this.fakeHandle3.y > this.dot3.y+0.99 &&this.fakeHandle3.input.isDragged) {
             this.dot1.x+=1.15;
            
             

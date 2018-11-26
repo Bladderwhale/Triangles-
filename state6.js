@@ -229,7 +229,7 @@ demo.state6.prototype = {
         this.texts[2].text = "Try this..."
         this.texts[2].lineSpacing = 30;
         this.texts[2].angle = -10;
-        this.texts[2].setStyle({ fill: "#0000FF"});
+        this.texts[2].setStyle({ fill: "#008000"});
         
         drawGraphicsLength = 130;
          boxTryAgainRotation(this);
