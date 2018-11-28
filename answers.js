@@ -411,9 +411,9 @@ function equilateralTrianglesAns(state) {
     state.pinkbox5 = game.add.graphics(0,0);
     state.pinkbox5.beginFill(0xF2C2B5, 1);
     state.pinkbox5.lineStyle(1, 0x000000,1);
-    state.pinkbox5.drawRect(770,660, 470,110);
+    state.pinkbox5.drawRect(770,660, 480,110);
     state.pinkbox5.alpha = 1;
-    state.isoAns5 = game.add.text(775,660, "They are equilateral triangles. \nThey each have three equal sides and \nthree equal angles. Each angle is 60˚.");
+    state.isoAns5 = game.add.text(775,660, "They are equilateral triangles. \nThey each have three equal sides and \nthree equal angles. Each angle is 60\xB0" +". ");
     state.isoAns5.fontWeight = 'normal';
     state.isoAns5.align = 'left';
     state.isoAns5.addFontWeight('normal',0);
@@ -439,7 +439,7 @@ function equilateralTrianglesAns(state) {
     state.pinkbox5a.lineStyle(1, 0x000000,1);
     state.pinkbox5a.drawRect(600,660, 360,110);
     state.pinkbox5a.alpha = 1;
-    state.isoAns5a = game.add.text(605,660, "This is an equilateral triangle. \nIt has three equal angles.\nEach angle is 60\xB0.");
+    state.isoAns5a = game.add.text(605,660, "This is an equilateral triangle. \nIt has three equal angles.\nEach angle is 60\xB0" +".");
     state.isoAns5a.fontWeight = 'normal';
     state.isoAns5a.align = 'left';
     state.isoAns5a.addFontWeight('normal',0);
@@ -452,7 +452,7 @@ function equilateralTrianglesAns(state) {
     state.pinkbox5b.lineStyle(1, 0x000000,1);
     state.pinkbox5b.drawRect(1020,660, 360,110);
     state.pinkbox5b.alpha = 1;
-    state.isoAns5b = game.add.text(1025,660, "This is an equilateral triangle. \nIt has three equal angles.\nEach angle is 60\xB0.");
+    state.isoAns5b = game.add.text(1025,660, "This is an equilateral triangle. \nIt has three equal angles.\nEach angle is 60\xB0"+".");
     state.isoAns5b.fontWeight = 'normal';
     state.isoAns5b.align = 'left';
     state.isoAns5b.addFontWeight('normal',0);
